@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ade766d-e1be-4edb-a1f0-da17a5a26d93" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CircusModel/Circus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Arena.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrandCircus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrandCircus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +19,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="20uL3jll9JEOJiOmaWdK4Olygdr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,6 +65,9 @@
       <workItem from="1636889337451" duration="152000" />
       <workItem from="1636889522148" duration="477000" />
       <workItem from="1636890041886" duration="472000" />
+      <workItem from="1636962460700" duration="818000" />
+      <workItem from="1636963351638" duration="45000" />
+      <workItem from="1636963465889" duration="366000" />
     </task>
     <servers />
   </component>
