@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ade766d-e1be-4edb-a1f0-da17a5a26d93" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CircusModel/Circus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Arena.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrandCircus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrandCircus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Camel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Camel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Cheetah.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Cheetah.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Elephant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Elephant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/GrizzlyBear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/GrizzlyBear.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Kakadu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Kakadu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Lion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Lion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Monkey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Monkey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Seal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Seal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Snake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Snake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Wolf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Wolf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/Circus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/Circus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Arena.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Arena.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animals.in" beforeDir="false" afterPath="$PROJECT_DIR$/animals.in" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -76,7 +89,19 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat(animal abstraction): extract common animal interface&#10;&#10;I've created IAnimal interface with the base properties Name and Species and the method MakeSound for extracting animals' common behaviour. Also, Name and Species are readonly as they have only getters defined. Moreover, AnimalBase is the abstract class which implements the IAnimal interface and propagate its properties/methods towards Animal Concrete classes via inheritance." />
   </component>
 </project>

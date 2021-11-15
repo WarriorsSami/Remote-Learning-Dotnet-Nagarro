@@ -13,7 +13,7 @@ namespace GrandCircus.Presentation
         public void AnnounceAnimal(string animalName, string animalSpecies)
         {
             Console.WriteLine();
-            Console.WriteLine("Next will perform {0}. It is a {1}:", animalName, animalSpecies);
+            Console.WriteLine("Next will perform {0}. It is a(n) {1}:", animalName, animalSpecies);
         }
 
         public void DisplayAnimalPerformance(string performance)
