@@ -2,7 +2,7 @@
 {
     public interface IAnimal
     {
-        string SpeciesName { get; }
+        string SpecieName { get; }
         string Name { get; }
         
         string MakeSound();

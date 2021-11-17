@@ -2,7 +2,7 @@
 {
     public class Kakadu: AnimalBase
     {
-        public Kakadu(string name, string speciesName) : base(name, speciesName)
+        public Kakadu(string name, string specieName) : base(name, specieName)
         {
         }
 

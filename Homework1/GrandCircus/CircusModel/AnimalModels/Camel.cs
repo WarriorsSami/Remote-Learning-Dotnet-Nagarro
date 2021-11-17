@@ -2,7 +2,7 @@
 {
     public class Camel: AnimalBase
     {
-        public Camel(string name, string speciesName) : base(name, speciesName)
+        public Camel(string name, string specieName) : base(name, specieName)
         {
         }
 

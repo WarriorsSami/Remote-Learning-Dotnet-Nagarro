@@ -8,7 +8,7 @@ namespace GrandCircus.CircusModel
         private readonly List<IAnimal> _animals;
         private readonly string _name;
         
-        private readonly AnimalFactory _animalFactory;
+        private readonly AnimalReader _animalFactory;
         private readonly Arena _arena;
 
         public Circus(Arena arena, string name, string animalFileIn)
@@ -16,7 +16,7 @@ namespace GrandCircus.CircusModel
             _arena = arena;
             _name = name;
             
-            _animalFactory = new AnimalFactory(animalFileIn);
+            _animalFactory = new AnimalReader(animalFileIn);
             _animals = _animalFactory.GetAnimals();
         }
 
@@ -32,7 +32,7 @@ namespace GrandCircus.CircusModel
         
         private void Perform(IAnimal animal)
         {
-            _arena.AnnounceAnimal(animal.Name, animal.SpeciesName);
+            _arena.AnnounceAnimal(animal.Name, animal.SpecieName);
             _arena.DisplayAnimalPerformance(animal.MakeSound());
         }
     }

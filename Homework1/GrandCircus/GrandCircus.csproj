@@ -6,9 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <EmbeddedResource Include="CircusModel\animals.in">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
+      <Content Include="CircusModel\animals.in">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

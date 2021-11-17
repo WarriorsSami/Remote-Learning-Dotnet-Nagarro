@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using GrandCircus.CircusModel.AnimalModels;
 
 namespace GrandCircus.CircusModel
 {
-    public class AnimalFactory
+    public class AnimalReader
     {
         private readonly StreamReader _reader;
 
-        public AnimalFactory(string filePath)
+        public AnimalReader(string filePath)
         {
             _reader = new StreamReader(filePath);
         }
@@ -29,47 +30,47 @@ namespace GrandCircus.CircusModel
         
         private IAnimal GetAnimal(string line)
         {
-            IAnimal animal;
             var animalData = line.Split(',');
-            var animalSpecies = animalData[0];
+            var animalSpecie = animalData[0];
             var animalName = animalData[1];
 
-            switch (animalSpecies)
+            // TODO: Refactor this to use reflection properly
+            // var animalDemo = AnimalFactory
+            //     .CreateAnimal("GrandCircus.CircusModel.AnimalModels." + animalSpecie);
+
+            IAnimal animal = animalSpecie switch
             {
-                case "Elephant":
-                    animal = new Elephant(animalName, animalSpecies);
-                    break;
-                case "Lion":
-                    animal = new Lion(animalName, animalSpecies);
-                    break;
-                case "Snake":
-                    animal = new Snake(animalName, animalSpecies);
-                    break;
-                case "Camel":
-                    animal = new Camel(animalName, animalSpecies);
-                    break;
-                case "Cheetah":
-                    animal = new Cheetah(animalName, animalSpecies);
-                    break;
-                case "GrizzlyBear":
-                    animal = new GrizzlyBear(animalName, animalSpecies);
-                    break;
-                case "Kakadu":
-                    animal = new Kakadu(animalName, animalSpecies);
-                    break;
-                case "Monkey":
-                    animal = new Monkey(animalName, animalSpecies);
-                    break;
-                case "Seal":
-                    animal = new Seal(animalName, animalSpecies);
-                    break;
-                case "Wolf":
-                    animal = new Wolf(animalName, animalSpecies);
-                    break;
-                default:
-                    throw new Exception("Invalid species");
-            }
+                "Elephant" => new Elephant(animalName, animalSpecie),
+                "Lion" => new Lion(animalName, animalSpecie),
+                "Snake" => new Snake(animalName, animalSpecie),
+                "Camel" => new Camel(animalName, animalSpecie),
+                "Cheetah" => new Cheetah(animalName, animalSpecie),
+                "GrizzlyBear" => new GrizzlyBear(animalName, animalSpecie),
+                "Kakadu" => new Kakadu(animalName, animalSpecie),
+                "Monkey" => new Monkey(animalName, animalSpecie),
+                "Seal" => new Seal(animalName, animalSpecie),
+                "Wolf" => new Wolf(animalName, animalSpecie),
+                _ => throw new Exception("Invalid species")
+            };
             return animal;
+        }
+    }
+    
+    public static class AnimalFactory
+    {
+        public static IAnimal CreateAnimal<T>() where T : IAnimal
+        {
+            return Activator.CreateInstance<T>();
+        }
+
+        public static IAnimal CreateAnimal(string animalSpecie)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var type = assembly.GetType(animalSpecie)?.FullName;
+            Console.WriteLine(type);
+            return Activator
+                .CreateInstanceFrom(assembly.Location, type ?? string.Empty)
+                ?.Unwrap() as IAnimal;
         }
     }
 }

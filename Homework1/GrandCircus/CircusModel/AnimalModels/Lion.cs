@@ -2,7 +2,7 @@
 {
     public class Lion: AnimalBase
     {
-        public Lion(string name, string speciesName) : base(name, speciesName)
+        public Lion(string name, string specieName) : base(name, specieName)
         {
         }
 

@@ -6,11 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="4ade766d-e1be-4edb-a1f0-da17a5a26d93" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrandCircus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrandCircus/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircusModel/AnimalFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Camel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Camel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Cheetah.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Cheetah.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Elephant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Elephant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/GrizzlyBear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/GrizzlyBear.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Kakadu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Kakadu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Lion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Lion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Monkey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Monkey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Seal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Seal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Snake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Snake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/AnimalModels/Wolf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/AnimalModels/Wolf.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircusModel/Circus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/Circus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/IAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/IAnimal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircusModel/animals.in" beforeDir="false" afterPath="$PROJECT_DIR$/CircusModel/animals.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrandCircus.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GrandCircus.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals.in" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animals.in" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,7 +2,7 @@
 {
     public class Seal: AnimalBase
     {
-        public Seal(string name, string speciesName) : base(name, speciesName)
+        public Seal(string name, string specieName) : base(name, specieName)
         {
         }
 

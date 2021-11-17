@@ -2,7 +2,7 @@
 {
     public class GrizzlyBear: AnimalBase
     {
-        public GrizzlyBear(string name, string speciesName) : base(name, speciesName)
+        public GrizzlyBear(string name, string specieName) : base(name, specieName)
         {
         }
 

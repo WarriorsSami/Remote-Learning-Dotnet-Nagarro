@@ -2,13 +2,13 @@
 {
     public abstract class AnimalBase: IAnimal
     {
-        public string SpeciesName { get; }
+        public string SpecieName { get; }
         public string Name { get; }
-        
-        protected AnimalBase(string name, string speciesName)
+
+        protected AnimalBase(string name, string specieName)
         {
             Name = name;
-            SpeciesName = speciesName;
+            SpecieName = specieName;
         }
 
         public abstract string MakeSound();
