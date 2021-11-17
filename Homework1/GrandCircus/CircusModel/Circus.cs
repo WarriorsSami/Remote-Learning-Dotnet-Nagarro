@@ -8,13 +8,16 @@ namespace GrandCircus.CircusModel
         private readonly List<IAnimal> _animals;
         private readonly string _name;
         
+        private readonly AnimalFactory _animalFactory;
         private readonly Arena _arena;
 
-        public Circus(Arena arena, string name, AnimalFactory animalFactory)
+        public Circus(Arena arena, string name, string animalFileIn)
         {
             _arena = arena;
             _name = name;
-            _animals = animalFactory.GetAnimals();
+            
+            _animalFactory = new AnimalFactory(animalFileIn);
+            _animals = _animalFactory.GetAnimals();
         }
 
         public void Perform()

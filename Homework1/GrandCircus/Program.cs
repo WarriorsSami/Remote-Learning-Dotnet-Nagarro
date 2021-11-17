@@ -6,15 +6,14 @@ namespace GrandCircus
 {
     internal static class Program
     {
-        private const string AnimalInFile =
-            "C:\\Users\\asus\\RiderProjects\\Remote-Learning-Dotnet-Nagarro\\Homework1\\GrandCircus\\animals.in";
+        private const string AnimalFileIn = "animals.in";
+        private const string DefaultCircusName = "Ringling Bros. and Barnum & Bailey Circus";
         
         private static void Main()
         {
             var arena = new Arena();
-            var animalFactory = new AnimalFactory(AnimalInFile);
 
-            var circus = new Circus(arena, "Ringling Bros. and Barnum & Bailey Circus", animalFactory);
+            var circus = new Circus(arena, DefaultCircusName, AnimalFileIn);
             circus.Perform();
 
             Pause();

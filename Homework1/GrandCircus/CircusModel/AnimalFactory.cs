@@ -11,7 +11,7 @@ namespace GrandCircus.CircusModel
 
         public AnimalFactory(string filePath)
         {
-            _reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read));
+            _reader = new StreamReader(filePath);
         }
         
         public List<IAnimal> GetAnimals()
