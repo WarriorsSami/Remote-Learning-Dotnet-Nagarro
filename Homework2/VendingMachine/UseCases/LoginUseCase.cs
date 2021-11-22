@@ -16,13 +16,13 @@ namespace VendingMachine.UseCases
 
         public LoginUseCase(VendingMachineApplication application, MainDisplay mainDisplay)
         {
-            this._application = application ?? throw new ArgumentNullException(nameof(application));
-            this._mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
+            _application = application ?? throw new ArgumentNullException(nameof(application));
+            _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
         }
 
         public void Execute()
         {
-            string password = _mainDisplay.AskForPassword();
+            var password = _mainDisplay.AskForPassword();
 
             if (password == "supercalifragilisticexpialidocious")
                 _application.UserIsLoggedIn = true;

@@ -14,7 +14,7 @@ namespace VendingMachine.UseCases
 
         public LogoutUseCase(VendingMachineApplication application)
         {
-            this._application = application ?? throw new ArgumentNullException(nameof(application));
+            _application = application ?? throw new ArgumentNullException(nameof(application));
         }
 
         public void Execute()

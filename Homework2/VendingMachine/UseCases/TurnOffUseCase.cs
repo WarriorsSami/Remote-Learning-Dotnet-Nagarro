@@ -12,7 +12,7 @@
 
         public TurnOffUseCase(VendingMachineApplication application)
         {
-            this._application = application;
+            _application = application;
         }
 
         public void Execute()

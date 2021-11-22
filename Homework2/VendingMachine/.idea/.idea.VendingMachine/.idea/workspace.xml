@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bootstrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IUseCase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationLayer/DisplayBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationLayer/MainDisplay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineApplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/ProductRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Product.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PresentationLayer/ShelfView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UseCases/LookUseCase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LoginUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UseCases/LogoutUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LogoutUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UseCases/TurnOffUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/TurnOffUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachineApplication.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -63,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637595811629</updated>
-      <workItem from="1637595829306" duration="2520000" />
+      <workItem from="1637595829306" duration="6219000" />
     </task>
     <servers />
   </component>

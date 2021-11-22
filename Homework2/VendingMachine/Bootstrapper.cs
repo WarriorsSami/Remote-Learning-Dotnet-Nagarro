@@ -15,6 +15,7 @@ namespace VendingMachine
         private static VendingMachineApplication BuildApplication()
         {
             var mainDisplay = new MainDisplay();
+            var shelfView = new ShelfView();
             var useCases = new List<IUseCase>();
 
             var vendingMachineApplication = new VendingMachineApplication(useCases, mainDisplay);
@@ -23,7 +24,8 @@ namespace VendingMachine
             {
                 new LoginUseCase(vendingMachineApplication, mainDisplay),
                 new LogoutUseCase(vendingMachineApplication),
-                new TurnOffUseCase(vendingMachineApplication)
+                new TurnOffUseCase(vendingMachineApplication),
+                new LookUseCase(vendingMachineApplication, shelfView)
             });
 
             return vendingMachineApplication;
