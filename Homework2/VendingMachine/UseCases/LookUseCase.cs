@@ -12,7 +12,7 @@ namespace VendingMachine.UseCases
 
         public string Name => "display";
         public string Description => "Display the list of available products stored in the vending machine";
-        public bool CanExecute => !_application.UserIsLoggedIn;
+        public bool CanExecute => true;
         
         public LookUseCase(VendingMachineApplication application, ShelfView shelfView)
         {
