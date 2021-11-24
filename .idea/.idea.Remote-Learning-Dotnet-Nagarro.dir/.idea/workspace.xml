@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/.idea/.idea.GrandCircus/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/.idea/.idea.GrandCircus/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/.idea/.idea.GrandCircus/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/.idea/.idea.GrandCircus/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/.idea/.idea.GrandCircus/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/.idea/.idea.GrandCircus/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/GrandCircus.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/GrandCircus.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework1/GrandCircus/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,19 +40,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="" />
+      <changelist id="b656c9ad-5484-44e1-9aa6-1d65ba5fed9c" name="Changes" comment="" />
       <created>1636889087469</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636889087469</updated>
       <workItem from="1636889087470" duration="389000" />
+      <workItem from="1637485350195" duration="294000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
