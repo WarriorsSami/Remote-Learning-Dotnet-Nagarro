@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using VendingMachine.Models;
 
 namespace VendingMachine.Data
@@ -10,6 +12,8 @@ namespace VendingMachine.Data
         #region ProductRepository Constructor
         public ProductRepository()
         {
+            if (Products.Count != 0) return;
+            
             Products.AddRange(new Product[]
             {
                 new()
@@ -55,6 +59,8 @@ namespace VendingMachine.Data
                     Quantity = 10
                 }
             });
+            
+            Console.WriteLine("Products added to the repository.");
         }
         #endregion
         
