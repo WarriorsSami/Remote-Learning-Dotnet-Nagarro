@@ -59,8 +59,6 @@ namespace VendingMachine.Data
                     Quantity = 10
                 }
             });
-            
-            Console.WriteLine("Products added to the repository.");
         }
         #endregion
         

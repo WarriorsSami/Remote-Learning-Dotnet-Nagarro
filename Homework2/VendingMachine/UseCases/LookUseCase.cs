@@ -13,10 +13,10 @@ namespace VendingMachine.UseCases
         public string Description => "Display the list of available products stored in the vending machine";
         public bool CanExecute => true;
         
-        public LookUseCase(ShelfView shelfView)
+        public LookUseCase(ShelfView shelfView, ProductRepository productRepository)
         {
             _shelfView = shelfView;
-            _productRepository = new ProductRepository();
+            _productRepository = productRepository;
         }
         
         public void Execute()
