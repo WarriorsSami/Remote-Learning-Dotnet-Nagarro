@@ -8,11 +8,12 @@ namespace VendingMachine.PresentationLayer
     {
         public void DisplayProducts(IEnumerable<Product> products)
         {
-            Console.WriteLine("Available products:");
+            DisplayLine("Available Products: ", ConsoleColor.Green);
             foreach (var item in products)
             {
-                Console.WriteLine($"{item.Name} - price: {item.Price}$, " +
-                                  $"colId: {item.ColumnId}, qty: {item.Quantity}");
+                DisplayLine($"{item.Name} - price: {item.Price}$, " +
+                                  $"colId: {item.ColumnId}, qty: {item.Quantity}",
+                                  ConsoleColor.Green);
             }
         }
     }
