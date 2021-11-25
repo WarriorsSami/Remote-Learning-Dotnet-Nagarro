@@ -25,7 +25,7 @@ namespace VendingMachine
                 new LoginUseCase(vendingMachineApplication, mainDisplay),
                 new LogoutUseCase(vendingMachineApplication),
                 new TurnOffUseCase(vendingMachineApplication),
-                new LookUseCase(vendingMachineApplication, shelfView)
+                new LookUseCase(shelfView)
             });
 
             return vendingMachineApplication;

@@ -6,7 +6,6 @@ namespace VendingMachine.UseCases
 {
     internal class LookUseCase: IUseCase
     {
-        private readonly VendingMachineApplication _application;
         private readonly ProductRepository _productRepository;
         private readonly ShelfView _shelfView;
 
@@ -14,9 +13,8 @@ namespace VendingMachine.UseCases
         public string Description => "Display the list of available products stored in the vending machine";
         public bool CanExecute => true;
         
-        public LookUseCase(VendingMachineApplication application, ShelfView shelfView)
+        public LookUseCase(ShelfView shelfView)
         {
-            _application = application;
             _shelfView = shelfView;
             _productRepository = new ProductRepository();
         }
