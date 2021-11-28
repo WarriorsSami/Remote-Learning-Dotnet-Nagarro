@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bootstrapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/ProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LookUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LookUseCase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1637595811629</updated>
       <workItem from="1637595829306" duration="6219000" />
+      <workItem from="1637948696108" duration="594000" />
+      <workItem from="1638096116032" duration="1599000" />
     </task>
     <servers />
   </component>

@@ -17,6 +17,7 @@ namespace VendingMachine
         {
             var mainDisplay = new MainDisplay();
             var shelfView = new ShelfView();
+            var buyView = new BuyView();
             var productRepository = new ProductRepository();
             var useCases = new List<IUseCase>();
 
@@ -27,7 +28,8 @@ namespace VendingMachine
                 new LoginUseCase(vendingMachineApplication, mainDisplay),
                 new LogoutUseCase(vendingMachineApplication),
                 new TurnOffUseCase(vendingMachineApplication),
-                new LookUseCase(shelfView, productRepository)
+                new LookUseCase(shelfView, productRepository),
+                new BuyUseCase(vendingMachineApplication, buyView, productRepository)
             });
 
             return vendingMachineApplication;
