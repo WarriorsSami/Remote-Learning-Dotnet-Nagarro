@@ -1,7 +1,19 @@
-﻿namespace VendingMachine.CustomExceptions.BuyUseCaseExceptions
+﻿using System;
+
+namespace VendingMachine.CustomExceptions.BuyUseCaseExceptions
 {
-    public class ProductNotFoundException
+    internal class ProductNotFoundException: Exception
     {
+        public ProductNotFoundException()
+        {
+        }
         
+        public ProductNotFoundException(string message) : base(message)
+        {
+        }
+        
+        public ProductNotFoundException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

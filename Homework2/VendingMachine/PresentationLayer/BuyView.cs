@@ -1,4 +1,5 @@
 ﻿using System;
+using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Models;
 
 namespace VendingMachine.PresentationLayer
@@ -16,8 +17,13 @@ namespace VendingMachine.PresentationLayer
         public int AskForProductCode()
         {
             DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
-            var productCode = int.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
-            return productCode;
+            var productCode = Console.ReadLine() ?? "";
+            if (productCode == "")
+            {
+                throw new CancelOrderException("Cancelled order");
+            }
+            
+            return int.Parse(productCode);
         }
     }
 }

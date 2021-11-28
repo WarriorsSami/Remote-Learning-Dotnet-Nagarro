@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
+using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Models;
 
 namespace VendingMachine.Data
@@ -57,7 +58,14 @@ namespace VendingMachine.Data
                     Name = "Fanta Light",
                     Price = 1.5m,
                     Quantity = 10
-                }
+                },
+                new()
+                {
+                    ColumnId = 7,
+                    Name = "Coca Cola Zero",
+                    Price = 1.5m,
+                    Quantity = 1
+                },
             });
         }
         #endregion
@@ -67,9 +75,13 @@ namespace VendingMachine.Data
             return Products;
         }
         
-        public Product? GetByCode(int code)
+        public Product GetByCode(int code)
         {
-            return Products.FirstOrDefault(product => product.ColumnId == code && product.Quantity > 0);
+            var product = Products.FirstOrDefault(product => product.ColumnId == code);
+            if (product == null) throw new ProductNotFoundException("No such product");
+            if (product.Quantity == 0) throw new ProductOutOfStockException("Product is out of stock");
+            
+            return product;
         }
         
         public void UpdateQuantity(int code, int quantity)

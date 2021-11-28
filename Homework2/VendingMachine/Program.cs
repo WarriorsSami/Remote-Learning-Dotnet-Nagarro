@@ -1,4 +1,6 @@
 ﻿using System;
+using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
+using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
 
 namespace VendingMachine
 {
@@ -11,9 +13,29 @@ namespace VendingMachine
                 var bootstrapper = new Bootstrapper();
                 bootstrapper.Run();
             }
-            catch (Exception ex)
+            catch (InvalidCredentialsException e)
             {
-                DisplayError(ex);
+                DisplayError(e);
+                Pause();
+            }
+            catch (ProductNotFoundException e)
+            {
+                DisplayError(e);
+                Pause();
+            }
+            catch (ProductOutOfStockException e)
+            {
+                DisplayError(e);
+                Pause();
+            }
+            catch (CancelOrderException e)
+            {
+                DisplayError(e);
+                Pause();
+            }
+            catch (Exception e)
+            {
+                DisplayError(e);
                 Pause();
             }
         }

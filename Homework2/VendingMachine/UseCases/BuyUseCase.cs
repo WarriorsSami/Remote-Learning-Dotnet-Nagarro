@@ -1,4 +1,5 @@
 ﻿using System;
+using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Data;
 using VendingMachine.PresentationLayer;
 
@@ -28,7 +29,7 @@ namespace VendingMachine.UseCases
         {
             var productCode = _buyView.AskForProductCode();
 
-            var product = _productRepository.GetByCode(productCode) ?? throw new InvalidOperationException();
+            var product = _productRepository.GetByCode(productCode);
             _productRepository.UpdateQuantity(productCode, product.Quantity - 1);
             
             _buyView.DisplayProduct(product);
