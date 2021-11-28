@@ -1,4 +1,4 @@
-﻿using System;
+﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
 using VendingMachine.Models;
@@ -65,6 +65,19 @@ namespace VendingMachine.Data
         public IEnumerable<Product> GetAll()
         {
             return Products;
+        }
+        
+        public Product? GetByCode(int code)
+        {
+            return Products.FirstOrDefault(product => product.ColumnId == code && product.Quantity > 0);
+        }
+        
+        public void UpdateQuantity(int code, int quantity)
+        {
+            var product = Products.FirstOrDefault(p => p.ColumnId == code);
+            if (product == null) return;
+            
+            product.Quantity = quantity;
         }
     }
 }
