@@ -19,16 +19,15 @@ namespace VendingMachine.UseCases
             BuyView buyView, 
             ProductRepository productRepository)
         {
-            _application = application;
-            _buyView = buyView;
-            _productRepository = productRepository;
+            _application = application ?? throw new ArgumentNullException(nameof(application));
+            _buyView = buyView ?? throw new ArgumentNullException(nameof(buyView));
+            _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
         }
          
         public void Execute()
         {
-            Console.WriteLine("Please enter the product code:");
-            var productCode = int.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
-            
+            var productCode = _buyView.AskForProductCode();
+
             var product = _productRepository.GetByCode(productCode) ?? throw new InvalidOperationException();
             _productRepository.UpdateQuantity(productCode, product.Quantity - 1);
             

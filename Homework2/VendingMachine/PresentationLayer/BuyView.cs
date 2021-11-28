@@ -12,5 +12,12 @@ namespace VendingMachine.PresentationLayer
                         $"colId: {product.ColumnId}, qty: {product.Quantity}",
                         ConsoleColor.Green);
         }
+
+        public int AskForProductCode()
+        {
+            DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
+            var productCode = int.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
+            return productCode;
+        }
     }
 }
