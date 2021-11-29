@@ -75,11 +75,9 @@ namespace VendingMachine.Data
             return Products;
         }
         
-        public Product GetByCode(int code)
+        public Product? GetByCode(int code)
         {
             var product = Products.FirstOrDefault(product => product.ColumnId == code);
-            if (product == null) throw new ProductNotFoundException("No such product");
-            if (product.Quantity == 0) throw new ProductOutOfStockException("Product is out of stock");
             
             return product;
         }
@@ -87,9 +85,10 @@ namespace VendingMachine.Data
         public void UpdateQuantity(int code, int quantity)
         {
             var product = Products.FirstOrDefault(p => p.ColumnId == code);
-            if (product == null) return;
-            
-            product.Quantity = quantity;
+            if (product != null)
+            {
+                product.Quantity = quantity;
+            }
         }
     }
 }

@@ -14,16 +14,12 @@ namespace VendingMachine.PresentationLayer
                         ConsoleColor.Green);
         }
 
-        public int AskForProductCode()
+        public string AskForProductCode()
         {
             DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
             var productCode = Console.ReadLine() ?? "";
-            if (productCode == "")
-            {
-                throw new CancelOrderException("Cancelled order");
-            }
-            
-            return int.Parse(productCode);
+
+            return productCode;
         }
     }
 }

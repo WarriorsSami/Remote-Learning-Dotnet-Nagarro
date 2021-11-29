@@ -27,9 +27,24 @@ namespace VendingMachine.UseCases
          
         public void Execute()
         {
-            var productCode = _buyView.AskForProductCode();
-
+            var productCodeStr = _buyView.AskForProductCode();
+            if (string.IsNullOrWhiteSpace(productCodeStr))
+            {
+                throw new CancelOrderException("Order cancelled");
+            }
+            
+            var productCode = int.Parse(productCodeStr);
+            
             var product = _productRepository.GetByCode(productCode);
+            if (product == null)
+            {
+                throw new ProductNotFoundException("Unavailable product");
+            }
+            if (product.Quantity == 0)
+            {
+                throw new ProductOutOfStockException("Product out of stock");
+            }
+            
             _productRepository.UpdateQuantity(productCode, product.Quantity - 1);
             
             _buyView.DisplayProduct(product);
