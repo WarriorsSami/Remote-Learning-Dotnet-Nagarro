@@ -1,4 +1,5 @@
 ﻿using System;
+using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
 using VendingMachine.PresentationLayer;
 
 namespace VendingMachine.UseCases
@@ -27,7 +28,7 @@ namespace VendingMachine.UseCases
             if (password == "supercalifragilisticexpialidocious")
                 _application.UserIsLoggedIn = true;
             else
-                throw new Exception("Invalid password");
+                throw new InvalidCredentialsException("Invalid password");
         }
     }
 }

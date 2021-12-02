@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bootstrapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/ProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationLayer/ShelfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/ShelfView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LookUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LookUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachineApplication.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +62,9 @@
       <option name="presentableId" value="Default" />
       <updated>1637595811629</updated>
       <workItem from="1637595829306" duration="6219000" />
+      <workItem from="1637948696108" duration="594000" />
+      <workItem from="1638096116032" duration="5010000" />
+      <workItem from="1638175878857" duration="949000" />
     </task>
     <servers />
   </component>
@@ -69,4 +73,21 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(repo): add methods related to buying logic&#10;&#10;- get product by code (possible null)&#10;- update bought product quantity&#10;(using LINQ)" />
+    <MESSAGE value="refactor(buy product): move display logic to buy view&#10;&#10;I've extracted the logic related to asking for product id from the buy use case into buy view" />
+    <MESSAGE value="feat(exp handling): define custom exceptions&#10;&#10;I've defined a list of custom exceptions related to login and buy use case (invalid credentials, cancel order, product not found, product out of stock), thrown them from proper classes (login use case, buy use case, product repo or buy view) and handled them in the main program" />
+  </component>
 </project>

@@ -1,4 +1,6 @@
 ﻿using System;
+using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
+using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
 
 namespace VendingMachine
 {
@@ -11,14 +13,14 @@ namespace VendingMachine
                 var bootstrapper = new Bootstrapper();
                 bootstrapper.Run();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                DisplayError(ex);
+                DisplayError(e);
                 Pause();
             }
         }
 
-        private static void DisplayError(Exception ex)
+        public static void DisplayError(Exception ex)
         {
             var oldColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
@@ -26,7 +28,7 @@ namespace VendingMachine
             Console.ForegroundColor = oldColor;
         }
 
-        private static void Pause()
+        public static void Pause()
         {
             Console.ReadKey(true);
         }

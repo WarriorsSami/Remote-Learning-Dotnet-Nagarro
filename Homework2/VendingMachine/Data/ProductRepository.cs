@@ -1,6 +1,7 @@
-﻿using System;
+﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
+using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Models;
 
 namespace VendingMachine.Data
@@ -57,16 +58,37 @@ namespace VendingMachine.Data
                     Name = "Fanta Light",
                     Price = 1.5m,
                     Quantity = 10
-                }
+                },
+                new()
+                {
+                    ColumnId = 7,
+                    Name = "Coca Cola Zero",
+                    Price = 1.5m,
+                    Quantity = 1
+                },
             });
-            
-            Console.WriteLine("Products added to the repository.");
         }
         #endregion
         
         public IEnumerable<Product> GetAll()
         {
             return Products;
+        }
+        
+        public Product? GetByCode(int code)
+        {
+            var product = Products.FirstOrDefault(product => product.ColumnId == code);
+            
+            return product;
+        }
+        
+        public void UpdateQuantity(int code, int quantity)
+        {
+            var product = Products.FirstOrDefault(p => p.ColumnId == code);
+            if (product != null)
+            {
+                product.Quantity = quantity;
+            }
         }
     }
 }
