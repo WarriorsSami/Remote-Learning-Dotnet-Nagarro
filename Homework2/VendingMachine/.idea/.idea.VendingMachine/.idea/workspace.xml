@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/IUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/ProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachineTests/BuyUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachineTests/BuyUseCaseTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +30,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="316048d3-9496-4c02-b7af-95ac9229f43c">
+  <component name="RunManager">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -69,7 +64,7 @@
       <workItem from="1638175878857" duration="949000" />
       <workItem from="1638628209056" duration="2807000" />
       <workItem from="1638632386234" duration="228000" />
-      <workItem from="1638632651674" duration="8069000" />
+      <workItem from="1638632651674" duration="8941000" />
     </task>
     <servers />
   </component>
@@ -85,29 +80,29 @@
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 237/375" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 237/375" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 237/375" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 237/375" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="UseCases 24% 48/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 237/375" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="UseCases 24% 48/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
