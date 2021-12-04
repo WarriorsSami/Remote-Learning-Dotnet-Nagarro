@@ -2,61 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Services/BuyProductService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_Bootstrapper.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_BuyUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_BuyView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_CancelOrderException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_DisplayBase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_InvalidCredentialsException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_LoginUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_LogoutUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_LookUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_MainDisplay.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_Product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ProductNotFoundException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ProductOutOfStockException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ProductRepository.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_Program.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ShelfView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_TurnOffUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_VendingMachineApplication.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/class.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_cube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_cube_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_down-dir_active.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_down-dir_active_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_fork.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_fork_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_info-circled.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_info-circled_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_minus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_minus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_plus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-minus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-minus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-plus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_sponsor.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_star.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_star_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_up-dir.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_up-dir_active.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_wrench.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_wrench_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/index.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/report.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/ProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/IUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/ProductRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LoginUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LogoutUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LogoutUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LookUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LookUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/TurnOffUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/TurnOffUseCase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachineTests/BuyUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachineTests/BuyUseCaseTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +35,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.VendingMachine">
+  <component name="RunManager" selected="316048d3-9496-4c02-b7af-95ac9229f43c">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -119,7 +69,7 @@
       <workItem from="1638175878857" duration="949000" />
       <workItem from="1638628209056" duration="2807000" />
       <workItem from="1638632386234" duration="228000" />
-      <workItem from="1638632651674" duration="2353000" />
+      <workItem from="1638632651674" duration="8069000" />
     </task>
     <servers />
   </component>
@@ -130,23 +80,38 @@
     <option name="coveragePercentColumnWidth" value="188" />
     <option name="sortOrder" value="DESCENDING" />
     <option name="sortedColumn" value="1" />
-    <option name="symbolColumnWidth" value="167" />
+    <option name="symbolColumnWidth" value="161" />
     <coverage-tree-state>
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 1% 288/290" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 1% 288/290" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="VendingMachine 0% 287/287" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 1% 288/290" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="VendingMachine 0% 287/287" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="VendingMachine 0% 287/287" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="UseCases 24% 48/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 37% 235/373" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="VendingMachine 28% 214/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="UseCases 24% 48/63" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="BuyUseCase 83% 3/18" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
       <select />

@@ -65,6 +65,13 @@ namespace VendingMachine.Repositories
                     Price = 1.5m,
                     Quantity = 1
                 },
+                new()
+                {
+                    ColumnId = 8,
+                    Name = "Coca Cola Light",
+                    Price = 1.5m,
+                    Quantity = 0
+                },
             });
         }
         #endregion

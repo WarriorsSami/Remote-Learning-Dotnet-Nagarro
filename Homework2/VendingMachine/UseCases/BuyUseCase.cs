@@ -34,7 +34,6 @@ namespace VendingMachine.UseCases
             }
             
             var productCode = int.Parse(productCodeStr);
-
             var product = _buyProductService.BuyProduct(productCode);
             
             _buyView.DisplayProduct(product);

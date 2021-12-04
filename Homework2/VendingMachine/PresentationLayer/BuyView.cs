@@ -14,7 +14,7 @@ namespace VendingMachine.PresentationLayer
                         ConsoleColor.Green);
         }
 
-        public string AskForProductCode()
+        public virtual string AskForProductCode()
         {
             DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
             var productCode = Console.ReadLine() ?? "";
