@@ -1,10 +1,10 @@
 ﻿using System;
-using VendingMachine.Data;
 using VendingMachine.PresentationLayer;
+using VendingMachine.Repositories;
 
 namespace VendingMachine.UseCases
 {
-    internal class LookUseCase: IUseCase
+    public class LookUseCase: IUseCase
     {
         private readonly ProductRepository _productRepository;
         private readonly ShelfView _shelfView;

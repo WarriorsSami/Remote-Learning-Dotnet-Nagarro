@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using VendingMachine.Data;
 using VendingMachine.PresentationLayer;
+using VendingMachine.Repositories;
+using VendingMachine.Services;
 using VendingMachine.UseCases;
 
 namespace VendingMachine
@@ -23,6 +24,7 @@ namespace VendingMachine
             var shelfView = new ShelfView();
             var buyView = new BuyView();
             var productRepository = new ProductRepository();
+            var buyProductService = new BuyProductService(productRepository);
             var useCases = new List<IUseCase>();
 
             var vendingMachineApplication = new VendingMachineApplication(useCases, mainDisplay);
@@ -33,7 +35,7 @@ namespace VendingMachine
                 new LogoutUseCase(vendingMachineApplication),
                 new TurnOffUseCase(vendingMachineApplication),
                 new LookUseCase(shelfView, productRepository),
-                new BuyUseCase(vendingMachineApplication, buyView, productRepository)
+                new BuyUseCase(vendingMachineApplication, buyView, buyProductService)
             });
 
             return vendingMachineApplication;

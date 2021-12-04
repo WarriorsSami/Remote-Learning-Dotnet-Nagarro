@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine.UseCases
 {
-    internal class TurnOffUseCase : IUseCase
+    public class TurnOffUseCase : IUseCase
     {
         private readonly VendingMachineApplication _application;
 

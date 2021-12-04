@@ -1,10 +1,9 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Models;
 
-namespace VendingMachine.Data
+namespace VendingMachine.Repositories
 {
     public class ProductRepository
     {
