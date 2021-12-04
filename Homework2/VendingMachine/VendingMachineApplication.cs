@@ -7,7 +7,7 @@ using VendingMachine.PresentationLayer;
 
 namespace VendingMachine
 {
-    internal class VendingMachineApplication
+    public class VendingMachineApplication
     {
         private readonly List<IUseCase> _useCases;
         private readonly MainDisplay _mainDisplay;

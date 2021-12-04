@@ -4,7 +4,7 @@ using VendingMachine.Models;
 
 namespace VendingMachine.PresentationLayer
 {
-    internal class BuyView: DisplayBase
+    public class BuyView: DisplayBase
     {
         public void DisplayProduct(Product product)
         {

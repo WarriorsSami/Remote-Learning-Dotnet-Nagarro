@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine.Models
 {
-    internal class Product
+    public class Product
     {
         public int ColumnId { get; set; }
         public string Name { get; set; }

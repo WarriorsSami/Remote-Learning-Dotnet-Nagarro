@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine
 {
-    internal interface IUseCase
+    public interface IUseCase
     {
         string Name { get; }
 

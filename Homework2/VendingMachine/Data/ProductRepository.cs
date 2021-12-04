@@ -6,7 +6,7 @@ using VendingMachine.Models;
 
 namespace VendingMachine.Data
 {
-    internal class ProductRepository
+    public class ProductRepository
     {
         private static readonly List<Product> Products = new();
         

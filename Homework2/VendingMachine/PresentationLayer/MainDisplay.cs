@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace VendingMachine.PresentationLayer
 {
-    internal class MainDisplay : DisplayBase
+    public class MainDisplay : DisplayBase
     {
         public IUseCase ChooseCommand(IEnumerable<IUseCase> useCases)
         {

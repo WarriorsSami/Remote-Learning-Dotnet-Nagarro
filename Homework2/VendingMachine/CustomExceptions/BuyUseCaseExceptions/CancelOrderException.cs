@@ -2,7 +2,7 @@
 
 namespace VendingMachine.CustomExceptions.BuyUseCaseExceptions
 {
-    internal class CancelOrderException: Exception
+    public class CancelOrderException: Exception
     {
         public CancelOrderException()
         {

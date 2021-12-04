@@ -2,7 +2,7 @@
 
 namespace VendingMachine.CustomExceptions.BuyUseCaseExceptions
 {
-    internal class ProductOutOfStockException: Exception
+    public class ProductOutOfStockException: Exception
     {
         public ProductOutOfStockException()
         {

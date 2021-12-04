@@ -1,10 +1,8 @@
 ﻿using System;
-using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
-using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
 
 namespace VendingMachine
 {
-    internal static class Program
+    public static class Program
     {
         private static void Main(string[] args)
         {

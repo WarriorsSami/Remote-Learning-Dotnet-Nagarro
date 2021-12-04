@@ -5,8 +5,12 @@ using VendingMachine.UseCases;
 
 namespace VendingMachine
 {
-    internal class Bootstrapper
+    public class Bootstrapper
     {
+        public Bootstrapper()
+        {
+        }
+        
         public void Run()
         {
             var vendingMachineApplication = BuildApplication();
