@@ -5,3 +5,4 @@
 - [x] OOAD
 - [x] Exception Handling
 - [x] TDD and Unit Testing
+- [x] SOLID
