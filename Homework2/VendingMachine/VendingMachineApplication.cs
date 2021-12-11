@@ -4,10 +4,11 @@ using System.Linq;
 using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
 using VendingMachine.PresentationLayer;
+using VendingMachine.UseCases;
 
 namespace VendingMachine
 {
-    public class VendingMachineApplication
+    internal class VendingMachineApplication: IVendingMachineApplication
     {
         private readonly List<IUseCase> _useCases;
         private readonly MainDisplay _mainDisplay;

@@ -4,7 +4,7 @@ using VendingMachine.Models;
 
 namespace VendingMachine.PresentationLayer
 {
-    public class BuyView: DisplayBase
+    internal class BuyView: DisplayBase, IBuyView
     {
         public void DisplayProduct(Product product)
         {
@@ -14,7 +14,7 @@ namespace VendingMachine.PresentationLayer
                         ConsoleColor.Green);
         }
 
-        public virtual string AskForProductCode()
+        public string AskForProductCode()
         {
             DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
             var productCode = Console.ReadLine() ?? "";

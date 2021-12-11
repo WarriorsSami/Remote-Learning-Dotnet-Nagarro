@@ -4,7 +4,7 @@ using VendingMachine.Models;
 
 namespace VendingMachine.PresentationLayer
 {
-    public class ShelfView: DisplayBase
+    internal class ShelfView: DisplayBase
     {
         public void DisplayProducts(IEnumerable<Product> products)
         {

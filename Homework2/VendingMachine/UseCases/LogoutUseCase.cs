@@ -2,7 +2,7 @@
 
 namespace VendingMachine.UseCases
 {
-    public class LogoutUseCase : IUseCase
+    internal class LogoutUseCase : IUseCase
     {
         private readonly VendingMachineApplication _application;
 

@@ -2,7 +2,7 @@
 
 namespace VendingMachine.PresentationLayer
 {
-    public class DisplayBase
+    internal class DisplayBase
     {
         protected void DisplayLine(string message, ConsoleColor color)
         {

@@ -4,7 +4,7 @@ using VendingMachine.Repositories;
 
 namespace VendingMachine.UseCases
 {
-    public class LookUseCase: IUseCase
+    internal class LookUseCase: IUseCase
     {
         private readonly ProductRepository _productRepository;
         private readonly ShelfView _shelfView;

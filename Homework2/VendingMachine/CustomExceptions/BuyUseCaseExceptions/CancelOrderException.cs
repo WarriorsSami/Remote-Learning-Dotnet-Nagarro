@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Reflection;
 
 namespace VendingMachine.CustomExceptions.BuyUseCaseExceptions
 {
-    public class CancelOrderException: Exception
+    internal class CancelOrderException: Exception
     {
         public CancelOrderException()
         {

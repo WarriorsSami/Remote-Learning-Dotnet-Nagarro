@@ -2,7 +2,7 @@
 
 namespace VendingMachine.CustomExceptions.LoginUseCaseExceptions
 {
-    public class InvalidCredentialsException: Exception
+    internal class InvalidCredentialsException: Exception
     {
         public InvalidCredentialsException()
         {

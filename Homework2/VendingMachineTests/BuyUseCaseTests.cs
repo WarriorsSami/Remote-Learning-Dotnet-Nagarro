@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Moq;
 using NUnit.Framework;
 using VendingMachine;
@@ -7,12 +5,11 @@ using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Models;
 using VendingMachine.PresentationLayer;
 using VendingMachine.Repositories;
-using VendingMachine.Services;
 using VendingMachine.UseCases;
 
 namespace VendingMachineTests
 {
-    public class BuyUseCaseTests
+    internal class BuyUseCaseTests
     {
         [Test]
         public void BuyExistingProduct()
@@ -26,19 +23,21 @@ namespace VendingMachineTests
                 Quantity = 9
             };
 
-            var productRepository = new ProductRepository();
-            var buyProductService = new BuyProductService(productRepository);
-            
-            var buyView = new Mock<BuyView>();
+            var productRepository = new ProductRepository(); 
+
+            var buyView = new Mock<IBuyView>();
             buyView.Setup(x =>
-                x.AskForProductCode())
-                .Returns(requestedId);
+                x.AskForProductCode()
+                ).Returns(requestedId);
             
-            var mainDisplay = new Mock<MainDisplay>();
-            var useCases = new Mock<List<IUseCase>>();
-            var application = new Mock<VendingMachineApplication>(useCases.Object, mainDisplay.Object);
+            var application = new Mock<IVendingMachineApplication>();
+            application.Setup(x =>
+                x.UserIsLoggedIn
+                ).Returns(false);
             
-            var buyUseCase = new BuyUseCase(application.Object, buyView.Object, buyProductService);
+            var buyUseCase = new BuyUseCase(application.Object, 
+                buyView.Object,
+                productRepository);
 
             buyUseCase.Execute();
             var result = productRepository.GetByCode(int.Parse(requestedId));
@@ -50,34 +49,20 @@ namespace VendingMachineTests
         public void BuyNonExistingProduct()
         {
             const string requestedId = "10";
-            var productRepository = new ProductRepository();
-            var buyProductService = new BuyProductService(productRepository);
+            var productRepository = new ProductRepository(); 
             
-            var buyView = new Mock<BuyView>();
+            var buyView = new Mock<IBuyView>();
             buyView.Setup(x =>
                 x.AskForProductCode())
                 .Returns(requestedId);
             
-            var mainDisplay = new Mock<MainDisplay>();
-            var useCases = new Mock<List<IUseCase>>();
-            var application = new Mock<VendingMachineApplication>(useCases.Object, mainDisplay.Object);
+            var application = new Mock<IVendingMachineApplication>();
             
-            var buyUseCase = new BuyUseCase(application.Object, buyView.Object, buyProductService);
+            var buyUseCase = new BuyUseCase(application.Object,
+                buyView.Object,
+                productRepository);
 
-            try
-            {
-                buyUseCase.Execute();
-            }
-            catch (ProductNotFoundException)
-            {
-                Assert.Pass();
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
-
-            Assert.Fail();
+            Assert.Throws<ProductNotFoundException>(() => buyUseCase.Execute());
         }
 
         [Test]
@@ -85,33 +70,20 @@ namespace VendingMachineTests
         {
             const string requestedId = "8";
             var productRepository = new ProductRepository();
-            var buyProductService = new BuyProductService(productRepository);
-            
-            var buyView = new Mock<BuyView>();
+
+            var buyView = new Mock<IBuyView>();
             buyView.Setup(x =>
                 x.AskForProductCode())
                 .Returns(requestedId);
             
-            var mainDisplay = new Mock<MainDisplay>();
-            var useCases = new Mock<List<IUseCase>>();
-            var application = new Mock<VendingMachineApplication>(useCases.Object, mainDisplay.Object);
             
-            var buyUseCase = new BuyUseCase(application.Object, buyView.Object, buyProductService);
+            var application = new Mock<IVendingMachineApplication>();
             
-            try
-            {
-                buyUseCase.Execute();
-            }
-            catch (ProductOutOfStockException)
-            {
-                Assert.Pass();
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
-
-            Assert.Fail();
+            var buyUseCase = new BuyUseCase(application.Object,
+                buyView.Object,
+                productRepository);
+            
+            Assert.Throws<ProductOutOfStockException>(() => buyUseCase.Execute()); 
         }
         
         [Test]
@@ -119,33 +91,19 @@ namespace VendingMachineTests
         {
             const string requestedId = "";
             var productRepository = new ProductRepository();
-            var buyProductService = new BuyProductService(productRepository);
             
-            var buyView = new Mock<BuyView>();
+            var buyView = new Mock<IBuyView>();
             buyView.Setup(x =>
                 x.AskForProductCode())
                 .Returns(requestedId);
             
-            var mainDisplay = new Mock<MainDisplay>();
-            var useCases = new Mock<List<IUseCase>>();
-            var application = new Mock<VendingMachineApplication>(useCases.Object, mainDisplay.Object);
+            var application = new Mock<IVendingMachineApplication>();
             
-            var buyUseCase = new BuyUseCase(application.Object, buyView.Object, buyProductService);
-            
-            try
-            {
-                buyUseCase.Execute();
-            }
-            catch (CancelOrderException)
-            {
-                Assert.Pass();
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
+            var buyUseCase = new BuyUseCase(application.Object,
+                buyView.Object,
+                productRepository);
 
-            Assert.Fail();
+            Assert.Throws<CancelOrderException>(() => buyUseCase.Execute());  
         }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace VendingMachine
 {
-    public static class Program
+    internal static class Program
     {
         private static void Main(string[] args)
         {

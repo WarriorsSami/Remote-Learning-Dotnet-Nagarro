@@ -1,28 +1,27 @@
 ﻿using System;
 using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.PresentationLayer;
-using VendingMachine.Services;
+using VendingMachine.Repositories;
 
 namespace VendingMachine.UseCases
 {
-    public class BuyUseCase: IUseCase
+    internal class BuyUseCase: IUseCase
     {
-        private readonly VendingMachineApplication _application;
-        private readonly BuyView _buyView;
-        private readonly BuyProductService _buyProductService;
+        private readonly IVendingMachineApplication _application;
+        private readonly IBuyView _buyView;
+        private readonly IProductRepository _productRepository;
         
         public string Name => "buy";
         public string Description => "Buy a product";
         public bool CanExecute => !_application.UserIsLoggedIn;
         
         public BuyUseCase(
-            VendingMachineApplication application, 
-            BuyView buyView,
-            BuyProductService buyProductService)
+            IVendingMachineApplication application, 
+            IBuyView buyView, IProductRepository productRepository)
         {
-            _application = application ?? throw new ArgumentNullException(nameof(application));
-            _buyView = buyView ?? throw new ArgumentNullException(nameof(buyView));
-            _buyProductService = buyProductService ?? throw new ArgumentNullException(nameof(buyProductService));
+            _application = application;
+            _buyView = buyView;
+            _productRepository = productRepository;
         }
          
         public void Execute()
@@ -34,7 +33,17 @@ namespace VendingMachine.UseCases
             }
             
             var productCode = int.Parse(productCodeStr);
-            var product = _buyProductService.BuyProduct(productCode);
+            var product = _productRepository.GetByCode(productCode);
+            if (product == null)
+            {
+                throw new ProductNotFoundException("Unavailable product");
+            }
+            if (product.Quantity == 0)
+            {
+                throw new ProductOutOfStockException("Product out of stock");
+            }
+            
+            _productRepository.UpdateQuantity(productCode, product.Quantity - 1);
             
             _buyView.DisplayProduct(product);
         }
