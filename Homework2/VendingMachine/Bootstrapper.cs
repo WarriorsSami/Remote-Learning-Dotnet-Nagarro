@@ -19,9 +19,11 @@ namespace VendingMachine
             var shelfView = new ShelfView();
             var buyView = new BuyView();
             var productRepository = new ProductRepository();
+            var paymentRepository = new PaymentRepository();
             var useCases = new List<IUseCase>();
-
+            
             var vendingMachineApplication = new VendingMachineApplication(useCases, mainDisplay);
+            var paymentUseCase = new PaymentUseCase(vendingMachineApplication, buyView, paymentRepository);
 
             useCases.AddRange(new IUseCase[]
             {
@@ -29,7 +31,7 @@ namespace VendingMachine
                 new LogoutUseCase(vendingMachineApplication),
                 new TurnOffUseCase(vendingMachineApplication),
                 new LookUseCase(shelfView, productRepository),
-                new BuyUseCase(vendingMachineApplication, buyView, productRepository)
+                new BuyUseCase(vendingMachineApplication, buyView, productRepository, paymentUseCase)
             });
 
             return vendingMachineApplication;
