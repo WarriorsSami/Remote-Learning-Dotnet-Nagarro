@@ -1,6 +1,6 @@
 ﻿using System;
-using VendingMachine.Data;
 using VendingMachine.PresentationLayer;
+using VendingMachine.Repositories;
 
 namespace VendingMachine.UseCases
 {
