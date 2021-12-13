@@ -9,5 +9,6 @@ namespace VendingMachine.PresentationLayer
         void DisplayProduct(Product product);
         string AskForProductCode();
         int AskForPaymentMethod(IEnumerable<PaymentMethod> paymentMethods);
+        void DisplayCommand(string command);
     }
 }

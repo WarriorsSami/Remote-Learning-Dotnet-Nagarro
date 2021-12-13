@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
+using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.PresentationLayer;
 using VendingMachine.UseCases;
 
@@ -53,6 +54,16 @@ namespace VendingMachine
                     Program.Pause();
                 }
                 catch (CancelOrderException e)
+                {
+                    Program.DisplayError(e);
+                    Program.Pause();
+                }
+                catch (InvalidPaymentMethodId e)
+                {
+                    Program.DisplayError(e);
+                    Program.Pause();
+                }
+                catch (InvalidCardId e)
                 {
                     Program.DisplayError(e);
                     Program.Pause();

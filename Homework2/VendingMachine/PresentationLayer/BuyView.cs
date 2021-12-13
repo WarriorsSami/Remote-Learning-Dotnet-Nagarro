@@ -20,7 +20,7 @@ namespace VendingMachine.PresentationLayer
         public string AskForProductCode()
         {
             DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
-            var productCode = Console.ReadLine() ?? "";
+            var productCode = Console.ReadLine() ?? string.Empty;
 
             return productCode;
         }
@@ -40,6 +40,11 @@ namespace VendingMachine.PresentationLayer
             
             var paymentMethodId = int.Parse(Console.ReadLine() ?? "0");
             return paymentMethodId;
+        }
+
+        public void DisplayCommand(string command)
+        {
+            DisplayLine(command, ConsoleColor.Magenta);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace VendingMachine.UseCases
             var productCode = int.Parse(productCodeStr);
             if (_paymentUseCase.CanExecute)
             {
-                var product = _productRepository.GetByCode(productCode);
+                var product = _productRepository.GetById(productCode);
                 if (product == null)
                 {
                     throw new ProductNotFoundException("Unavailable product");

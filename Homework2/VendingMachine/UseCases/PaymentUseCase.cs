@@ -38,9 +38,13 @@ namespace VendingMachine.UseCases
             {
                 throw new InvalidPaymentMethodId("Invalid payment method id");
             }
+
+            var paymentAlgorithm = _paymentAlgorithms.Find(p =>
+                p.Id == (PaymentMethodType) paymentMethodId);
             
-            _paymentAlgorithms.Find(p => p.Id == (PaymentMethodType)paymentMethodId)
-                ?.Run(price);
+            _buyView.DisplayCommand($"You have to pay {price}$!");
+            _buyView.DisplayCommand(paymentAlgorithm?.Command);
+            paymentAlgorithm?.Run(price);
         }
     }
 }
