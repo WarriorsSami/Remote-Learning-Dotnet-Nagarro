@@ -81,16 +81,16 @@ namespace VendingMachine.Repositories
             return Products;
         }
         
-        public Product? GetByCode(int code)
+        public Product? GetById(int code)
         {
-            var product = GetAll().FirstOrDefault(product => product.ColumnId == code);
+            var product = Products.FirstOrDefault(product => product.ColumnId == code);
             
             return product;
         }
         
         public void UpdateQuantity(int code, int quantity)
         {
-            var product = GetAll().FirstOrDefault(p => p.ColumnId == code);
+            var product = Products.FirstOrDefault(p => p.ColumnId == code);
             if (product != null)
             {
                 product.Quantity = quantity;
