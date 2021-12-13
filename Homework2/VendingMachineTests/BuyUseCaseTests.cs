@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Moq;
 using NUnit.Framework;
 using VendingMachine;
@@ -14,12 +12,11 @@ namespace VendingMachineTests
 {
     internal class BuyUseCaseTests
     {
-        private readonly List<Product> _productList = new();
+        private readonly IProductRepository _productRepository;
         
-        [OneTimeSetUp]
-        public void Setup()
+        public BuyUseCaseTests()
         {
-            _productList.AddRange(new List<Product>
+            var listProduct = new List<Product>
             {
                 new()
                 {
@@ -77,16 +74,30 @@ namespace VendingMachineTests
                     Price = 1.5m,
                     Quantity = 0
                 }
-            });
-            foreach (var product in _productList)
-            {
-                Console.WriteLine("Id: " + product.ColumnId + " Product: " + product.Name + " Price: " + product.Price + " Quantity: " + product.Quantity);
-            }
-        }
-
-        private IEnumerable<Product> GetSampleProducts()
-        {
-            return _productList;
+            };
+            
+            var mockProductRepository = new Mock<IProductRepository>();
+            
+            mockProductRepository.Setup(x =>
+                x.GetAll()
+                ).Returns(listProduct);
+            
+            mockProductRepository.Setup(x =>
+                x.GetById(It.IsAny<int>())
+                ).Returns((int id) => listProduct.Find(x => x.ColumnId == id));
+            
+            mockProductRepository.Setup(x =>
+                x.UpdateQuantity(It.IsAny<int>(), It.IsAny<int>())
+                ).Callback((int id, int quantity) =>
+                {
+                    var product = listProduct.Find(x => x.ColumnId == id);
+                    if (product != null)
+                    {
+                        product.Quantity = quantity;
+                    }
+                });
+           
+            _productRepository = mockProductRepository.Object;
         }
         
         [Test]
@@ -101,12 +112,6 @@ namespace VendingMachineTests
                 Quantity = 8
             };
 
-            var productRepository = new Mock<IProductRepository>();
-            productRepository.Setup(x =>
-                x.GetAll()
-                ).Returns(GetSampleProducts());
-            Console.WriteLine(productRepository.Object.GetAll().Count());
-            
             var paymentUseCase = new Mock<IPaymentUseCase>();
             paymentUseCase.Setup(x =>
                 x.Execute(productExpected.Price)
@@ -127,18 +132,11 @@ namespace VendingMachineTests
             
             var buyUseCase = new BuyUseCase(application.Object, 
                 buyView.Object,
-                productRepository.Object,
+                _productRepository,
                 paymentUseCase.Object);
 
-            foreach (var product in productRepository.Object.GetAll())
-            {
-                Console.WriteLine("Id: " + product.ColumnId + " Product: " + product.Name + " Price: " + product.Price + " Quantity: " + product.Quantity);
-            }
-
-            productRepository.Object.GetAll();
-            
             buyUseCase.Execute();
-            var result = productRepository.Object.GetByCode(int.Parse(requestedId));
+            var result = _productRepository.GetById(int.Parse(requestedId));
  
             Assert.AreEqual(productExpected.Quantity, result?.Quantity);
         }
@@ -147,10 +145,6 @@ namespace VendingMachineTests
         public void BuyNonExistingProduct()
         {
             const string requestedId = "10";
-            var productRepository = new Mock<IProductRepository>(); 
-            productRepository.Setup(x =>
-                x.GetAll()
-                ).Returns(GetSampleProducts());
             
             var paymentUseCase = new Mock<IPaymentUseCase>();
             paymentUseCase.Setup(x =>
@@ -169,7 +163,7 @@ namespace VendingMachineTests
             
             var buyUseCase = new BuyUseCase(application.Object,
                 buyView.Object,
-                productRepository.Object,
+                _productRepository,
                 paymentUseCase.Object);
 
             Assert.Throws<ProductNotFoundException>(() => buyUseCase.Execute());
@@ -179,10 +173,6 @@ namespace VendingMachineTests
         public void BuyOutOfStockProduct()
         {
             const string requestedId = "8";
-            var productRepository = new Mock<IProductRepository>();
-            productRepository.Setup(x =>
-                x.GetAll()
-            ).Returns(GetSampleProducts());
             
             var paymentUseCase = new Mock<IPaymentUseCase>();
             paymentUseCase.Setup(x =>
@@ -201,7 +191,7 @@ namespace VendingMachineTests
             
             var buyUseCase = new BuyUseCase(application.Object,
                 buyView.Object,
-                productRepository.Object,
+                _productRepository,
                 paymentUseCase.Object);
             
             Assert.Throws<ProductOutOfStockException>(() => buyUseCase.Execute()); 
@@ -211,10 +201,6 @@ namespace VendingMachineTests
         public void CancelOrder()
         {
             const string requestedId = "";
-            var productRepository = new Mock<IProductRepository>();
-            productRepository.Setup(x =>
-                x.GetAll()
-            ).Returns(GetSampleProducts());
             
             var paymentUseCase = new Mock<IPaymentUseCase>();
             paymentUseCase.Setup(x =>
@@ -233,7 +219,7 @@ namespace VendingMachineTests
             
             var buyUseCase = new BuyUseCase(application.Object,
                 buyView.Object,
-                productRepository.Object,
+                _productRepository,
                 paymentUseCase.Object);
             
             Assert.Throws<CancelOrderException>(() => buyUseCase.Execute());  
