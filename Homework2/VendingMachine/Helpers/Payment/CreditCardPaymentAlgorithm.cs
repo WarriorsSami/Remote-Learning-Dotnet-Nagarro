@@ -1,4 +1,5 @@
 ﻿using System;
+using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
 
 namespace VendingMachine.Helpers.Payment
 {
@@ -6,6 +7,7 @@ namespace VendingMachine.Helpers.Payment
     {
         public PaymentMethodType Id => PaymentMethodType.CreditCard;
         public string Name => "Credit Card";
+        public string Command => "Please insert your credit card credentials!";
         
         private readonly CreditCardPaymentTerminal _terminal;
 
@@ -16,7 +18,11 @@ namespace VendingMachine.Helpers.Payment
 
         public void Run(decimal price)
         {
-            Console.WriteLine("Please insert your credit card number");
+            var creditCardNumber = _terminal.AskForCardNumber();
+            if (!CardChecker.IsValid(creditCardNumber))
+            {
+                throw new InvalidCardId("Credit card's credentials are corrupted");
+            }
         }
     }
 }

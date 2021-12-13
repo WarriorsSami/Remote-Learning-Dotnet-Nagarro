@@ -6,7 +6,8 @@ namespace VendingMachine.Helpers.Payment
     {
         public string AskForCardNumber()
         {
-            throw new NotImplementedException();
+            var creditCardNumber = Console.ReadLine() ?? string.Empty;
+            return creditCardNumber;
         }
     }
 }

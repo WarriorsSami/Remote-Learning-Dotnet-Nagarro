@@ -6,12 +6,13 @@ namespace VendingMachine.Helpers.Payment
     {
         public decimal AskForMoney()
         {
-            return 0.0m;
+            var currentMoney = decimal.Parse(Console.ReadLine() ?? "0.0");   
+            return currentMoney;
         }
         
         public void GiveBackChange(decimal change)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Your change is {change}$!");
         }
     }
 }

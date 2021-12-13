@@ -6,6 +6,7 @@ namespace VendingMachine.Helpers.Payment
     {
         public PaymentMethodType Id => PaymentMethodType.Cash;
         public string Name => "Cash";
+        public string Command => "Please insert cash to match the price!";
         
         private readonly CashPaymentTerminal _terminal;
 
@@ -23,6 +24,7 @@ namespace VendingMachine.Helpers.Payment
                  if (currentAmountOfMoney > price)
                  {
                      _terminal.GiveBackChange(currentAmountOfMoney - price);
+                     break;
                  }
              }
         }
