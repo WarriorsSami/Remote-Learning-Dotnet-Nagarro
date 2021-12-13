@@ -1,7 +1,19 @@
+using System;
+
 namespace VendingMachine.CustomExceptions.PaymentUseCaseExceptions
 {
-    public class InvalidCardId
+    internal class InvalidCardId: Exception
     {
+        public InvalidCardId()
+        {
+        }
         
+        public InvalidCardId(string message) : base(message)
+        {
+        }
+        
+        public InvalidCardId(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }
