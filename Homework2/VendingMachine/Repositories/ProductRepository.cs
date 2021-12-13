@@ -62,7 +62,7 @@ namespace VendingMachine.Repositories
                 {
                     ColumnId = 7,
                     Name = "Coca Cola Zero",
-                    Price = 1.5m,
+                    Price = 10.0m,
                     Quantity = 1
                 },
                 new()

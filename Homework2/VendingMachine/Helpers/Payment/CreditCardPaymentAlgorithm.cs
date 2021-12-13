@@ -9,9 +9,9 @@ namespace VendingMachine.Helpers.Payment
         public string Name => "Credit Card";
         public string Command => "Please insert your credit card credentials!";
         
-        private readonly CreditCardPaymentTerminal _terminal;
+        private readonly ICardTerminal _terminal;
 
-        public CreditCardPaymentAlgorithm(CreditCardPaymentTerminal terminal)
+        public CreditCardPaymentAlgorithm(ICardTerminal terminal)
         {
             _terminal = terminal;
         }
@@ -21,7 +21,7 @@ namespace VendingMachine.Helpers.Payment
             var creditCardNumber = _terminal.AskForCardNumber();
             if (!CardChecker.IsValid(creditCardNumber))
             {
-                throw new InvalidCardId("Credit card's credentials are corrupted");
+                throw new InvalidCreditCardIdException("Credit card's credentials are corrupted");
             }
         }
     }

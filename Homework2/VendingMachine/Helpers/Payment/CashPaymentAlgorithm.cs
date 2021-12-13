@@ -8,9 +8,9 @@ namespace VendingMachine.Helpers.Payment
         public string Name => "Cash";
         public string Command => "Please insert cash to match the price!";
         
-        private readonly CashPaymentTerminal _terminal;
+        private readonly ICashTerminal _terminal;
 
-        public CashPaymentAlgorithm(CashPaymentTerminal terminal)
+        public CashPaymentAlgorithm(ICashTerminal terminal)
         {
             _terminal = terminal;
         }
@@ -18,13 +18,12 @@ namespace VendingMachine.Helpers.Payment
         public void Run(decimal price)
         {
              var currentAmountOfMoney = 0.0m;
-             while (currentAmountOfMoney != price)
+             while (currentAmountOfMoney < price)
              {
                  currentAmountOfMoney += _terminal.AskForMoney();
                  if (currentAmountOfMoney > price)
                  {
                      _terminal.GiveBackChange(currentAmountOfMoney - price);
-                     break;
                  }
              }
         }

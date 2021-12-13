@@ -15,18 +15,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f9a19c5-978a-4f64-b5cf-01daff91e232" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../VendingMachine/CustomExceptions/PaymentUseCaseExceptions/InvalidCardId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CardChecker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VendingMachine/CustomExceptions/PaymentUseCaseExceptions/InvalidCardIdException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VendingMachine/CustomExceptions/PaymentUseCaseExceptions/InvalidPaymentMethodIdException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/ICardTerminal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/ICashTerminal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PaymentUseCaseTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VendingMachine/CustomExceptions/PaymentUseCaseExceptions/InvalidCardId.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VendingMachine/CustomExceptions/PaymentUseCaseExceptions/InvalidPaymentMethodId.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CashPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CashPaymentAlgorithm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CashPaymentTerminal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CashPaymentTerminal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CreditCardPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CreditCardPaymentAlgorithm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CreditCardPaymentTerminal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CreditCardPaymentTerminal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/IPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/IPaymentAlgorithm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/PresentationLayer/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/PresentationLayer/BuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/PresentationLayer/IBuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/PresentationLayer/IBuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/Repositories/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Repositories/IProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VendingMachine/Repositories/PaymentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Repositories/PaymentRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachine/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Repositories/ProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/UseCases/BuyUseCase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachine/UseCases/PaymentUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/UseCases/PaymentUseCase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VendingMachine/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/VendingMachineApplication.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachineTests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
@@ -69,7 +70,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.environmentSetup" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.VendingMachine">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -101,6 +102,8 @@
       <workItem from="1639242774344" duration="16000" />
       <workItem from="1639243082335" duration="13362000" />
       <workItem from="1639301402592" duration="5591000" />
+      <workItem from="1639423315110" duration="513000" />
+      <workItem from="1639424672447" duration="1249000" />
     </task>
     <servers />
   </component>

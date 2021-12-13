@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Helpers.Payment;
 using VendingMachine.PresentationLayer;
@@ -16,7 +17,7 @@ namespace VendingMachine.UseCases
         private readonly IPaymentRepository _paymentRepository;
 
         public string Name => "payment";
-        public string Description => "Executes payment";
+        public string Description => "Execute payment";
         public bool CanExecute => !_application.UserIsLoggedIn;
             
         public PaymentUseCase(IVendingMachineApplication application,
@@ -36,7 +37,7 @@ namespace VendingMachine.UseCases
             if (_paymentMethods.Find(p =>
                 p.Id == (PaymentMethodType)paymentMethodId) == null)
             {
-                throw new InvalidPaymentMethodId("Invalid payment method id");
+                throw new InvalidPaymentMethodIdException("Invalid payment method id");
             }
 
             var paymentAlgorithm = _paymentAlgorithms.Find(p =>

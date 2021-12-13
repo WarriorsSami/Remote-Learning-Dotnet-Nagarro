@@ -2,7 +2,7 @@
 
 namespace VendingMachine.Helpers.Payment
 {
-    internal class CashPaymentTerminal
+    internal class CashPaymentTerminal: ICashTerminal
     {
         public decimal AskForMoney()
         {

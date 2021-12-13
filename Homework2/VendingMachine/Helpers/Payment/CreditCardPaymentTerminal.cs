@@ -2,7 +2,7 @@
 
 namespace VendingMachine.Helpers.Payment
 {
-    internal class CreditCardPaymentTerminal
+    internal class CreditCardPaymentTerminal: ICardTerminal
     {
         public string AskForCardNumber()
         {

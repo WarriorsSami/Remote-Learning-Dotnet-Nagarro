@@ -58,12 +58,12 @@ namespace VendingMachine
                     Program.DisplayError(e);
                     Program.Pause();
                 }
-                catch (InvalidPaymentMethodId e)
+                catch (InvalidPaymentMethodIdException e)
                 {
                     Program.DisplayError(e);
                     Program.Pause();
                 }
-                catch (InvalidCardId e)
+                catch (InvalidCreditCardIdException e)
                 {
                     Program.DisplayError(e);
                     Program.Pause();

@@ -12,8 +12,11 @@ namespace VendingMachine.Repositories
         {
             if (PaymentMethods.Count == 0)
             {
-                PaymentMethods.Add(new PaymentMethod(PaymentMethodType.Cash, "Cash"));
-                PaymentMethods.Add(new PaymentMethod(PaymentMethodType.CreditCard, "Credit Card"));
+                PaymentMethods.AddRange(new List<PaymentMethod>
+                {
+                    new(PaymentMethodType.Cash, "Cash"), 
+                    new(PaymentMethodType.CreditCard, "Credit Card")
+                });
             }
             
             if (PaymentAlgorithms.Count == 0)
@@ -21,8 +24,11 @@ namespace VendingMachine.Repositories
                 var cashTerminal = new CashPaymentTerminal();
                 var creditCardTerminal = new CreditCardPaymentTerminal();
                 
-                PaymentAlgorithms.Add(new CashPaymentAlgorithm(cashTerminal));
-                PaymentAlgorithms.Add(new CreditCardPaymentAlgorithm(creditCardTerminal));
+                PaymentAlgorithms.AddRange(new List<IPaymentAlgorithm>
+                {
+                    new CashPaymentAlgorithm(cashTerminal),
+                    new CreditCardPaymentAlgorithm(creditCardTerminal)
+                });
             }
         }
         
