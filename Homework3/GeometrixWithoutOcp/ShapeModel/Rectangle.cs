@@ -1,7 +1,9 @@
 ﻿namespace GeometrixWithoutOcp.ShapeModel
 {
-    public class Rectangle
+    internal class Rectangle
     {
-        
+        public double Width { get; set; }
+
+        public double Height { get; set; }
     }
 }

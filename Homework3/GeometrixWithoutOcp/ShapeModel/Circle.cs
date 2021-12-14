@@ -1,7 +1,7 @@
 ﻿namespace GeometrixWithoutOcp.ShapeModel
 {
-    public class Circle
+    internal class Circle
     {
-        
+        public double Radius { get; set; }
     }
 }

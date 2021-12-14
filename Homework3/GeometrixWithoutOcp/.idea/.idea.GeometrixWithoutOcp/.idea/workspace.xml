@@ -5,14 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1962693-09f5-45a9-aa2b-189714b79472" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.Homework3.dir/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.Homework3.dir/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.Homework3.dir/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.Homework3.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.Homework3.dir/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GeometrixWithOcp/ShapeModel/Circle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GeometrixWithOcp/ShapeModel/GeometricShapes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GeometrixWithOcp/ShapeModel/IShape.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GeometrixWithOcp/ShapeModel/Rectangle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GeometrixWithOcp/ShapeModel/Triangle.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.GeometrixWithoutOcp/.idea/discord.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.GeometrixWithoutOcp/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.GeometrixWithoutOcp/.idea/indexLayout.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.GeometrixWithoutOcp/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.GeometrixWithoutOcp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.GeometrixWithoutOcp/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp.csproj" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp.sln" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShapeModel/Circle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShapeModel/GeometricShapes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShapeModel/Rectangle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShapeModel/Triangle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -67,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639465438448</updated>
-      <workItem from="1639465483282" duration="898000" />
+      <workItem from="1639465483282" duration="2708000" />
     </task>
     <servers />
   </component>
