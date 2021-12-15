@@ -1,5 +1,4 @@
-﻿using System;
-using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
+﻿using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
 
 namespace VendingMachine.Helpers.Payment
 {

@@ -1,5 +1,4 @@
-﻿using System;
-using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
+﻿using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.PresentationLayer;
 using VendingMachine.Repositories;
 

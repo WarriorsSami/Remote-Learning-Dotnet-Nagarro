@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Helpers.Payment;
 using VendingMachine.PresentationLayer;

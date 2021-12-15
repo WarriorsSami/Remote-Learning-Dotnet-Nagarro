@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VendingMachine.Helpers.Payment
+﻿namespace VendingMachine.Helpers.Payment
 {
     internal class CashPaymentAlgorithm: IPaymentAlgorithm
     {

@@ -1,5 +1,4 @@
-﻿using System;
-using VendingMachine.PresentationLayer;
+﻿using VendingMachine.PresentationLayer;
 using VendingMachine.Repositories;
 
 namespace VendingMachine.UseCases
