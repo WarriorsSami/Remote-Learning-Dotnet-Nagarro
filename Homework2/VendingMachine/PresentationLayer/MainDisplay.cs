@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using VendingMachine.Interfaces.IUseCases;
 using VendingMachine.UseCases;
 
 namespace VendingMachine.PresentationLayer

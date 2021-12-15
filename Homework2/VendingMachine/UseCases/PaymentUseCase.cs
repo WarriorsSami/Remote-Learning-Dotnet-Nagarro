@@ -1,6 +1,11 @@
 ﻿using System.Collections.Generic;
 using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Helpers.Payment;
+using VendingMachine.Interfaces;
+using VendingMachine.Interfaces.IHelpersPayment;
+using VendingMachine.Interfaces.IPresentationLayer;
+using VendingMachine.Interfaces.IRepositories;
+using VendingMachine.Interfaces.IUseCases;
 using VendingMachine.PresentationLayer;
 using VendingMachine.Repositories;
 

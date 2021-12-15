@@ -1,4 +1,4 @@
-namespace VendingMachine.Helpers.Payment
+namespace VendingMachine.Interfaces.IHelpersPayment
 {
     internal interface ICardTerminal
     {

@@ -1,11 +1,12 @@
 using System;
 using System.Linq;
+using VendingMachine.Interfaces.IHelpersPayment;
 
 namespace VendingMachine.Helpers.Payment
 {
-    internal static class CardChecker
+    internal class LuhnCardValidator: ICardValidityAlgorithm
     {
-        private static int SumDigits(int number)
+        private int SumDigits(int number)
         {
             var sum = 0;
             while (number > 0)
@@ -16,12 +17,12 @@ namespace VendingMachine.Helpers.Payment
             return sum;
         }
         
-        public static bool IsValid(string number)
+        public bool IsValid(string cardNumber)
         {
-            var checkDigit = number.Last();
-            number = number.Remove(number.Length - 1);
+            var checkDigit = cardNumber.Last();
+            cardNumber = cardNumber.Remove(cardNumber.Length - 1);
             
-            var res = number.Reverse()
+            var res = cardNumber.Reverse()
                 .ToList()
                 .Select(x => int.Parse(x.ToString()))
                 .Aggregate(Tuple.Create(0, 0), (current, digit) =>

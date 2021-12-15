@@ -1,4 +1,8 @@
 ﻿using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
+using VendingMachine.Interfaces;
+using VendingMachine.Interfaces.IPresentationLayer;
+using VendingMachine.Interfaces.IRepositories;
+using VendingMachine.Interfaces.IUseCases;
 using VendingMachine.PresentationLayer;
 using VendingMachine.Repositories;
 

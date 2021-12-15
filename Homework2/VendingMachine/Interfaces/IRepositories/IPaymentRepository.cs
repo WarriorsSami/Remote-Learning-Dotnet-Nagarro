@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using VendingMachine.Helpers.Payment;
+using VendingMachine.Interfaces.IHelpersPayment;
 
-namespace VendingMachine.Repositories
+namespace VendingMachine.Interfaces.IRepositories
 {
     internal interface IPaymentRepository
     {

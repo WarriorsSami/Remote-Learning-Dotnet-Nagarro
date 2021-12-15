@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using VendingMachine.Helpers.Payment;
+using VendingMachine.Interfaces.IHelpersPayment;
+using VendingMachine.Interfaces.IRepositories;
 
 namespace VendingMachine.Repositories
 {
@@ -21,13 +23,15 @@ namespace VendingMachine.Repositories
             
             if (PaymentAlgorithms.Count == 0)
             {
+                var cardValidityAlgorithm = new LuhnCardValidator();
+                
                 var cashTerminal = new CashPaymentTerminal();
                 var creditCardTerminal = new CreditCardPaymentTerminal();
                 
                 PaymentAlgorithms.AddRange(new List<IPaymentAlgorithm>
                 {
                     new CashPaymentAlgorithm(cashTerminal),
-                    new CreditCardPaymentAlgorithm(creditCardTerminal)
+                    new CreditCardPaymentAlgorithm(creditCardTerminal, cardValidityAlgorithm)
                 });
             }
         }

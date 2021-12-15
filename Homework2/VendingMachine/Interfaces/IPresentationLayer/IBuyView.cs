@@ -2,7 +2,7 @@
 using VendingMachine.Helpers.Payment;
 using VendingMachine.Models;
 
-namespace VendingMachine.PresentationLayer
+namespace VendingMachine.Interfaces.IPresentationLayer
 {
     internal interface IBuyView
     {

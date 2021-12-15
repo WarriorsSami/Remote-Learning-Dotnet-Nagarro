@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using Moq;
 using NUnit.Framework;
-using VendingMachine;
 using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Helpers.Payment;
-using VendingMachine.PresentationLayer;
-using VendingMachine.Repositories;
+using VendingMachine.Interfaces;
+using VendingMachine.Interfaces.IHelpersPayment;
+using VendingMachine.Interfaces.IPresentationLayer;
+using VendingMachine.Interfaces.IRepositories;
 using VendingMachine.UseCases;
 
 namespace VendingMachineTests
@@ -16,8 +17,12 @@ namespace VendingMachineTests
         private readonly IVendingMachineApplication _application;
         private readonly Mock<IPaymentRepository> _mockPaymentRepository;
         
+        private readonly ICardValidityAlgorithm _cardValidityAlgorithm;
+        
         public PaymentUseCaseTests()
         {
+            _cardValidityAlgorithm = new LuhnCardValidator();
+            
             var mockApplication = new Mock<IVendingMachineApplication>(); 
             mockApplication.Setup(x => 
                 x.UserIsLoggedIn
@@ -45,6 +50,7 @@ namespace VendingMachineTests
             const decimal requestedPrice = 10.0m;
             const decimal requestedChange = 8.0m;
             
+            var mockCardValidator = new Mock<ICardValidityAlgorithm>();
             var mockCashTerminal = new Mock<ICashTerminal>(); 
             var mockCreditCardTerminal = new Mock<ICardTerminal>();
             
@@ -65,7 +71,8 @@ namespace VendingMachineTests
             var listOfPaymentAlgorithm = new List<IPaymentAlgorithm> 
             {
                 new CashPaymentAlgorithm(mockCashTerminal.Object), 
-                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object)
+                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object,
+                    mockCardValidator.Object)
             };
             
             _mockPaymentRepository.Setup(x =>
@@ -90,13 +97,15 @@ namespace VendingMachineTests
             const decimal requestedPrice = 10.0m;
             const int requestedPaymentMethodId = 2;
             
+            var mockCardValidator = new Mock<ICardValidityAlgorithm>();
             var mockCashTerminal = new Mock<ICashTerminal>(); 
             var mockCreditCardTerminal = new Mock<ICardTerminal>();
             
             var listOfPaymentAlgorithm = new List<IPaymentAlgorithm> 
             {
                 new CashPaymentAlgorithm(mockCashTerminal.Object), 
-                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object)
+                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object,
+                    mockCardValidator.Object)
             };
             
             _mockPaymentRepository.Setup(x =>
@@ -133,7 +142,8 @@ namespace VendingMachineTests
             var listOfPaymentAlgorithm = new List<IPaymentAlgorithm> 
             {
                 new CashPaymentAlgorithm(mockCashTerminal.Object), 
-                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object)
+                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object,
+                    _cardValidityAlgorithm)
             };
             
             _mockPaymentRepository.Setup(x =>
@@ -169,7 +179,8 @@ namespace VendingMachineTests
             var listOfPaymentAlgorithm = new List<IPaymentAlgorithm> 
             {
                 new CashPaymentAlgorithm(mockCashTerminal.Object), 
-                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object)
+                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object,
+                    _cardValidityAlgorithm)
             };
             
             _mockPaymentRepository.Setup(x =>
@@ -206,7 +217,8 @@ namespace VendingMachineTests
             var listOfPaymentAlgorithm = new List<IPaymentAlgorithm> 
             {
                 new CashPaymentAlgorithm(mockCashTerminal.Object), 
-                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object)
+                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object,
+                    _cardValidityAlgorithm)
             };
             
             _mockPaymentRepository.Setup(x =>

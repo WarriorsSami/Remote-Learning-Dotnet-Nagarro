@@ -1,4 +1,5 @@
 ﻿using System;
+using VendingMachine.Interfaces.IUseCases;
 
 namespace VendingMachine.UseCases
 {

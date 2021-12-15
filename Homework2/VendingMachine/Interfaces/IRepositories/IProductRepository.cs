@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using VendingMachine.Models;
 
-namespace VendingMachine.Repositories
+namespace VendingMachine.Interfaces.IRepositories
 {
     internal interface IProductRepository
     {

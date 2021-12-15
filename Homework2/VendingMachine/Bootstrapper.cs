@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VendingMachine.Interfaces.IUseCases;
 using VendingMachine.PresentationLayer;
 using VendingMachine.Repositories;
 using VendingMachine.UseCases;

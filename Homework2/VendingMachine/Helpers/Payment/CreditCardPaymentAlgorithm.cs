@@ -1,4 +1,5 @@
 ﻿using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
+using VendingMachine.Interfaces.IHelpersPayment;
 
 namespace VendingMachine.Helpers.Payment
 {
@@ -9,16 +10,18 @@ namespace VendingMachine.Helpers.Payment
         public string Command => "Please insert your credit card credentials!";
         
         private readonly ICardTerminal _terminal;
+        private readonly ICardValidityAlgorithm _validityAlgorithm;
 
-        public CreditCardPaymentAlgorithm(ICardTerminal terminal)
+        public CreditCardPaymentAlgorithm(ICardTerminal terminal, ICardValidityAlgorithm validityAlgorithm)
         {
             _terminal = terminal;
+            _validityAlgorithm = validityAlgorithm;
         }
 
         public void Run(decimal price)
         {
             var creditCardNumber = _terminal.AskForCardNumber();
-            if (!CardChecker.IsValid(creditCardNumber))
+            if (!_validityAlgorithm.IsValid(creditCardNumber))
             {
                 throw new InvalidCreditCardIdException("Credit card's credentials are corrupted");
             }

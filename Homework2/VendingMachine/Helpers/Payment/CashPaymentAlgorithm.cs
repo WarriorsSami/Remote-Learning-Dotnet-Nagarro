@@ -1,4 +1,6 @@
-﻿namespace VendingMachine.Helpers.Payment
+﻿using VendingMachine.Interfaces.IHelpersPayment;
+
+namespace VendingMachine.Helpers.Payment
 {
     internal class CashPaymentAlgorithm: IPaymentAlgorithm
     {
