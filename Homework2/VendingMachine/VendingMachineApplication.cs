@@ -68,6 +68,16 @@ namespace VendingMachine
                     Program.DisplayError(e);
                     Program.Pause();
                 }
+                catch (FormatException e)
+                {
+                    Program.DisplayError(e);
+                    Program.Pause();
+                }
+                catch (Exception e)
+                {
+                    Program.DisplayError(e);
+                    Program.Pause();
+                }
             }
         }
 

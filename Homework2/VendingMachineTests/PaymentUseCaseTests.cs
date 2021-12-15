@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Moq;
 using NUnit.Framework;
@@ -185,6 +186,43 @@ namespace VendingMachineTests
                 mockBuyView.Object, _mockPaymentRepository.Object);
             
             Assert.Throws<InvalidCreditCardIdException>(() =>
+                paymentUseCase.Execute(requestedPrice));
+        }
+        
+        [Test]
+        public void FailedCreditCardPaymentAttempt_DueToInvalidCreditCardIdFormat()
+        {
+            const decimal requestedPrice = 10.0m;
+            const string requestedCardNumber = "7992739871asd";
+            const int requestedPaymentMethodId = 1;
+            
+            var mockCashTerminal = new Mock<ICashTerminal>(); 
+            var mockCreditCardTerminal = new Mock<ICardTerminal>();
+            
+            mockCreditCardTerminal.Setup(x =>
+                x.AskForCardNumber()
+                ).Returns(requestedCardNumber);
+            
+            var listOfPaymentAlgorithm = new List<IPaymentAlgorithm> 
+            {
+                new CashPaymentAlgorithm(mockCashTerminal.Object), 
+                new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object)
+            };
+            
+            _mockPaymentRepository.Setup(x =>
+                x.GetPaymentAlgorithms()
+                ).Returns(listOfPaymentAlgorithm);
+            
+            var mockBuyView = new Mock<IBuyView>();
+            
+            mockBuyView.Setup(x =>
+                x.AskForPaymentMethod(It.IsAny<IEnumerable<PaymentMethod>>())
+                ).Returns(requestedPaymentMethodId);
+            
+            var paymentUseCase = new PaymentUseCase(_application, 
+                mockBuyView.Object, _mockPaymentRepository.Object);
+            
+            Assert.Throws<FormatException>(() =>
                 paymentUseCase.Execute(requestedPrice));
         }
     }

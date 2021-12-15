@@ -15,15 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f9a19c5-978a-4f64-b5cf-01daff91e232" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CardChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CardChecker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CashPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CashPaymentAlgorithm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CreditCardPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/Helpers/Payment/CreditCardPaymentAlgorithm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/PresentationLayer/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/PresentationLayer/BuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/UseCases/BuyUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/UseCases/LookUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/UseCases/LookUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/UseCases/PaymentUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/UseCases/PaymentUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachine/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/VendingMachine.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachineTests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VendingMachine/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachine/VendingMachineApplication.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +89,7 @@
       <workItem from="1639423315110" duration="513000" />
       <workItem from="1639424672447" duration="1600000" />
       <workItem from="1639590194243" duration="11000" />
-      <workItem from="1639590249168" duration="334000" />
+      <workItem from="1639590249168" duration="688000" />
     </task>
     <servers />
   </component>
