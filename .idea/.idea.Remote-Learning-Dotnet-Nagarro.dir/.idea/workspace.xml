@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/.name" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/discord.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/encodings.xml" afterDir="false" />
@@ -21,7 +22,6 @@
       <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/VendingMachineTests.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,8 @@
       <updated>1636889087469</updated>
       <workItem from="1636889087470" duration="389000" />
       <workItem from="1637485350195" duration="294000" />
-      <workItem from="1638628035563" duration="1088000" />
+      <workItem from="1639461649202" duration="24000" />
+      <workItem from="1639461735907" duration="79000" />
     </task>
     <servers />
   </component>
