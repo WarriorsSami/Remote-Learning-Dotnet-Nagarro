@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using iQuest.TheUniverse.Application;
 using iQuest.TheUniverse.Application.GetAllStars;
 using iQuest.TheUniverse.Infrastructure;
 
@@ -8,7 +9,6 @@ namespace iQuest.TheUniverse.Presentation.Commands
     internal class DisplayAllStarsCommand
     {
         private readonly RequestBus requestBus;
-
         public DisplayAllStarsCommand(RequestBus requestBus)
         {
             this.requestBus = requestBus ?? throw new ArgumentNullException(nameof(requestBus));
@@ -17,7 +17,12 @@ namespace iQuest.TheUniverse.Presentation.Commands
         public void Execute()
         {
             GetAllStarsRequest request = new GetAllStarsRequest();
-            List<StarInfo> starInfos = (List<StarInfo>)requestBus.Send(request);
+            var response = requestBus.Send<StarInfo>(request);
+
+            var starInfos = response.Match(
+                result => new List<StarInfo>(),
+                infos => infos
+            );
 
             DisplayStars(starInfos);
         }

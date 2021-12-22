@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using iQuest.TheUniverse.Domain;
 using iQuest.TheUniverse.Infrastructure;
 
 namespace iQuest.TheUniverse.Application.GetAllStars
 {
-    public class GetAllStarsRequestHandler : IRequestHandler
+    public class GetAllStarsRequestHandler : IRequestHandler<StarInfo>
     {
-        public object Execute(object request)
+        public Either<Boolean, List<StarInfo>> Execute(IRequest request)
         {
             List<StarInfo> starsInfo = new List<StarInfo>();
 

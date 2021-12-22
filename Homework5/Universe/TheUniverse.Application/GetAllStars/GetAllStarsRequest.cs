@@ -1,6 +1,8 @@
-﻿namespace iQuest.TheUniverse.Application.GetAllStars
+﻿using iQuest.TheUniverse.Infrastructure;
+
+namespace iQuest.TheUniverse.Application.GetAllStars
 {
-    public class GetAllStarsRequest
+    public class GetAllStarsRequest: IRequest
     {
     }
 }

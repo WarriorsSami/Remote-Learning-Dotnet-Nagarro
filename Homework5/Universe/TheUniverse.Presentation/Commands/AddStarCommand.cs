@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using iQuest.TheUniverse.Application;
 using iQuest.TheUniverse.Application.AddStar;
+using iQuest.TheUniverse.Application.GetAllStars;
 using iQuest.TheUniverse.Infrastructure;
 
 namespace iQuest.TheUniverse.Presentation.Commands
@@ -7,7 +10,7 @@ namespace iQuest.TheUniverse.Presentation.Commands
     internal class AddStarCommand
     {
         private readonly RequestBus requestBus;
-
+        
         public AddStarCommand(RequestBus requestBus)
         {
             this.requestBus = requestBus ?? throw new ArgumentNullException(nameof(requestBus));
@@ -19,9 +22,13 @@ namespace iQuest.TheUniverse.Presentation.Commands
             {
                 StarDetailsProvider = new StarDetailsProvider()
             };
-            bool success = (bool)requestBus.Send(addStarRequest);
+            var response = requestBus.Send<StarInfo>(addStarRequest);
 
-            if (success)
+            var getResult = response.Match(
+                result => result,
+                infos => false);
+            
+            if (getResult)
                 DisplaySuccessMessage();
             else
                 DisplayFailureMessage();

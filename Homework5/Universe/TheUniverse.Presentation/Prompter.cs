@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using iQuest.TheUniverse.Application;
+using iQuest.TheUniverse.Application.AddGalaxy;
+using iQuest.TheUniverse.Application.GetAllStars;
 using iQuest.TheUniverse.Infrastructure;
 using iQuest.TheUniverse.Presentation.Commands;
 

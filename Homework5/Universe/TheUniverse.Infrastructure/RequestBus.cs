@@ -7,18 +7,17 @@ namespace iQuest.TheUniverse.Infrastructure
     {
         private readonly Dictionary<Type, Type> handlers = new Dictionary<Type, Type>();
 
-        public void RegisterHandler(Type requestType, Type requestHandlerType)
+        public void RegisterHandler<T, TRequest, THandler>() 
+            where TRequest: IRequest
+            where THandler: IRequestHandler<T>
         {
-            if (!requestHandlerType.ImplementsInterface(typeof(IRequestHandler)))
-                throw new ArgumentException("requestHandlerType must inherit RequestHandlerBase", nameof(requestHandlerType));
+            if (handlers.ContainsKey(typeof(THandler)))
+                throw new ArgumentException("requestType is already registered.", nameof(TRequest));
 
-            if (handlers.ContainsKey(requestType))
-                throw new ArgumentException("requestType is already registered.", nameof(requestType));
-
-            handlers.Add(requestType, requestHandlerType);
+            handlers.Add(typeof(TRequest), typeof(THandler));
         }
 
-        public object Send(object request)
+        public Either<Boolean, List<T>> Send<T>(IRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
@@ -29,7 +28,8 @@ namespace iQuest.TheUniverse.Infrastructure
 
             Type requestHandlerType = handlers[requestType];
 
-            IRequestHandler requestHandler = (IRequestHandler)Activator.CreateInstance(requestHandlerType);
+            var requestHandler = (IRequestHandler<T>)Activator
+                .CreateInstance(requestHandlerType);
 
             return requestHandler.Execute(request);
         }

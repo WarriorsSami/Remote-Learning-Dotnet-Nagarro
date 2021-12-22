@@ -1,7 +1,10 @@
-﻿namespace iQuest.TheUniverse.Infrastructure
+﻿using System;
+using System.Collections.Generic;
+
+namespace iQuest.TheUniverse.Infrastructure
 {
-    public interface IRequestHandler
+    public interface IRequestHandler<T>
     {
-        object Execute(object request);
+        Either<Boolean, List<T>> Execute(IRequest request);
     }
 }

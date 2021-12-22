@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using iQuest.TheUniverse.Application;
 using iQuest.TheUniverse.Application.AddGalaxy;
+using iQuest.TheUniverse.Application.GetAllStars;
 using iQuest.TheUniverse.Infrastructure;
 
 namespace iQuest.TheUniverse.Presentation.Commands
@@ -19,9 +22,13 @@ namespace iQuest.TheUniverse.Presentation.Commands
             {
                 GalaxyDetailsProvider = new GalaxyDetailsProvider()
             };
-            bool success = (bool)requestBus.Send(addGalaxyRequest);
+            var response = requestBus.Send<StarInfo>(addGalaxyRequest);
 
-            if (success)
+            var getResult = response.Match(
+                result => result,
+                infos => false);
+
+            if (getResult)
                 DisplaySuccessMessage();
             else
                 DisplayFailureMessage();

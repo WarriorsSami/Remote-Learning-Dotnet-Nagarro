@@ -1,4 +1,7 @@
-﻿using iQuest.TheUniverse.Application.AddGalaxy;
+﻿using System;
+using System.Collections.Generic;
+using iQuest.TheUniverse.Application;
+using iQuest.TheUniverse.Application.AddGalaxy;
 using iQuest.TheUniverse.Application.AddStar;
 using iQuest.TheUniverse.Application.GetAllStars;
 using iQuest.TheUniverse.Infrastructure;
@@ -20,9 +23,9 @@ namespace iQuest.TheUniverse
 
         private static void ConfigureRequestBus()
         {
-            requestBus.RegisterHandler(typeof(AddStarRequest), typeof(AddStarRequestHandler));
-            requestBus.RegisterHandler(typeof(AddGalaxyRequest), typeof(AddGalaxyRequestHandler));
-            requestBus.RegisterHandler(typeof(GetAllStarsRequest), typeof(GetAllStarsRequestHandler));
+            requestBus.RegisterHandler<StarInfo, AddGalaxyRequest, AddGalaxyRequestHandler>();
+            requestBus.RegisterHandler<StarInfo, AddStarRequest, AddStarRequestHandler>();
+            requestBus.RegisterHandler<StarInfo, GetAllStarsRequest, GetAllStarsRequestHandler>();
         }
 
         private static void DisplayApplicationHeader()
