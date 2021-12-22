@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/BoxingBenchmarking.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/BoxingBenchmarking.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/DemoClasses/A.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/DemoClasses/B.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/DemoClasses/C.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/DemoClasses/D.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/DemoClasses/E.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/DemoClasses/ILetter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework3/.idea/.idea.Homework3.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework3/.idea/.idea.Homework3.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework3/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework3/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +68,8 @@
       <workItem from="1637485350195" duration="294000" />
       <workItem from="1639461649202" duration="24000" />
       <workItem from="1639461735907" duration="79000" />
+      <workItem from="1640154424587" duration="33000" />
+      <workItem from="1640154522729" duration="697000" />
     </task>
     <servers />
   </component>
