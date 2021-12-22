@@ -1,4 +1,4 @@
-﻿namespace VendingMachine
+﻿namespace VendingMachine.UseCases
 {
     internal interface IUseCase
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using VendingMachine.Data;
 using VendingMachine.PresentationLayer;
+using VendingMachine.Repositories;
 using VendingMachine.UseCases;
 
 namespace VendingMachine

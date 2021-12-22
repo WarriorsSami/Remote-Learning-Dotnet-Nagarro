@@ -1,28 +1,27 @@
 ﻿using System;
 using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
-using VendingMachine.Data;
 using VendingMachine.PresentationLayer;
+using VendingMachine.Repositories;
 
 namespace VendingMachine.UseCases
 {
     internal class BuyUseCase: IUseCase
     {
-        private readonly VendingMachineApplication _application;
-        private readonly BuyView _buyView;
-        private readonly ProductRepository _productRepository;
-
+        private readonly IVendingMachineApplication _application;
+        private readonly IBuyView _buyView;
+        private readonly IProductRepository _productRepository;
+        
         public string Name => "buy";
         public string Description => "Buy a product";
         public bool CanExecute => !_application.UserIsLoggedIn;
         
         public BuyUseCase(
-            VendingMachineApplication application, 
-            BuyView buyView, 
-            ProductRepository productRepository)
+            IVendingMachineApplication application, 
+            IBuyView buyView, IProductRepository productRepository)
         {
-            _application = application ?? throw new ArgumentNullException(nameof(application));
-            _buyView = buyView ?? throw new ArgumentNullException(nameof(buyView));
-            _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
+            _application = application;
+            _buyView = buyView;
+            _productRepository = productRepository;
         }
          
         public void Execute()
@@ -34,7 +33,6 @@ namespace VendingMachine.UseCases
             }
             
             var productCode = int.Parse(productCodeStr);
-            
             var product = _productRepository.GetByCode(productCode);
             if (product == null)
             {
