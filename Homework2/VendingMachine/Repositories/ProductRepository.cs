@@ -1,12 +1,12 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
+using VendingMachine.Interfaces.IRepositories;
 using VendingMachine.Models;
 
-namespace VendingMachine.Data
+namespace VendingMachine.Repositories
 {
-    internal class ProductRepository
+    internal class ProductRepository: IProductRepository
     {
         private static readonly List<Product> Products = new();
         
@@ -63,8 +63,15 @@ namespace VendingMachine.Data
                 {
                     ColumnId = 7,
                     Name = "Coca Cola Zero",
-                    Price = 1.5m,
+                    Price = 10.0m,
                     Quantity = 1
+                },
+                new()
+                {
+                    ColumnId = 8,
+                    Name = "Coca Cola Light",
+                    Price = 1.5m,
+                    Quantity = 0
                 },
             });
         }
@@ -75,7 +82,7 @@ namespace VendingMachine.Data
             return Products;
         }
         
-        public Product? GetByCode(int code)
+        public Product? GetById(int code)
         {
             var product = Products.FirstOrDefault(product => product.ColumnId == code);
             

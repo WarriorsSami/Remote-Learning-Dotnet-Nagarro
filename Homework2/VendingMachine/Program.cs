@@ -1,7 +1,7 @@
 ﻿using System;
-using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
-using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace VendingMachine
 {
     internal static class Program

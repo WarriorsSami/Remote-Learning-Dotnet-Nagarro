@@ -1,10 +1,12 @@
 ﻿using System;
-using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
+using System.Collections.Generic;
+using VendingMachine.Helpers.Payment;
+using VendingMachine.Interfaces.IPresentationLayer;
 using VendingMachine.Models;
 
 namespace VendingMachine.PresentationLayer
 {
-    internal class BuyView: DisplayBase
+    internal class BuyView: DisplayBase, IBuyView
     {
         public void DisplayProduct(Product product)
         {
@@ -17,9 +19,31 @@ namespace VendingMachine.PresentationLayer
         public string AskForProductCode()
         {
             DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
-            var productCode = Console.ReadLine() ?? "";
+            var productCode = Console.ReadLine() ?? string.Empty;
 
             return productCode;
+        }
+
+        private void DisplayPaymentMethods(IEnumerable<PaymentMethod> paymentMethods)
+        {
+            foreach (var paymentMethod in paymentMethods)
+            {
+                DisplayLine($"{(int)paymentMethod.Id} - {paymentMethod.Name}", ConsoleColor.Green);
+            }
+        }
+
+        public int AskForPaymentMethod(IEnumerable<PaymentMethod> paymentMethods)
+        {
+            DisplayLine("Please select a payment method:", ConsoleColor.Yellow);
+            DisplayPaymentMethods(paymentMethods);
+            
+            var paymentMethodId = int.Parse(Console.ReadLine() ?? "0");
+            return paymentMethodId;
+        }
+
+        public void DisplayCommand(string command)
+        {
+            DisplayLine(command, ConsoleColor.Magenta);
         }
     }
 }
