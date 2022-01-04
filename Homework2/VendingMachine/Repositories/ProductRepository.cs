@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
+using VendingMachine.Interfaces.IRepositories;
 using VendingMachine.Models;
 
 namespace VendingMachine.Repositories
@@ -62,7 +63,7 @@ namespace VendingMachine.Repositories
                 {
                     ColumnId = 7,
                     Name = "Coca Cola Zero",
-                    Price = 1.5m,
+                    Price = 10.0m,
                     Quantity = 1
                 },
                 new()
@@ -81,7 +82,7 @@ namespace VendingMachine.Repositories
             return Products;
         }
         
-        public Product? GetByCode(int code)
+        public Product? GetById(int code)
         {
             var product = Products.FirstOrDefault(product => product.ColumnId == code);
             

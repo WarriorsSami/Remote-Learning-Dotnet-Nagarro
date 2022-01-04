@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using VendingMachine.Models;
 
-namespace VendingMachine.Repositories
+namespace VendingMachine.Interfaces.IRepositories
 {
     internal interface IProductRepository
     {
         IEnumerable<Product> GetAll();
-        Product GetByCode(int code);
+        Product GetById(int code);
         void UpdateQuantity(int code, int quantity);
     }
 }

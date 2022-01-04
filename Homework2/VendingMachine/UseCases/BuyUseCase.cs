@@ -1,7 +1,8 @@
-﻿using System;
-using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
-using VendingMachine.PresentationLayer;
-using VendingMachine.Repositories;
+﻿using VendingMachine.CustomExceptions.BuyUseCaseExceptions;
+using VendingMachine.Interfaces;
+using VendingMachine.Interfaces.IPresentationLayer;
+using VendingMachine.Interfaces.IRepositories;
+using VendingMachine.Interfaces.IUseCases;
 
 namespace VendingMachine.UseCases
 {
@@ -11,17 +12,22 @@ namespace VendingMachine.UseCases
         private readonly IBuyView _buyView;
         private readonly IProductRepository _productRepository;
         
+        private readonly IPaymentUseCase _paymentUseCase;
+        
         public string Name => "buy";
-        public string Description => "Buy a product";
+        public string Description => "Buy a product | " + _paymentUseCase.Description;
         public bool CanExecute => !_application.UserIsLoggedIn;
         
         public BuyUseCase(
             IVendingMachineApplication application, 
-            IBuyView buyView, IProductRepository productRepository)
+            IBuyView buyView,
+            IProductRepository productRepository,
+            IPaymentUseCase paymentUseCase)
         {
             _application = application;
             _buyView = buyView;
             _productRepository = productRepository;
+            _paymentUseCase = paymentUseCase;
         }
          
         public void Execute()
@@ -29,23 +35,28 @@ namespace VendingMachine.UseCases
             var productCodeStr = _buyView.AskForProductCode();
             if (string.IsNullOrWhiteSpace(productCodeStr))
             {
-                throw new CancelOrderException("Order cancelled");
+                throw new CancelOrderException("Order cancelled due to empty product code");
             }
             
             var productCode = int.Parse(productCodeStr);
-            var product = _productRepository.GetByCode(productCode);
-            if (product == null)
+            if (_paymentUseCase.CanExecute)
             {
-                throw new ProductNotFoundException("Unavailable product");
+                var product = _productRepository.GetById(productCode);
+                if (product == null)
+                {
+                    throw new ProductNotFoundException("Unavailable product");
+                }
+
+                if (product.Quantity == 0)
+                {
+                    throw new ProductOutOfStockException("Product out of stock");
+                }
+    
+                _paymentUseCase.Execute(product.Price);
+                _productRepository.UpdateQuantity(productCode, product.Quantity - 1);
+
+                _buyView.DisplayProduct(product);
             }
-            if (product.Quantity == 0)
-            {
-                throw new ProductOutOfStockException("Product out of stock");
-            }
-            
-            _productRepository.UpdateQuantity(productCode, product.Quantity - 1);
-            
-            _buyView.DisplayProduct(product);
         }
     }
 }

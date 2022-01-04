@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VendingMachine.UseCases;
+using VendingMachine.Interfaces.IUseCases;
 
 namespace VendingMachine.PresentationLayer
 {

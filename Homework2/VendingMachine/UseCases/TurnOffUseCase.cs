@@ -1,4 +1,6 @@
-﻿namespace VendingMachine.UseCases
+﻿using VendingMachine.Interfaces.IUseCases;
+
+namespace VendingMachine.UseCases
 {
     internal class TurnOffUseCase : IUseCase
     {
