@@ -5,3 +5,5 @@
 - [x] OOAD
 - [x] Exception Handling
 - [x] TDD and Unit Testing
+- [x] SOLID
+- [x] Value types vs refs + Generics

@@ -174,11 +174,8 @@
       <workItem from="1637595829306" duration="6219000" />
       <workItem from="1637948696108" duration="594000" />
       <workItem from="1638096116032" duration="5010000" />
-      <workItem from="1638175878857" duration="949000" />
-      <workItem from="1638628209056" duration="2807000" />
-      <workItem from="1638632386234" duration="228000" />
-      <workItem from="1638632651674" duration="8941000" />
-      <workItem from="1639242973594" duration="83000" />
+      <workItem from="1638175878857" duration="1278000" />
+      <workItem from="1639074760419" duration="1012000" />
     </task>
     <servers />
   </component>
@@ -246,5 +243,6 @@
     <MESSAGE value="feat(repo): add methods related to buying logic&#10;&#10;- get product by code (possible null)&#10;- update bought product quantity&#10;(using LINQ)" />
     <MESSAGE value="refactor(buy product): move display logic to buy view&#10;&#10;I've extracted the logic related to asking for product id from the buy use case into buy view" />
     <MESSAGE value="feat(exp handling): define custom exceptions&#10;&#10;I've defined a list of custom exceptions related to login and buy use case (invalid credentials, cancel order, product not found, product out of stock), thrown them from proper classes (login use case, buy use case, product repo or buy view) and handled them in the main program" />
+    <MESSAGE value="refactor(exceptions): resolve review&#10;&#10;https://github.com/WarriorsSami/Remote-Learning-Dotnet-Nagarro/pull/5" />
   </component>
 </project>
