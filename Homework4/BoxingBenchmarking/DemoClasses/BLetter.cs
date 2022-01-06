@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace BoxingBenchmarking.DemoClasses
+﻿namespace BoxingBenchmarking.DemoClasses
 {
-    internal class C: ILetter
+    internal class BLetter: ILetter
     {
-        public C(int id)
+        public BLetter(int id)
         {
             Id = id;
         }

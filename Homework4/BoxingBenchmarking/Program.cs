@@ -37,19 +37,19 @@ namespace BoxingBenchmarking
                 switch (randomLetter)
                 {
                     case 'A':
-                        arrayOfLetters.Add(new A(randomLetter));
+                        arrayOfLetters.Add(new ALetter(randomLetter));
                         break;
                     case 'B':
-                        arrayOfLetters.Add(new B(randomLetter));
+                        arrayOfLetters.Add(new BLetter(randomLetter));
                         break;
                     case 'C':
-                        arrayOfLetters.Add(new C(randomLetter));
+                        arrayOfLetters.Add(new CLetter(randomLetter));
                         break;
                     case 'D':
-                        arrayOfLetters.Add(new D(randomLetter));
+                        arrayOfLetters.Add(new DLetter(randomLetter));
                         break;
                     case 'E':
-                        arrayOfLetters.Add(new E(randomLetter));
+                        arrayOfLetters.Add(new ELetter(randomLetter));
                         break;
                 }
             }
@@ -59,19 +59,19 @@ namespace BoxingBenchmarking
             {
                 switch (letter)
                 {
-                    case A a:
+                    case ALetter a:
                         a.Name = "A";
                         break;
-                    case B b:
+                    case BLetter b:
                         b.Name = "B";
                         break;
-                    case C c:
+                    case CLetter c:
                         c.Name = "C";
                         break;
-                    case D d:
+                    case DLetter d:
                         d.Name = "D";
                         break;
-                    case E e:
+                    case ELetter e:
                         e.Name = "E";
                         break;
                 }
