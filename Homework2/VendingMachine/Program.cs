@@ -19,7 +19,7 @@ namespace VendingMachine
                 Pause();
             }
         }
-
+        
         public static void DisplayError(Exception ex)
         {
             var oldColor = Console.ForegroundColor;
