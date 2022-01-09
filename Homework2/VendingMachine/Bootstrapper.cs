@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VendingMachine.Interfaces.IUseCases;
 using VendingMachine.PresentationLayer;
 using VendingMachine.Repositories;
@@ -19,7 +20,9 @@ namespace VendingMachine
             var mainDisplay = new MainDisplay();
             var shelfView = new ShelfView();
             var buyView = new BuyView();
-            var productRepository = new ProductRepository();
+            var productContextFactory = new ProductContextFactory();
+            var productRepository = new ProductPersistentRepository(
+                productContextFactory.CreateDbContext(Array.Empty<string>()));
             var paymentRepository = new PaymentRepository();
             var useCases = new List<IUseCase>();
             
