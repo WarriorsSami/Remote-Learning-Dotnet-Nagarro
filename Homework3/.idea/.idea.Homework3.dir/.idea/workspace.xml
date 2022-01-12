@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc3a682f-ee14-461b-9bc5-2d70df935b53" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Homework3.dir/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Homework3.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Homework3.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Homework3.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Homework3.dir/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithOcp/ShapeModel/Circle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithOcp/ShapeModel/GeometricShapes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithOcp/ShapeModel/IShape.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithOcp/ShapeModel/Rectangle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithOcp/ShapeModel/Triangle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/.idea/.idea.GeometrixWithoutOcp/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/GeometrixWithoutOcp.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/GeometrixWithoutOcp.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/ShapeModel/Circle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/ShapeModel/GeometricShapes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/ShapeModel/Rectangle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeometrixWithoutOcp/ShapeModel/Triangle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bc3a682f-ee14-461b-9bc5-2d70df935b53" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -62,7 +36,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639467923275</updated>
-      <workItem from="1639467929626" duration="1875000" />
+      <workItem from="1639467929626" duration="2081000" />
     </task>
     <servers />
   </component>

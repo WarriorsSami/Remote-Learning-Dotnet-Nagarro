@@ -1,5 +1,6 @@
 ﻿using System;
 using VendingMachine.CustomExceptions.LoginUseCaseExceptions;
+using VendingMachine.Interfaces.IUseCases;
 using VendingMachine.PresentationLayer;
 
 namespace VendingMachine.UseCases
