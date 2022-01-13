@@ -8,3 +8,4 @@
 - [x] SOLID
 - [x] Value types vs refs + Generics
 - [x] Repository Pattern and DIP
+- [x] Observer Pattern, Delegates and Events
