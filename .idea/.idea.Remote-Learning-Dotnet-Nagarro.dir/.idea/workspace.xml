@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachine.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/UnitTest1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/VendingMachineTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/VendingMachineTests.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework4/BoxingBenchmarking/.idea/.idea.BoxingBenchmarking/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +35,6 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Homework2/VendingMachine.sln" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -69,7 +49,10 @@
       <updated>1636889087469</updated>
       <workItem from="1636889087470" duration="389000" />
       <workItem from="1637485350195" duration="294000" />
-      <workItem from="1638628035563" duration="1088000" />
+      <workItem from="1639461649202" duration="24000" />
+      <workItem from="1639461735907" duration="79000" />
+      <workItem from="1640154424587" duration="33000" />
+      <workItem from="1640154522729" duration="697000" />
     </task>
     <servers />
   </component>
