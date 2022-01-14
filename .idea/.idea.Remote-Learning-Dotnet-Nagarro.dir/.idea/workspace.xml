@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachine.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/UnitTest1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/VendingMachineTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework2/VendingMachineTests/VendingMachineTests.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Homework2/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +17,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="20uKXmArUTFedaW4Bppz1BBXMvm" />
   <component name="ProjectLevelVcsManager">
