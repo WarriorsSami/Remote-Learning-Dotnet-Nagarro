@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using VendingMachine.Interfaces.IUseCases;
 
 namespace VendingMachine.PresentationLayer
 {
-    internal class MainDisplay : DisplayBase
+    internal class MainDisplay : DisplayBase 
     {
         public IUseCase ChooseCommand(IEnumerable<IUseCase> useCases)
         {
