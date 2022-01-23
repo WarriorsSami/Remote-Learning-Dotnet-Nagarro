@@ -28,4 +28,10 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\VendingMachine.Business\VendingMachine.Business.csproj" />
+      <ProjectReference Include="..\VendingMachine.DataAccess\VendingMachine.DataAccess.csproj" />
+      <ProjectReference Include="..\VendingMachine.Presentation\VendingMachine.Presentation.csproj" />
+    </ItemGroup>
+
 </Project>

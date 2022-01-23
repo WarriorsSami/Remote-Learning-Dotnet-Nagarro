@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using Moq;
 using NUnit.Framework;
-using VendingMachine.CustomExceptions.PaymentUseCaseExceptions;
-using VendingMachine.Helpers.Payment;
-using VendingMachine.Interfaces;
-using VendingMachine.Interfaces.IHelpersPayment;
-using VendingMachine.Interfaces.IPresentationLayer;
-using VendingMachine.Interfaces.IRepositories;
-using VendingMachine.UseCases;
+using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
+using VendingMachine.Business.Helpers.Payment;
+using VendingMachine.Business.Interfaces;
+using VendingMachine.Business.Interfaces.IHelpersPayment;
+using VendingMachine.Business.Interfaces.IPresentationLayer;
+using VendingMachine.Business.Interfaces.IRepositories;
+using VendingMachine.Business.UseCases;
 
 namespace VendingMachineTests
 {

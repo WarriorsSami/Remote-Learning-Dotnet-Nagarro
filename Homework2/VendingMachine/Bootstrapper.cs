@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using VendingMachine.Interfaces.IUseCases;
-using VendingMachine.PresentationLayer;
-using VendingMachine.Repositories;
-using VendingMachine.UseCases;
+using VendingMachine.Business;
+using VendingMachine.Business.Interfaces.IUseCases;
+using VendingMachine.Business.UseCases;
+using VendingMachine.DataAccess.Repositories;
+using VendingMachine.Presentation.PresentationLayer;
 
 namespace VendingMachine
 {
