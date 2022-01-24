@@ -1,6 +1,8 @@
 # Remote-Learning-Dotnet-Nagarro
 
 ## Sessions
+
+### First Semester
 - [x] OOP Basics
 - [x] OOAD
 - [x] Exception Handling
@@ -9,3 +11,5 @@
 - [x] Value types vs refs + Generics
 - [x] Repository Pattern and DIP
 - [x] Observer Pattern, Delegates and Events
+
+### Second Semester
