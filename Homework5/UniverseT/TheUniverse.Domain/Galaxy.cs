@@ -5,7 +5,7 @@ namespace iQuest.TheUniverse.Domain
 {
     public class Galaxy
     {
-        private readonly HashSet<string> stars = new HashSet<string>();
+        private readonly HashSet<string> _stars = new HashSet<string>();
 
         public string Name { get; }
 
@@ -18,12 +18,12 @@ namespace iQuest.TheUniverse.Domain
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
 
-            return stars.Add(name);
+            return _stars.Add(name);
         }
 
         public IEnumerable<string> EnumerateStars()
         {
-            return stars;
+            return _stars;
         }
     }
 }

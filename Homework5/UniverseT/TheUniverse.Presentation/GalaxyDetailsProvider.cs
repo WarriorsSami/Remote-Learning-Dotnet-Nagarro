@@ -11,7 +11,7 @@ namespace iQuest.TheUniverse.Presentation
         {
             Console.WriteLine();
             Console.Write("Galaxy name (" + DefaultGalaxyName + "): ");
-            string galaxyName = Console.ReadLine();
+            var galaxyName = Console.ReadLine();
 
             return string.IsNullOrWhiteSpace(galaxyName)
                 ? DefaultGalaxyName

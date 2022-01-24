@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using iQuest.TheUniverse.Application;
+﻿using System.Collections.Generic;
 using iQuest.TheUniverse.Application.AddGalaxy;
 using iQuest.TheUniverse.Application.AddStar;
 using iQuest.TheUniverse.Application.GetAllStars;
@@ -11,11 +9,11 @@ namespace iQuest.TheUniverse
 {
     internal class Bootstrapper
     {
-        private static RequestBus requestBus;
+        private static RequestBus _requestBus;
 
         public void Run()
         {
-            requestBus = new RequestBus();
+            _requestBus = new RequestBus();
             ConfigureRequestBus();
             DisplayApplicationHeader();
             RunUserCommandProcessLoop();
@@ -23,9 +21,9 @@ namespace iQuest.TheUniverse
 
         private static void ConfigureRequestBus()
         {
-            requestBus.RegisterHandler<StarInfo, AddGalaxyRequest, AddGalaxyRequestHandler>();
-            requestBus.RegisterHandler<StarInfo, AddStarRequest, AddStarRequestHandler>();
-            requestBus.RegisterHandler<StarInfo, GetAllStarsRequest, GetAllStarsRequestHandler>();
+            _requestBus.RegisterHandler<bool, AddGalaxyRequest, AddGalaxyRequestHandler>();
+            _requestBus.RegisterHandler<bool, AddStarRequest, AddStarRequestHandler>();
+            _requestBus.RegisterHandler<IEnumerable<StarInfo>, GetAllStarsRequest, GetAllStarsRequestHandler>();
         }
 
         private static void DisplayApplicationHeader()
@@ -36,7 +34,7 @@ namespace iQuest.TheUniverse
 
         private static void RunUserCommandProcessLoop()
         {
-            Prompter prompter = new Prompter(requestBus);
+            Prompter prompter = new Prompter(_requestBus);
             prompter.ProcessUserInput();
         }
     }

@@ -1,32 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using iQuest.TheUniverse.Domain;
 using iQuest.TheUniverse.Infrastructure;
 
 namespace iQuest.TheUniverse.Application.GetAllStars
 {
-    public class GetAllStarsRequestHandler : IRequestHandler<StarInfo>
+    public abstract class GetAllStarsRequestHandler : IRequestHandler<IEnumerable<StarInfo>>
     {
-        public Either<Boolean, List<StarInfo>> Execute(IRequest request)
+        public IEnumerable<StarInfo> Execute(IRequest request)
         {
-            List<StarInfo> starsInfo = new List<StarInfo>();
+            var starsInfo = new List<StarInfo>();
 
-            IEnumerable<Galaxy> galaxies = Universe.Instance.EnumerateGalaxies();
+            var galaxies = Universe.Instance.EnumerateGalaxies();
 
-            foreach (Galaxy galaxy in galaxies)
+            foreach (var galaxy in galaxies)
             {
-                IEnumerable<string> stars = galaxy.EnumerateStars();
+                var stars = galaxy.EnumerateStars();
 
-                foreach (string star in stars)
-                {
-                    StarInfo starInfo = new StarInfo
+                starsInfo.AddRange(stars.Select(star => 
+                    new StarInfo
                     {
-                        GalaxyName = galaxy.Name,
+                        GalaxyName = galaxy.Name, 
                         StarName = star
-                    };
-
-                    starsInfo.Add(starInfo);
-                }
+                    })
+                );
             }
 
             return starsInfo;

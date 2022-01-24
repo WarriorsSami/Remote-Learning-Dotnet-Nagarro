@@ -8,7 +8,7 @@ namespace iQuest.TheUniverse
         {
             try
             {
-                Bootstrapper bootstrapper = new Bootstrapper();
+                var bootstrapper = new Bootstrapper();
                 bootstrapper.Run();
             }
             catch (Exception ex)
@@ -20,7 +20,7 @@ namespace iQuest.TheUniverse
 
         private static void DisplayError(Exception exception)
         {
-            ConsoleColor oldColor = Console.ForegroundColor;
+            var oldColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(exception);
             Console.ForegroundColor = oldColor;

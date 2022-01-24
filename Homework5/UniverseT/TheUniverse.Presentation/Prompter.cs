@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using iQuest.TheUniverse.Application;
-using iQuest.TheUniverse.Application.AddGalaxy;
-using iQuest.TheUniverse.Application.GetAllStars;
 using iQuest.TheUniverse.Infrastructure;
 using iQuest.TheUniverse.Presentation.Commands;
 
@@ -10,23 +6,23 @@ namespace iQuest.TheUniverse.Presentation
 {
     public class Prompter
     {
-        private readonly RequestBus requestBus;
-        private bool exitWasRequested;
+        private readonly RequestBus _requestBus;
+        private bool _exitWasRequested;
 
         public Prompter(RequestBus requestBus)
         {
-            this.requestBus = requestBus ?? throw new ArgumentNullException(nameof(requestBus));
+            _requestBus = requestBus ?? throw new ArgumentNullException(nameof(requestBus));
         }
 
         public void ProcessUserInput()
         {
-            exitWasRequested = false;
+            _exitWasRequested = false;
 
-            while (!exitWasRequested)
+            while (!_exitWasRequested)
             {
                 try
                 {
-                    string command = ReadCommandFromConsole();
+                    var command = ReadCommandFromConsole();
                     ProcessCommand(command);
                 }
                 catch (Exception ex)
@@ -48,24 +44,24 @@ namespace iQuest.TheUniverse.Presentation
             switch (command)
             {
                 case "add-galaxy":
-                    AddGalaxyCommand command1 = new AddGalaxyCommand(requestBus);
+                    var command1 = new AddGalaxyCommand(_requestBus);
                     command1.Execute();
                     break;
 
                 case "add-star":
-                    AddStarCommand command2 = new AddStarCommand(requestBus);
+                    var command2 = new AddStarCommand(_requestBus);
                     command2.Execute();
                     break;
 
                 case "display-stars":
-                    DisplayAllStarsCommand command3 = new DisplayAllStarsCommand(requestBus);
+                    var command3 = new DisplayAllStarsCommand(_requestBus);
                     command3.Execute();
                     break;
 
                 case "exit":
                 case "kill":
                 case "collapse":
-                    exitWasRequested = true;
+                    _exitWasRequested = true;
                     break;
 
                 default:
@@ -75,7 +71,7 @@ namespace iQuest.TheUniverse.Presentation
 
         private static void DisplayError(Exception exception)
         {
-            ConsoleColor oldColor = Console.ForegroundColor;
+            var oldColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(exception);
             Console.ForegroundColor = oldColor;

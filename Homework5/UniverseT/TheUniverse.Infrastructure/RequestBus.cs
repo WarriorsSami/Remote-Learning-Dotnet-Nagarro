@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace iQuest.TheUniverse.Infrastructure
 {
@@ -7,9 +8,9 @@ namespace iQuest.TheUniverse.Infrastructure
     {
         private readonly Dictionary<Type, Type> _handlers = new Dictionary<Type, Type>();
 
-        public void RegisterHandler<T, TRequest, THandler>() 
+        public void RegisterHandler<TReturnedType, TRequest, THandler>() 
             where TRequest: IRequest
-            where THandler: IRequestHandler<T>
+            where THandler: IRequestHandler<TReturnedType>
         {
             if (_handlers.ContainsKey(typeof(THandler)))
                 throw new ArgumentException("requestType is already registered.", nameof(TRequest));
@@ -17,20 +18,21 @@ namespace iQuest.TheUniverse.Infrastructure
             _handlers.Add(typeof(TRequest), typeof(THandler));
         }
 
-        public Either<Boolean, List<T>> Send<T>(IRequest request)
+        public TReturnedType Send<TReturnedType>(IRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
-            Type requestType = request.GetType();
+            var requestType = request.GetType();
 
             if (!_handlers.ContainsKey(requestType))
                 throw new Exception("Request handler not registered for the specified request.");
 
-            Type requestHandlerType = _handlers[requestType];
+            var requestHandlerType = _handlers[requestType];
 
-            var requestHandler = (IRequestHandler<T>)Activator
+            var requestHandler = (IRequestHandler<TReturnedType>)Activator
                 .CreateInstance(requestHandlerType);
 
+            Debug.Assert(requestHandler != null, nameof(requestHandler) + " != null");
             return requestHandler.Execute(request);
         }
     }
