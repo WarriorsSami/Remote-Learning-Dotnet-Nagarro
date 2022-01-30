@@ -1,11 +1,11 @@
 ﻿using System.Runtime.CompilerServices;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
-using VendingMachine.Business.Interfaces;
-using VendingMachine.Business.Interfaces.IPresentationLayer;
-using VendingMachine.Business.Interfaces.IRepositories;
-using VendingMachine.Business.Interfaces.IUseCases;
+using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Presentation.IViews;
 
-[assembly: InternalsVisibleTo("VendingMachineTests")]
+[assembly: InternalsVisibleTo("VendingMachine.Test")]
 [assembly: InternalsVisibleTo("VendingMachine")]
 namespace VendingMachine.Business.UseCases
 {

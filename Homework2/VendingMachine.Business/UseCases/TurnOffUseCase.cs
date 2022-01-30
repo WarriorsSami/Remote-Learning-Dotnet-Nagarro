@@ -1,5 +1,5 @@
-﻿using VendingMachine.Business.Interfaces;
-using VendingMachine.Business.Interfaces.IUseCases;
+﻿using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IUseCases;
 
 namespace VendingMachine.Business.UseCases
 {

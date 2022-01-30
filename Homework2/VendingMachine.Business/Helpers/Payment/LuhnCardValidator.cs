@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using VendingMachine.Business.Interfaces.IHelpersPayment;
+using VendingMachine.Domain.Business.IHelpersPayment;
 
 namespace VendingMachine.Business.Helpers.Payment
 {

@@ -4,9 +4,9 @@ using System.Linq;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.LoginUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
-using VendingMachine.Business.Interfaces;
-using VendingMachine.Business.Interfaces.IPresentationLayer;
-using VendingMachine.Business.Interfaces.IUseCases;
+using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business
 {

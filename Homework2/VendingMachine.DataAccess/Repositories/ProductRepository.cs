@@ -1,8 +1,8 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using VendingMachine.Business.Interfaces.IRepositories;
-using VendingMachine.Business.Models;
+using VendingMachine.DataAccess.Models;
+using VendingMachine.Domain.DataAccess.IRepositories;
 
 namespace VendingMachine.DataAccess.Repositories
 {

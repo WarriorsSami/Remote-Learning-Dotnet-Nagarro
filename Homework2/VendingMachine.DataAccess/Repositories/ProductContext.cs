@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using VendingMachine.Business.Models;
+﻿using System.Runtime.CompilerServices;
+using Microsoft.EntityFrameworkCore;
+using VendingMachine.DataAccess.Models;
 
+[assembly: InternalsVisibleTo("VendingMachine")]
 namespace VendingMachine.DataAccess.Repositories
 {
     internal class ProductContext: DbContext

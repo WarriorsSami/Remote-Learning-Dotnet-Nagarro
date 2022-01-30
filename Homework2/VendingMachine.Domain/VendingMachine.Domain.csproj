@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\VendingMachine.Domain\VendingMachine.Domain.csproj" />
+      <Folder Include="DataAccess" />
+      <Folder Include="Presentation" />
     </ItemGroup>
-
 </Project>

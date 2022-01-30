@@ -1,4 +1,5 @@
-﻿using VendingMachine.Business.Interfaces.IHelpersPayment;
+﻿using VendingMachine.Domain.Business.IHelpersPayment;
+using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 
 namespace VendingMachine.Business.Helpers.Payment
 {

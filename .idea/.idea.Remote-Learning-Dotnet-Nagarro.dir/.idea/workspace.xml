@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d7eac32-2f1b-4cdf-bce5-caf5fc305143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/Either.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/IRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddGalaxy/AddGalaxyRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddGalaxy/AddGalaxyRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddGalaxy/AddGalaxyRequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddGalaxy/AddGalaxyRequestHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddStar/AddStarRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddStar/AddStarRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddStar/AddStarRequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/AddStar/AddStarRequestHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/GetAllStars/GetAllStarsRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/GetAllStars/GetAllStarsRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/GetAllStars/GetAllStarsRequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Application/GetAllStars/GetAllStarsRequestHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/IRequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/IRequestHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/RequestBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/RequestBus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/TheUniverse.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Infrastructure/TheUniverse.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Commands/AddGalaxyCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Commands/AddGalaxyCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Commands/AddStarCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Commands/AddStarCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Commands/DisplayAllStarsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Commands/DisplayAllStarsCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Prompter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse.Presentation/Prompter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse/Bootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework5/Universe/TheUniverse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Homework5/Universe/TheUniverse/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +20,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Homework2/VendingMachine.Business/VendingMachineApplication.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="20uKXmArUTFedaW4Bppz1BBXMvm" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,7 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -70,6 +56,9 @@
       <workItem from="1639461735907" duration="79000" />
       <workItem from="1640154424587" duration="33000" />
       <workItem from="1640154522729" duration="697000" />
+      <workItem from="1643477885479" duration="39000" />
+      <workItem from="1643478166717" duration="85000" />
+      <workItem from="1643540640759" duration="33000" />
     </task>
     <servers />
   </component>

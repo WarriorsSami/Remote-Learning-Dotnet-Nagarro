@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using VendingMachine.Business;
-using VendingMachine.Business.Interfaces.IUseCases;
+using VendingMachine.Business.Helpers.Payment;
 using VendingMachine.Business.UseCases;
 using VendingMachine.DataAccess.Repositories;
-using VendingMachine.Presentation.PresentationLayer;
+using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Presentation.Views;
+using VendingMachine.Presentation.Views.PaymentTerminals;
 
 namespace VendingMachine
 {
@@ -24,11 +26,13 @@ namespace VendingMachine
             var productContextFactory = new ProductContextFactory();
             var productRepository = new ProductPersistentRepository(
                 productContextFactory.CreateDbContext(Array.Empty<string>()));
-            var paymentRepository = new PaymentRepository();
+            var cashPaymentTerminal = new CashPaymentTerminal();
+            var creditCardPaymentTerminal = new CreditCardPaymentTerminal();
+            var paymentFactory = new PaymentFactory(cashPaymentTerminal, creditCardPaymentTerminal);
             var useCases = new List<IUseCase>();
-            
+
             var vendingMachineApplication = new VendingMachineApplication(useCases, mainDisplay);
-            var paymentUseCase = new PaymentUseCase(vendingMachineApplication, buyView, paymentRepository);
+            var paymentUseCase = new PaymentUseCase(vendingMachineApplication, buyView, paymentFactory);
 
             useCases.AddRange(new IUseCase[]
             {

@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Business.Helpers.Payment;
-using VendingMachine.Business.Interfaces;
-using VendingMachine.Business.Interfaces.IHelpersPayment;
-using VendingMachine.Business.Interfaces.IPresentationLayer;
-using VendingMachine.Business.Interfaces.IRepositories;
-using VendingMachine.Business.Interfaces.IUseCases;
+using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IHelpersPayment;
+using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business.UseCases
 {
@@ -16,7 +15,6 @@ namespace VendingMachine.Business.UseCases
         
         private readonly List<IPaymentAlgorithm> _paymentAlgorithms;
         private readonly List<PaymentMethod> _paymentMethods;
-        private readonly IPaymentRepository _paymentRepository;
 
         public string Name => "payment";
         public string Description => "Execute payment";
@@ -24,13 +22,12 @@ namespace VendingMachine.Business.UseCases
             
         public PaymentUseCase(IVendingMachineApplication application,
             IBuyView buyView,
-            IPaymentRepository paymentRepository)
+            IPaymentFactory paymentFactory)
         {
             _application = application;
             _buyView = buyView;
-            _paymentRepository = paymentRepository;
-            _paymentAlgorithms = _paymentRepository.GetPaymentAlgorithms();
-            _paymentMethods = _paymentRepository.GetPaymentMethods();
+            _paymentAlgorithms = paymentFactory.GetPaymentAlgorithms();
+            _paymentMethods = paymentFactory.GetPaymentMethods();
         }
         
         public void Execute(decimal price)

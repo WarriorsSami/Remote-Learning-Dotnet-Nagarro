@@ -1,6 +1,6 @@
-﻿using VendingMachine.Business.Interfaces.IPresentationLayer;
-using VendingMachine.Business.Interfaces.IRepositories;
-using VendingMachine.Business.Interfaces.IUseCases;
+﻿using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business.UseCases
 {
