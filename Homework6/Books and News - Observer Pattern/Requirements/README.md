@@ -46,7 +46,7 @@ Some developers consider that it is overengineering to create events that confor
 However, C# allow us to provide custom format for the event handler function. Modify the previous implementation of the "Books and News" so that the subscribers (`BookLover` and `NewsHunter`) to receive in the event handler only one parameter:
 
 - The `BookLover` should receive a `Book` instance.
-- The `NewsHunter` should receive a `Newspaper instance.
+- The `NewsHunter` should receive a `Newspaper` instance.
 
 ```csharp
 public class BookLover

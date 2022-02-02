@@ -1,5 +1,6 @@
-﻿using iQuest.BooksAndNews.Application.Publishers;
-using iQuest.BooksAndNews.Application.PublishingEvents;
+﻿using iQuest.BooksAndNews.Application.Publications;
+using iQuest.BooksAndNews.Application.Publishers;
+using iQuest.BooksAndNews.Application.PublishingDelegates;
 
 namespace iQuest.BooksAndNews.Application.Subscribers
 {
@@ -21,12 +22,12 @@ namespace iQuest.BooksAndNews.Application.Subscribers
             _name = name;
             _log = log;
 
-            printingOffice.RaiseNewsPublishedEvent += OnNewsPrinted;
+            printingOffice.HandleNewsPublishedEmitter += HandleNewsPublished;
         }
-
-        private void OnNewsPrinted(object sender, NewsPublishedEventArgs e)
+        
+        private void HandleNewsPublished(Newspaper newspaper)
         {
-            _log.WriteInfo($"{_name} received a news published event: {e.NewsMessage}");
+            _log.WriteInfo($"{_name} received a news published event: {newspaper.Title}");
         }
     }
 }
