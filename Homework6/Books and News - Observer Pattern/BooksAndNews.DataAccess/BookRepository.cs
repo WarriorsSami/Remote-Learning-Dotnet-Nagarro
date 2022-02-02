@@ -9,28 +9,28 @@ namespace iQuest.BooksAndNews.DataAccess
 {
     public class BookRepository : IBookRepository
     {
-        private static readonly List<Book> books;
+        private static readonly List<Book> Books;
 
         static BookRepository()
         {
             var json = File.ReadAllText("Data\\books.json");
-            books = JsonConvert.DeserializeObject<List<Book>>(json);
+            Books = JsonConvert.DeserializeObject<List<Book>>(json);
         }
 
-        private readonly Random random;
+        private readonly Random _random;
 
         public BookRepository()
         {
-            random = new Random();
+            _random = new Random();
         }
 
         public Book GetRandom()
         {
-            if (books.Count == 0)
+            if (Books.Count == 0)
                 return null;
 
-            var index = random.Next(books.Count);
-            return books[index];
+            var index = _random.Next(Books.Count);
+            return Books[index];
         }
     }
 }

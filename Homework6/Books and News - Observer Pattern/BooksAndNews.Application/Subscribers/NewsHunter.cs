@@ -12,8 +12,6 @@ namespace iQuest.BooksAndNews.Application.Subscribers
     /// </summary>
     public class NewsHunter
     {
-        public NewsHunter(string name, PrintingOffice printingOffice, ILog log)
-        {
-        }
+        public NewsHunter(string name, PrintingOffice printingOffice, ILog log) { }
     }
 }

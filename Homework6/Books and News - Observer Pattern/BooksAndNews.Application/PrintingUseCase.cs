@@ -8,19 +8,25 @@ namespace iQuest.BooksAndNews.Application
 {
     public class PrintingUseCase
     {
-        private readonly IBookRepository bookRepository;
-        private readonly INewspaperRepository newspaperRepository;
-        private readonly ILog log;
+        private readonly IBookRepository _bookRepository;
+        private readonly INewspaperRepository _newspaperRepository;
+        private readonly ILog _log;
 
-        private PrintingOffice printingOffice;
-        private readonly List<BookLover> bookLovers = new List<BookLover>();
-        private readonly List<NewsHunter> newsHunters = new List<NewsHunter>();
+        private PrintingOffice _printingOffice;
+        private readonly List<BookLover> _bookLovers = new List<BookLover>();
+        private readonly List<NewsHunter> _newsHunters = new List<NewsHunter>();
 
-        public PrintingUseCase(IBookRepository bookRepository, INewspaperRepository newspaperRepository, ILog log)
+        public PrintingUseCase(
+            IBookRepository bookRepository,
+            INewspaperRepository newspaperRepository,
+            ILog log
+        )
         {
-            this.bookRepository = bookRepository ?? throw new ArgumentNullException(nameof(bookRepository));
-            this.newspaperRepository = newspaperRepository ?? throw new ArgumentNullException(nameof(newspaperRepository));
-            this.log = log ?? throw new ArgumentNullException(nameof(log));
+            _bookRepository =
+                bookRepository ?? throw new ArgumentNullException(nameof(bookRepository));
+            _newspaperRepository =
+                newspaperRepository ?? throw new ArgumentNullException(nameof(newspaperRepository));
+            _log = log ?? throw new ArgumentNullException(nameof(log));
         }
 
         public void Execute()
@@ -29,33 +35,33 @@ namespace iQuest.BooksAndNews.Application
             CreateBookLovers();
             CreateNewsHunters();
 
-            printingOffice.PrintRandom(2, 5);
+            _printingOffice.PrintRandom(2, 5);
         }
 
         private void CreatePrintingOffice()
         {
-            printingOffice = new PrintingOffice(bookRepository, newspaperRepository, log);
+            _printingOffice = new PrintingOffice(_bookRepository, _newspaperRepository, _log);
         }
 
         private void CreateBookLovers()
         {
-            var william = new BookLover("William", printingOffice, log);
-            bookLovers.Add(william);
+            var william = new BookLover("William", _printingOffice, _log);
+            _bookLovers.Add(william);
 
-            var james = new BookLover("James", printingOffice, log);
-            bookLovers.Add(james);
+            var james = new BookLover("James", _printingOffice, _log);
+            _bookLovers.Add(james);
 
-            var anna = new BookLover("Anna", printingOffice, log);
-            bookLovers.Add(anna);
+            var anna = new BookLover("Anna", _printingOffice, _log);
+            _bookLovers.Add(anna);
         }
 
         private void CreateNewsHunters()
         {
-            var alice = new NewsHunter("Alice", printingOffice, log);
-            newsHunters.Add(alice);
+            var alice = new NewsHunter("Alice", _printingOffice, _log);
+            _newsHunters.Add(alice);
 
-            var johnny = new NewsHunter("Johnny", printingOffice, log);
-            newsHunters.Add(johnny);
+            var johnny = new NewsHunter("Johnny", _printingOffice, _log);
+            _newsHunters.Add(johnny);
         }
     }
 }
