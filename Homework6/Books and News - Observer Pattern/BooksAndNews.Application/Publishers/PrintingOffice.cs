@@ -42,7 +42,7 @@ namespace iQuest.BooksAndNews.Application.Publishers
             {
                 var book = _bookRepository.GetRandom();
                 _log.WriteInfo($"Printing book {book.Title}");
-                HandleBookPublishedEmitter?.Invoke(book);
+                HandleBookPublishedEmitter(book);
             }
 
             _log.WriteInfo("\nHere are some random newspapers:");
@@ -50,7 +50,7 @@ namespace iQuest.BooksAndNews.Application.Publishers
             {
                 var newspaper = _newspaperRepository.GetRandom();
                 _log.WriteInfo($"Printing newspaper {newspaper.Title}");
-                HandleNewsPublishedEmitter?.Invoke(newspaper);
+                HandleNewsPublishedEmitter(newspaper);
             }
         }
     }
