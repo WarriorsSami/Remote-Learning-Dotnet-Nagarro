@@ -1,5 +1,5 @@
-﻿using iQuest.BooksAndNews.Application.Publishers;
-using iQuest.BooksAndNews.Application.PublishingEvents;
+﻿using iQuest.BooksAndNews.Application.Publications;
+using iQuest.BooksAndNews.Application.Publishers;
 
 namespace iQuest.BooksAndNews.Application.Subscribers
 {
@@ -21,12 +21,12 @@ namespace iQuest.BooksAndNews.Application.Subscribers
             _name = name;
             _log = log;
 
-            printingOffice.RaiseBookPublishedEvent += OnBookPublished;
+            printingOffice.HandleBookPublishedEmitter += HandleBookPublished;
         }
 
-        private void OnBookPublished(object sender, BookPublishedEventArgs e)
+        private void HandleBookPublished(Book book)
         {
-            _log.WriteInfo($"{_name} received a book published event: {e.BookMessage}");
+            _log.WriteInfo($"{_name} received a book published event: {book.Title}");
         }
     }
 }

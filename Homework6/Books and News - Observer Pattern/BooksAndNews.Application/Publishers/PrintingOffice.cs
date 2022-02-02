@@ -1,6 +1,6 @@
 ﻿using System;
 using iQuest.BooksAndNews.Application.DataAccess;
-using iQuest.BooksAndNews.Application.PublishingEvents;
+using iQuest.BooksAndNews.Application.PublishingDelegates;
 
 namespace iQuest.BooksAndNews.Application.Publishers
 {
@@ -19,8 +19,8 @@ namespace iQuest.BooksAndNews.Application.Publishers
         private readonly INewspaperRepository _newspaperRepository;
         private readonly ILog _log;
 
-        public event EventHandler<BookPublishedEventArgs> RaiseBookPublishedEvent;
-        public event EventHandler<NewsPublishedEventArgs> RaiseNewsPublishedEvent;
+        public HandleBookPublishedDelegate HandleBookPublishedEmitter;
+        public HandleNewsPublishedDelegate HandleNewsPublishedEmitter;
 
         public PrintingOffice(
             IBookRepository bookRepository,
@@ -42,7 +42,7 @@ namespace iQuest.BooksAndNews.Application.Publishers
             {
                 var book = _bookRepository.GetRandom();
                 _log.WriteInfo($"Printing book {book.Title}");
-                OnRaiseBookPublished(new BookPublishedEventArgs(book.Title));
+                HandleBookPublishedEmitter?.Invoke(book);
             }
 
             _log.WriteInfo("\nHere are some random newspapers:");
@@ -50,31 +50,7 @@ namespace iQuest.BooksAndNews.Application.Publishers
             {
                 var newspaper = _newspaperRepository.GetRandom();
                 _log.WriteInfo($"Printing newspaper {newspaper.Title}");
-                OnRaiseNewspaperPublished(
-                    new NewsPublishedEventArgs($"Book {newspaper.Title} was published")
-                );
-            }
-        }
-
-        private void OnRaiseBookPublished(BookPublishedEventArgs e)
-        {
-            var raiseEvent = RaiseBookPublishedEvent;
-
-            if (raiseEvent != null)
-            {
-                e.BookMessage += $" at {DateTime.Now}";
-                raiseEvent(this, e);
-            }
-        }
-
-        private void OnRaiseNewspaperPublished(NewsPublishedEventArgs e)
-        {
-            var raiseEvent = RaiseNewsPublishedEvent;
-
-            if (raiseEvent != null)
-            {
-                e.NewsMessage += $" at {DateTime.Now}";
-                raiseEvent(this, e);
+                HandleNewsPublishedEmitter?.Invoke(newspaper);
             }
         }
     }
