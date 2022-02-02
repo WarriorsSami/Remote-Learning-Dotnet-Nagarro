@@ -20,7 +20,7 @@ namespace iQuest.BooksAndNews.Application.Publishers
         private readonly ILog _log;
 
         public event EventHandler<BookPublishedEventArgs> RaiseBookPublishedEvent;
-        public event EventHandler<NewspaperPublishedEventArgs> RaiseNewspaperPublishedEvent;
+        public event EventHandler<NewsPublishedEventArgs> RaiseNewsPublishedEvent;
 
         public PrintingOffice(
             IBookRepository bookRepository,
@@ -51,7 +51,7 @@ namespace iQuest.BooksAndNews.Application.Publishers
                 var newspaper = _newspaperRepository.GetRandom();
                 _log.WriteInfo($"Printing newspaper {newspaper.Title}");
                 OnRaiseNewspaperPublished(
-                    new NewspaperPublishedEventArgs($"Book {newspaper.Title} was published")
+                    new NewsPublishedEventArgs($"Book {newspaper.Title} was published")
                 );
             }
         }
@@ -62,18 +62,18 @@ namespace iQuest.BooksAndNews.Application.Publishers
 
             if (raiseEvent != null)
             {
-                e.BookMessage += $"at {DateTime.Now}";
+                e.BookMessage += $" at {DateTime.Now}";
                 raiseEvent(this, e);
             }
         }
 
-        private void OnRaiseNewspaperPublished(NewspaperPublishedEventArgs e)
+        private void OnRaiseNewspaperPublished(NewsPublishedEventArgs e)
         {
-            var raiseEvent = RaiseNewspaperPublishedEvent;
-            
+            var raiseEvent = RaiseNewsPublishedEvent;
+
             if (raiseEvent != null)
             {
-                e.NewspaperMessage += $"at {DateTime.Now}";
+                e.NewsMessage += $" at {DateTime.Now}";
                 raiseEvent(this, e);
             }
         }
