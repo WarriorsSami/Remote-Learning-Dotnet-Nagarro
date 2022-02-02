@@ -12,8 +12,6 @@ namespace iQuest.BooksAndNews.Application.Subscribers
     /// </summary>
     public class BookLover
     {
-        public BookLover(string name, PrintingOffice printingOffice, ILog log)
-        {
-        }
+        public BookLover(string name, PrintingOffice printingOffice, ILog log) { }
     }
 }

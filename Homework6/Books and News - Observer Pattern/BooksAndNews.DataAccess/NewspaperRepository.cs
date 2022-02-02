@@ -9,28 +9,28 @@ namespace iQuest.BooksAndNews.DataAccess
 {
     public class NewspaperRepository : INewspaperRepository
     {
-        private static readonly List<Newspaper> newspapers;
+        private static readonly List<Newspaper> Newspapers;
 
         static NewspaperRepository()
         {
             var json = File.ReadAllText("Data\\newspapers.json");
-            newspapers = JsonConvert.DeserializeObject<List<Newspaper>>(json);
+            Newspapers = JsonConvert.DeserializeObject<List<Newspaper>>(json);
         }
 
-        private readonly Random random;
+        private readonly Random _random;
 
         public NewspaperRepository()
         {
-            random = new Random();
+            _random = new Random();
         }
 
         public Newspaper GetRandom()
         {
-            if (newspapers.Count == 0)
+            if (Newspapers.Count == 0)
                 return null;
 
-            var index = random.Next(newspapers.Count);
-            return newspapers[index];
+            var index = _random.Next(Newspapers.Count);
+            return Newspapers[index];
         }
     }
 }
