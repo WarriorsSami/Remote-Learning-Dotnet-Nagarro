@@ -13,3 +13,4 @@
 - [x] Observer Pattern, Delegates and Events
 
 ### Second Semester
+- [x] Object Equality, Comparison and IEnumerable
