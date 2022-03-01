@@ -2,7 +2,7 @@
 
 namespace iQuest.Terra
 {
-    public class Country: IEquatable<Country>
+    public class Country: IEquatable<Country>, IComparable<Country>
     {
         public string Name { get; }
 
@@ -32,6 +32,24 @@ namespace iQuest.Terra
         public override int GetHashCode()
         {
             return HashCode.Combine(Name, Capital);
+        }
+
+        public int CompareTo(Country other)
+        {
+            if (ReferenceEquals(this, other)) return 0;
+            if (ReferenceEquals(null, other)) return 1;
+            var nameComparison = string.Compare(Name, other.Name, StringComparison.Ordinal);
+            if (nameComparison != 0) return nameComparison > 0 ? 1 : -1;
+            return string.Compare(Capital, other.Capital, StringComparison.Ordinal);
+        }
+        
+        public int CompareTo(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return 1;
+            if (ReferenceEquals(this, obj)) return 0;
+            return obj is Country other 
+                ? CompareTo(other) 
+                : throw new ArgumentException($"Object must be of type {nameof(Country)}");
         }
     }
 }
