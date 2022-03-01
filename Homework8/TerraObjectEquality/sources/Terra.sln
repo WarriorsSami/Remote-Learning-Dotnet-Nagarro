@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terra", "Terra\Terra.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terra.Tests", "Terra.Tests\Terra.Tests.csproj", "{7CBFC6EB-39C4-4F49-9C52-02CE6E358779}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraPlus", "TerraPlus\TerraPlus.csproj", "{8BD20503-3445-4A05-B4BD-0FB89829BD8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraPlus.Tests", "TerraPlus.Tests\TerraPlus.Tests.csproj", "{17B2E6E5-2B3A-41E3-A680-488E6C5FE81A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7CBFC6EB-39C4-4F49-9C52-02CE6E358779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CBFC6EB-39C4-4F49-9C52-02CE6E358779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CBFC6EB-39C4-4F49-9C52-02CE6E358779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BD20503-3445-4A05-B4BD-0FB89829BD8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD20503-3445-4A05-B4BD-0FB89829BD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD20503-3445-4A05-B4BD-0FB89829BD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD20503-3445-4A05-B4BD-0FB89829BD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B2E6E5-2B3A-41E3-A680-488E6C5FE81A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B2E6E5-2B3A-41E3-A680-488E6C5FE81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B2E6E5-2B3A-41E3-A680-488E6C5FE81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B2E6E5-2B3A-41E3-A680-488E6C5FE81A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

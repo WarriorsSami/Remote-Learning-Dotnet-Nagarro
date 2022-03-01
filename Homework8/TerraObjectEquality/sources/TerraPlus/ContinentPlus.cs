@@ -27,7 +27,19 @@ namespace iQuest.TerraPlus
 
         public IEnumerable<Country> EnumerateCountriesByCapital()
         {
-            throw new NotImplementedException();
+            countries.Sort(
+                (x, y) =>
+                {
+                    if (x == null)
+                    {
+                        return y == null ? 0 : -1;
+                    }
+                    
+                    return y == null 
+                        ? 1 
+                        : string.Compare(x.Capital, y.Capital, StringComparison.Ordinal);
+                });
+            return countries;
         }
     }
 }
