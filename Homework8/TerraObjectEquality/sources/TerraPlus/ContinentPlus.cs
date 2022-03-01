@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using iQuest.Terra;
 
 namespace iQuest.TerraPlus
@@ -27,23 +28,18 @@ namespace iQuest.TerraPlus
 
         public IEnumerable<Country> EnumerateCountriesByCapital()
         {
-            countries.Sort(CountryComparisonExtension.CompareByCapital);
-            return countries;
+            return countries.OrderBy(country => country, new CountryByCapitalComparer());
         }
     }
 
-    public static class CountryComparisonExtension
+    public class CountryByCapitalComparer : IComparer<Country>
     {
-        public static int CompareByCapital(this Country country1, Country country2)
+        public int Compare(Country x, Country y)
         {
-            if (country1 == null)
-            {
-                return country2 == null ? 0 : -1;
-            }
-            
-            return country2 == null 
-                ? 1 
-                : string.Compare(country1.Capital, country2.Capital, StringComparison.Ordinal);
+            if (ReferenceEquals(x, y)) return 0;
+            if (ReferenceEquals(null, y)) return 1;
+            if (ReferenceEquals(null, x)) return -1;
+            return string.Compare(x.Capital, y.Capital, StringComparison.Ordinal);
         }
     }
 }
