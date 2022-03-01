@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
-using VendingMachine.Interfaces.IUseCases;
-using VendingMachine.PresentationLayer;
-using VendingMachine.Repositories;
-using VendingMachine.UseCases;
+﻿using System;
+using System.Collections.Generic;
+using VendingMachine.Business;
+using VendingMachine.Business.Helpers.Payment;
+using VendingMachine.Business.UseCases;
+using VendingMachine.DataAccess.Repositories;
+using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Presentation.Views;
+using VendingMachine.Presentation.Views.PaymentTerminals;
 
 namespace VendingMachine
 {
@@ -19,12 +23,16 @@ namespace VendingMachine
             var mainDisplay = new MainDisplay();
             var shelfView = new ShelfView();
             var buyView = new BuyView();
-            var productRepository = new ProductRepository();
-            var paymentRepository = new PaymentRepository();
+            var productContextFactory = new ProductContextFactory();
+            var productRepository = new ProductPersistentRepository(
+                productContextFactory.CreateDbContext(Array.Empty<string>()));
+            var cashPaymentTerminal = new CashPaymentTerminal();
+            var creditCardPaymentTerminal = new CreditCardPaymentTerminal();
+            var paymentFactory = new PaymentFactory(cashPaymentTerminal, creditCardPaymentTerminal);
             var useCases = new List<IUseCase>();
-            
+
             var vendingMachineApplication = new VendingMachineApplication(useCases, mainDisplay);
-            var paymentUseCase = new PaymentUseCase(vendingMachineApplication, buyView, paymentRepository);
+            var paymentUseCase = new PaymentUseCase(vendingMachineApplication, buyView, paymentFactory);
 
             useCases.AddRange(new IUseCase[]
             {
