@@ -14,3 +14,4 @@
 
 ### Second Semester
 - [x] Object Equality, Comparison and IEnumerable
+- [x] Lambda Expressions, Extension Methods, LINQ and Reflection
