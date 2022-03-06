@@ -5,109 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachine/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachine/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachine/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachine/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachine/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomExceptions/PaymentUseCaseExceptions/InvalidCreditCardIdException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomExceptions/PaymentUseCaseExceptions/InvalidPaymentMethodIdException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/Payment/CashPaymentAlgorithm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/Payment/CashPaymentTerminal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/Payment/CreditCardPaymentAlgorithm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/Payment/CreditCardPaymentTerminal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/Payment/LuhnCardValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/Payment/PaymentMethod.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/Payment/PaymentMethodType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IHelpersPayment/ICardTerminal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IHelpersPayment/ICardValidityAlgorithm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IHelpersPayment/ICashTerminal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IHelpersPayment/IPaymentAlgorithm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IPresentationLayer/IBuyView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IRepositories/IPaymentRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IRepositories/IProductRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IUseCases/IPaymentUseCase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interfaces/IVendingMachineApplication.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Repositories/PaymentRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UseCases/PaymentUseCase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_Bootstrapper.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_BuyProductService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_BuyUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_BuyView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_CancelOrderException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_DisplayBase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_InvalidCredentialsException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_LoginUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_LogoutUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_LookUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_MainDisplay.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_Product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ProductNotFoundException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ProductOutOfStockException.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ProductRepository.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_Program.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_ShelfView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_TurnOffUseCase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/VendingMachine_VendingMachineApplication.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/class.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_cube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_cube_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_down-dir_active.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_down-dir_active_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_fork.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_fork_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_info-circled.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_info-circled_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_minus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_minus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_plus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-minus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-minus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_search-plus_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_sponsor.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_star.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_star_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_up-dir.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_up-dir_active.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_wrench.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/icon_wrench_dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/index.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coveragereport/report.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/BuyUseCaseTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/PaymentUseCaseTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/VendingMachineTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VendingMachineTests/VendingMachineTests.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources/0014a1a8-d797-4dcd-8b67-4c9a5256a988.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources/476848cd-57c3-4ed4-8ef2-56887ea3527e.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomExceptions/BuyUseCaseExceptions/CancelOrderException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomExceptions/BuyUseCaseExceptions/CancelOrderException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/ProductRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces/IUseCases/IUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/BuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationLayer/MainDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/MainDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/BuyUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LoginUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LogoutUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LogoutUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/LookUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/LookUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UseCases/TurnOffUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UseCases/TurnOffUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachineApplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,15 +41,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../VendingMachineTests/VendingMachineTests.csproj" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Inspections-ASP.NET" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.VendingMachine">
+  <component name="RunManager">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -176,6 +85,8 @@
       <workItem from="1638096116032" duration="5010000" />
       <workItem from="1638175878857" duration="1278000" />
       <workItem from="1639074760419" duration="1012000" />
+      <workItem from="1643014888498" duration="91000" />
+      <workItem from="1643015080996" duration="367000" />
     </task>
     <servers />
   </component>

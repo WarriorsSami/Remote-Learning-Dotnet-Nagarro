@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\VendingMachine.Business\VendingMachine.Business.csproj" />
+      <ProjectReference Include="..\VendingMachine.DataAccess\VendingMachine.DataAccess.csproj" />
+      <ProjectReference Include="..\VendingMachine.Domain\VendingMachine.Domain.csproj" />
+    </ItemGroup>
+    
+</Project>
