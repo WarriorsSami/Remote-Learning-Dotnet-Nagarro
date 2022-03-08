@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace VendingMachine
 {
     internal static class Program
@@ -20,7 +18,7 @@ namespace VendingMachine
             }
         }
 
-        public static void DisplayError(Exception ex)
+        private static void DisplayError(Exception ex)
         {
             var oldColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
@@ -28,7 +26,7 @@ namespace VendingMachine
             Console.ForegroundColor = oldColor;
         }
 
-        public static void Pause()
+        private static void Pause()
         {
             Console.ReadKey(true);
         }
