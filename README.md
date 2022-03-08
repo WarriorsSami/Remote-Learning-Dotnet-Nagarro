@@ -14,3 +14,5 @@
 
 ### Second Semester
 - [x] Object Equality, Comparison and IEnumerable
+- [x] Lambda Expressions, Extension Methods, LINQ and Reflection
+- [x] IDisposable and DI Frameworks (Autofac vs .NET Core DI)
