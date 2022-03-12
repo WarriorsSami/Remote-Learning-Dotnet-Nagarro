@@ -4,17 +4,7 @@
     <projectFile>VendingMachine.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources/0014a1a8-d797-4dcd-8b67-4c9a5256a988.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/dataSources/476848cd-57c3-4ed4-8ef2-56887ea3527e.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +77,7 @@
       <workItem from="1639074760419" duration="1012000" />
       <workItem from="1643014888498" duration="91000" />
       <workItem from="1643015080996" duration="367000" />
+      <workItem from="1647074381618" duration="122000" />
     </task>
     <servers />
   </component>

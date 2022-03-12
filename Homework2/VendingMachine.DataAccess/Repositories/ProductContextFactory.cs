@@ -10,9 +10,9 @@ namespace VendingMachine.DataAccess.Repositories
         public ProductContext CreateDbContext(string[] args)
         {
             var configuration = new ConfigurationBuilder()
-                .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
+                .Add(new JsonConfigurationSource { Path = args[0], ReloadOnChange = true })
                 .Build(); 
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            var connectionString = configuration.GetConnectionString(args[1]);
                         
             var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
             optionsBuilder.UseNpgsql(connectionString);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
@@ -12,17 +13,32 @@ namespace VendingMachine.Business
 {
     internal class VendingMachineApplication: IVendingMachineApplication
     {
-        private readonly List<IUseCase> _useCases;
+        private readonly List<IUseCase> _useCases = new();
         private readonly IMainDisplay _mainDisplay;
 
         private bool _turnOffWasRequested;
 
         public bool UserIsLoggedIn { get; set; }
 
-        public VendingMachineApplication(List<IUseCase> useCases, IMainDisplay mainDisplay)
+        public VendingMachineApplication(IMainDisplay mainDisplay)
         {
-            _useCases = useCases ?? throw new ArgumentNullException(nameof(useCases));
             _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
+        }
+        
+        public void AddUseCase(IUseCase useCase)
+        {
+            if (useCase == null)
+                throw new ArgumentNullException(nameof(useCase));
+
+            _useCases.Add(useCase);
+        }
+        
+        public void AddRangeUseCase(IEnumerable<IUseCase> useCases)
+        {
+            if (useCases == null)
+                throw new ArgumentNullException(nameof(useCases));
+
+            _useCases.AddRange(useCases);
         }
 
         public void Run()
@@ -41,43 +57,43 @@ namespace VendingMachine.Business
                 }
                 catch (InvalidCredentialsException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (ProductNotFoundException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (ProductOutOfStockException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (CancelOrderException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (InvalidPaymentMethodIdException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (InvalidCreditCardIdException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (FormatException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (Exception e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
             }
         }

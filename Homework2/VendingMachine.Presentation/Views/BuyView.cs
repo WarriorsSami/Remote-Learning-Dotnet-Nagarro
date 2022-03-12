@@ -8,19 +8,19 @@ using VendingMachine.Domain.Presentation.IViews;
 [assembly: InternalsVisibleTo("VendingMachine")]
 namespace VendingMachine.Presentation.Views
 {
-    internal class BuyView: DisplayBase, IBuyView
+    internal class BuyView: IBuyView
     {
         public void DisplayProduct(Product product)
         {
-            DisplayLine("You have bought the following product:", ConsoleColor.Cyan);
-            DisplayLine($"{product.Name} - price: {product.Price}$, " +
+            DisplayBase.DisplayLine("You have bought the following product:", ConsoleColor.Cyan);
+            DisplayBase.DisplayLine($"{product.Name} - price: {product.Price}$, " +
                         $"colId: {product.ColumnId}, qty: {product.Quantity}",
                         ConsoleColor.Green);
         }
 
         public string AskForProductCode()
         {
-            DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
+            DisplayBase.DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
             var productCode = Console.ReadLine() ?? string.Empty;
 
             return productCode;
@@ -30,13 +30,13 @@ namespace VendingMachine.Presentation.Views
         {
             foreach (var paymentMethod in paymentMethods)
             {
-                DisplayLine($"{(int)paymentMethod.Id} - {paymentMethod.Name}", ConsoleColor.Green);
+                DisplayBase.DisplayLine($"{(int)paymentMethod.Id} - {paymentMethod.Name}", ConsoleColor.Green);
             }
         }
 
         public int AskForPaymentMethod(IEnumerable<PaymentMethod> paymentMethods)
         {
-            DisplayLine("Please select a payment method:", ConsoleColor.Yellow);
+            DisplayBase.DisplayLine("Please select a payment method:", ConsoleColor.Yellow);
             DisplayPaymentMethods(paymentMethods);
             
             var paymentMethodId = int.Parse(Console.ReadLine() ?? "0");
@@ -45,7 +45,7 @@ namespace VendingMachine.Presentation.Views
 
         public void DisplayCommand(string command)
         {
-            DisplayLine(command, ConsoleColor.Magenta);
+            DisplayBase.DisplayLine(command, ConsoleColor.Magenta);
         }
     }
 }
