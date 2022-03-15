@@ -61,14 +61,6 @@ namespace UnitTests
         }
         
         [Test]
-        public void TestContainsKey_WhenKeyIsNull()
-        {
-            StubClass key = null;
-            Assert.Throws<NullReferenceException>(
-                () => _hashTable.ContainsKey(key));
-        }
-        
-        [Test]
         public void TestGetValue_WhenKeyIsNotInHashTable()
         {
             var key = new StubClass("Stub 5", 5, true);
@@ -81,14 +73,6 @@ namespace UnitTests
         {
             var key = new StubClass("Stub 1", 1, true);
             Assert.AreEqual("1", _hashTable.Get(key));
-        }
-        
-        [Test]
-        public void TestGetValue_WhenKeyIsNull()
-        {
-            StubClass key = null;
-            Assert.Throws<NullReferenceException>(
-                () => _hashTable.Get(key));
         }
         
         [Test]
@@ -110,15 +94,6 @@ namespace UnitTests
         }
         
         [Test]
-        public void TestPut_WhenKeyIsNull()
-        {
-            StubClass key = null;
-            var value = "5";
-            Assert.Throws<NullReferenceException>(
-                () => _hashTable.Put(key, value));
-        }
-        
-        [Test]
         public void TestRemove_WhenKeyIsNotInHashTable()
         {
             var key = new StubClass("Stub 5", 5, true);
@@ -131,14 +106,6 @@ namespace UnitTests
             var key = new StubClass("Stub 1", 1, true);
             Assert.IsTrue(_hashTable.Remove(key));
             Assert.IsFalse(_hashTable.ContainsKey(key));
-        }
-        
-        [Test]
-        public void TestRemove_WhenKeyIsNull()
-        {
-            StubClass key = null;
-            Assert.Throws<NullReferenceException>(
-                () => _hashTable.Remove(key));
         }
         
         [Test]

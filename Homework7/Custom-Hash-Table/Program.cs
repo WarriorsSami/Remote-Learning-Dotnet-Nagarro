@@ -7,6 +7,7 @@ var map = new SmHashTable<string, int>();
 map.Put("a", 1);
 map.Put("b", 2);
 map.Put("c", 3);
+map.Put(null, 4);
 
 Console.WriteLine(map.Get("a"));
 Console.WriteLine(map.Count());

@@ -6,7 +6,6 @@ namespace Custom_Hash_Table.HashTableAPI
 {
     internal class SmHashTable<TKey, TValue>: 
         IHashTable<TKey, TValue>, IEnumerable<Tuple<int, TValue>>
-        where TKey: notnull
     {
         private readonly List<Tuple<int, TValue>> _table = new();
 
@@ -29,7 +28,7 @@ namespace Custom_Hash_Table.HashTableAPI
 
         public TValue Get(TKey key)
         {
-            var keyHash = key.GetHashCode(); 
+            var keyHash = key?.GetHashCode(); 
             foreach (var (currentHash, value) in _table) 
             { 
                 if (currentHash == keyHash) 
@@ -43,60 +42,46 @@ namespace Custom_Hash_Table.HashTableAPI
 
         public bool Put(TKey key, TValue value)
         {
-                var keyHash = key.GetHashCode();
-                foreach (var (currentHash, _) in _table)
+            var keyHash = key?.GetHashCode();
+            foreach (var (currentHash, _) in _table)
+            {
+                if (currentHash == keyHash)
                 {
-                    if (currentHash == keyHash)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
+            }
 
-                _table.Add(new Tuple<int, TValue>(keyHash, value));
-                return true;
+            _table.Add(new Tuple<int, TValue>(keyHash ?? 0, value));
+            return true;
         }
 
         public bool Remove(TKey key)
         {
-            try
+            var keyHash = key?.GetHashCode();
+            foreach (var (currentHash, value) in _table)
             {
-                var keyHash = key.GetHashCode();
-                foreach (var (currentHash, value) in _table)
+                if (currentHash == keyHash)
                 {
-                    if (currentHash == keyHash)
-                    {
-                        return _table
-                            .Remove(new Tuple<int, TValue>(keyHash, value));
-                    }
+                    return _table
+                        .Remove(new Tuple<int, TValue>((int) keyHash, value));
                 }
+            }
 
-                return false;
-            }
-            catch (NullReferenceException e)
-            {
-                throw new NullReferenceException(e.Message);
-            }
+            return false;
         }
 
         public bool ContainsKey(TKey key)
         {
-            try
+            var keyHash = key?.GetHashCode();
+            foreach (var (currentHash, _) in _table)
             {
-                var keyHash = key.GetHashCode();
-                foreach (var (currentHash, _) in _table)
+                if (currentHash == keyHash)
                 {
-                    if (currentHash == keyHash)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
+            }
 
-                return false;
-            }
-            catch (NullReferenceException e)
-            {
-                throw new NullReferenceException(e.Message);
-            }
+            return false;
         }
 
         public int Count()
