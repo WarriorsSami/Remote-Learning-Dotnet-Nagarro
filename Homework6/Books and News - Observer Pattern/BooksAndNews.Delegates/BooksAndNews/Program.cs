@@ -1,8 +1,8 @@
 ﻿using System;
-using iQuest.BooksAndNews.Application;
-using iQuest.BooksAndNews.DataAccess;
+using BooksAndNews.Application;
+using BooksAndNews.DataAccess;
 
-namespace iQuest.BooksAndNews
+namespace BooksAndNews
 {
     internal static class Program
     {

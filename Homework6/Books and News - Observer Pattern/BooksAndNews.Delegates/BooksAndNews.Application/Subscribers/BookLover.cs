@@ -1,7 +1,8 @@
-﻿using iQuest.BooksAndNews.Application.Publications;
-using iQuest.BooksAndNews.Application.Publishers;
+﻿using BooksAndNews.Application.Publishers;
+using BooksAndNews.Domain;
+using BooksAndNews.Domain.Publications;
 
-namespace iQuest.BooksAndNews.Application.Subscribers
+namespace BooksAndNews.Application.Subscribers
 {
     // todo: This class must be implemented.
 

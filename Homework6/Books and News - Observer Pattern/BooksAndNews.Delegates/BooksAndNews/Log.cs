@@ -1,6 +1,7 @@
 ﻿using System;
+using BooksAndNews.Domain;
 
-namespace iQuest.BooksAndNews
+namespace BooksAndNews
 {
     /// <summary>
     /// This class is responsible to store the received message.

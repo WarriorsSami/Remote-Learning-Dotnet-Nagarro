@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using iQuest.BooksAndNews.Application.DataAccess;
-using iQuest.BooksAndNews.Application.Publishers;
-using iQuest.BooksAndNews.Application.Subscribers;
+using BooksAndNews.Application.Publishers;
+using BooksAndNews.Application.Subscribers;
+using BooksAndNews.Domain;
+using BooksAndNews.Domain.DataAccess;
 
-namespace iQuest.BooksAndNews.Application
+namespace BooksAndNews.Application
 {
     public class PrintingUseCase
     {

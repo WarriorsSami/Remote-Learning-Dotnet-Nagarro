@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using iQuest.BooksAndNews.Application.DataAccess;
-using iQuest.BooksAndNews.Application.Publications;
+using BooksAndNews.Domain.DataAccess;
+using BooksAndNews.Domain.Publications;
 using Newtonsoft.Json;
 
-namespace iQuest.BooksAndNews.DataAccess
+namespace BooksAndNews.DataAccess
 {
     public class NewspaperRepository : INewspaperRepository
     {
-        private static readonly List<Newspaper> Newspapers;
+        private static readonly List<Newspaper>? Newspapers;
 
         static NewspaperRepository()
         {
