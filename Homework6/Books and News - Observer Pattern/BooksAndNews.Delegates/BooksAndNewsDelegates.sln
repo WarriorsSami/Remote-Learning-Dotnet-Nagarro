@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksAndNews.DataAccess", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksAndNews.Application", "BooksAndNews.Application\BooksAndNews.Application.csproj", "{E6F82DDE-D60F-4E77-93C5-F4043AC8682B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksAndNews.Domain", "BooksAndNews.Domain\BooksAndNews.Domain.csproj", "{02FABB49-01C4-4E8C-AA73-E54185C153CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,14 @@ Global
 		{E6F82DDE-D60F-4E77-93C5-F4043AC8682B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6F82DDE-D60F-4E77-93C5-F4043AC8682B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6F82DDE-D60F-4E77-93C5-F4043AC8682B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A54CC4A-9075-4E1C-BD1B-051E5C77DE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A54CC4A-9075-4E1C-BD1B-051E5C77DE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A54CC4A-9075-4E1C-BD1B-051E5C77DE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A54CC4A-9075-4E1C-BD1B-051E5C77DE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02FABB49-01C4-4E8C-AA73-E54185C153CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02FABB49-01C4-4E8C-AA73-E54185C153CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02FABB49-01C4-4E8C-AA73-E54185C153CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02FABB49-01C4-4E8C-AA73-E54185C153CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

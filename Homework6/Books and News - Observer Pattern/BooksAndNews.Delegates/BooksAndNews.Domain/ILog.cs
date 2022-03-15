@@ -1,4 +1,4 @@
-﻿namespace iQuest.BooksAndNews.Application
+﻿namespace BooksAndNews.Domain
 {
     public interface ILog
     {

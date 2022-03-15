@@ -1,5 +1,4 @@
 ﻿using System;
-using iQuest.BooksAndNews.Application;
 
 namespace iQuest.BooksAndNews
 {
