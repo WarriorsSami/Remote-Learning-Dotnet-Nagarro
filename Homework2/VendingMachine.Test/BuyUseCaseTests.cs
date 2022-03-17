@@ -3,10 +3,10 @@ using Moq;
 using NUnit.Framework;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.UseCases;
-using VendingMachine.DataAccess.Models;
 using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Test

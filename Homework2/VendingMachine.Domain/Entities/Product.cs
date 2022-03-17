@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace VendingMachine.DataAccess.Models
+namespace VendingMachine.Domain.Entities
 {
     [Table("products")]
     public class Product

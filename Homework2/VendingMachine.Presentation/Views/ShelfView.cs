@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using VendingMachine.DataAccess.Models;
+using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Presentation.Views

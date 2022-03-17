@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using VendingMachine.Business.Helpers.Payment;
-using VendingMachine.DataAccess.Models;
+using VendingMachine.Domain.Business.IHelpersPayment;
+using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.IViews;
 
 [assembly: InternalsVisibleTo("VendingMachine")]
@@ -26,7 +26,7 @@ namespace VendingMachine.Presentation.Views
             return productCode;
         }
 
-        private void DisplayPaymentMethods(IEnumerable<PaymentMethod> paymentMethods)
+        private void DisplayPaymentMethods(IEnumerable<IPaymentMethod> paymentMethods)
         {
             foreach (var paymentMethod in paymentMethods)
             {
@@ -34,7 +34,7 @@ namespace VendingMachine.Presentation.Views
             }
         }
 
-        public int AskForPaymentMethod(IEnumerable<PaymentMethod> paymentMethods)
+        public int AskForPaymentMethod(IEnumerable<IPaymentMethod> paymentMethods)
         {
             DisplayBase.DisplayLine("Please select a payment method:", ConsoleColor.Yellow);
             DisplayPaymentMethods(paymentMethods);

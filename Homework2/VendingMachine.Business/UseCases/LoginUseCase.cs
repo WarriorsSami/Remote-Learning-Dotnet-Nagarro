@@ -27,7 +27,7 @@ namespace VendingMachine.Business.UseCases
         {
             var password = _mainDisplay.AskForPassword();
 
-            if (password == "supercalifragilisticexpialidocious")
+            if (password == "super")
                 _application.UserIsLoggedIn = true;
             else
                 throw new InvalidCredentialsException("Invalid password");

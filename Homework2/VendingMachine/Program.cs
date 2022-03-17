@@ -30,7 +30,14 @@ try
         .RegisterType<CreditCardPaymentTerminal>()
         .As<ICardTerminal>()
         .InstancePerLifetimeScope();
-    builder.RegisterType<PaymentFactory>().As<IPaymentFactory>().InstancePerLifetimeScope();
+    builder.RegisterType<CashPaymentAlgorithm>().As<IPaymentAlgorithm>().InstancePerLifetimeScope();
+    builder
+        .RegisterType<CreditCardPaymentAlgorithm>()
+        .As<IPaymentAlgorithm>()
+        .InstancePerLifetimeScope();
+    builder.RegisterType<CashPaymentMethod>().As<IPaymentMethod>().InstancePerLifetimeScope();
+    builder.RegisterType<CreditCardPaymentMethod>().As<IPaymentMethod>().InstancePerLifetimeScope();
+    builder.RegisterType<LuhnCardValidator>().As<ICardValidityAlgorithm>().InstancePerLifetimeScope();
 
     var configuration = new ConfigurationBuilder()
         .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })

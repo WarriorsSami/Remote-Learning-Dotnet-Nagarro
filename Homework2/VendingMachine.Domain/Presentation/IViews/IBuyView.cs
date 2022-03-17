@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using VendingMachine.Business.Helpers.Payment;
-using VendingMachine.DataAccess.Models;
+using VendingMachine.Domain.Business.IHelpersPayment;
+using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.Domain.Presentation.IViews
 {
@@ -8,7 +8,7 @@ namespace VendingMachine.Domain.Presentation.IViews
     {
         void DisplayProduct(Product product);
         string AskForProductCode();
-        int AskForPaymentMethod(IEnumerable<PaymentMethod> paymentMethods);
+        int AskForPaymentMethod(IEnumerable<IPaymentMethod> paymentMethods);
         void DisplayCommand(string command);
     }
 }

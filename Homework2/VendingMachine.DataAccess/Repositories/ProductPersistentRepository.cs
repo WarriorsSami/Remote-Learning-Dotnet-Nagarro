@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using VendingMachine.DataAccess.Models;
 using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.DataAccess.Repositories
 {

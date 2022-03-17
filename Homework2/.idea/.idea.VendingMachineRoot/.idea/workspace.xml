@@ -5,20 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f2d2e7-0d07-48cb-97aa-7b58f7eabc97" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IHelpersPayment/CashPaymentMethod.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IHelpersPayment/CreditCardPaymentMethod.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IHelpersPayment/IPaymentMethod.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductContextFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductContextFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IVendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IVendingMachineApplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IDisplayBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IMainDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IMainDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/Helpers/Payment/CashPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/Helpers/Payment/CashPaymentAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/Helpers/Payment/CreditCardPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/Helpers/Payment/CreditCardPaymentAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/Helpers/Payment/PaymentFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/PaymentUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/PaymentUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductContextFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IHelpersPayment/IPaymentAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IHelpersPayment/IPaymentAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IHelpersPayment/IPaymentFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/PaymentMethod.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/PaymentMethodType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IHelpersPayment/PaymentMethodType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IShelfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IShelfView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/DisplayBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/DisplayBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/MainDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/MainDisplay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ShelfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ShelfView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Bootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/PaymentUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/PaymentUseCaseTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +50,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85fd7feb2da340f49ece7754dc3f94a54cc00/F/RegistrationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/asus/RiderProjects/Remote-Learning-Dotnet-Nagarro/Homework2/VendingMachine/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="248bYpTC6pgiHGK8PAul31HMyyu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -88,6 +99,8 @@
       <workItem from="1643015225581" duration="156000" />
       <workItem from="1643015526508" duration="395000" />
       <workItem from="1647074523040" duration="10850000" />
+      <workItem from="1647365640467" duration="467000" />
+      <workItem from="1647517616487" duration="3909000" />
     </task>
     <servers />
   </component>
@@ -107,6 +120,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

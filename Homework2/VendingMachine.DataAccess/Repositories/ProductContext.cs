@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
-using VendingMachine.DataAccess.Models;
+using VendingMachine.Domain.Entities;
 
 [assembly: InternalsVisibleTo("VendingMachine")]
 namespace VendingMachine.DataAccess.Repositories

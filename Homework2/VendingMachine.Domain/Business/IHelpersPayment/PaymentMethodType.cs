@@ -1,4 +1,4 @@
-﻿namespace VendingMachine.Business.Helpers.Payment
+﻿namespace VendingMachine.Domain.Business.IHelpersPayment
 {
     public enum PaymentMethodType
     {
