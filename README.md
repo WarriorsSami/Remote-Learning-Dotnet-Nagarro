@@ -16,4 +16,5 @@
 - [x] Object Equality, Comparison and IEnumerable
 - [x] Lambda Expressions, Extension Methods, LINQ and Reflection
 - [x] IDisposable and DI Frameworks (Autofac vs .NET Core DI)
-- [x] SRP and Factory Pattern
+- [x] SRP, Command and Factory Method Pattern
+- [x] Serialization / Deserialization
