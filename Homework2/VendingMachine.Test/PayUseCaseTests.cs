@@ -12,22 +12,18 @@ using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 
 namespace VendingMachine.Test
 {
-    internal class PaymentUseCaseTests
+    internal class PayUseCaseTests
     {
-        private readonly IVendingMachineApplication _application;
-
         private readonly ICardValidityAlgorithm _cardValidityAlgorithm;
 
         private readonly IEnumerable<IPaymentMethod> _listOfPaymentMethods;
 
-        public PaymentUseCaseTests()
+        public PayUseCaseTests()
         {
             _cardValidityAlgorithm = new LuhnCardValidator();
 
             var mockApplication = new Mock<IVendingMachineApplication>();
             mockApplication.Setup(x => x.UserIsLoggedIn).Returns(false);
-
-            _application = mockApplication.Object;
 
             _listOfPaymentMethods = new List<IPaymentMethod>
             {
@@ -37,7 +33,7 @@ namespace VendingMachine.Test
         }
 
         [Test]
-        public void SuccessfulCashPaymentAttempt()
+        public void NotHavingThrown_WhenSuccessfulCashPaymentAttemptIsMade()
         {
             const int requestedPaymentMethodId = 0;
             const decimal requestedPrice = 10.0m;
@@ -80,8 +76,7 @@ namespace VendingMachine.Test
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
                 .Returns(requestedPaymentMethodId);
 
-            var paymentUseCase = new PaymentUseCase(
-                _application,
+            var paymentUseCase = new PayUseCase(
                 mockBuyView.Object,
                 listOfPaymentAlgorithm,
                 _listOfPaymentMethods
@@ -91,7 +86,7 @@ namespace VendingMachine.Test
         }
 
         [Test]
-        public void FailedPaymentAttempt_DueToInvalidPaymentMethodIdProvided()
+        public void HavingThrownInvalidPaymentMethodIdException_WhenAnInvalidPaymentMethodIdIsProvided()
         {
             const decimal requestedPrice = 10.0m;
             const int requestedPaymentMethodId = 2;
@@ -115,8 +110,7 @@ namespace VendingMachine.Test
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
                 .Returns(requestedPaymentMethodId);
 
-            var paymentUseCase = new PaymentUseCase(
-                _application,
+            var paymentUseCase = new PayUseCase(
                 mockBuyView.Object,
                 listOfPaymentAlgorithm,
                 _listOfPaymentMethods
@@ -128,7 +122,7 @@ namespace VendingMachine.Test
         }
 
         [Test]
-        public void SuccessfulCreditCardPaymentAttempt()
+        public void NotHavingThrown_WhenSuccessfulCreditCardPaymentAttemptIsMade()
         {
             const decimal requestedPrice = 10.0m;
             const string requestedCardNumber = "79927398713";
@@ -154,8 +148,7 @@ namespace VendingMachine.Test
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
                 .Returns(requestedPaymentMethodId);
 
-            var paymentUseCase = new PaymentUseCase(
-                _application,
+            var paymentUseCase = new PayUseCase(
                 mockBuyView.Object,
                 listOfPaymentAlgorithm,
                 _listOfPaymentMethods
@@ -165,7 +158,7 @@ namespace VendingMachine.Test
         }
 
         [Test]
-        public void FailedCreditCardPaymentAttempt_DueToInvalidCreditCardIdProvided()
+        public void HavingThrownInvalidCreditCardIdException_WhenAnInvalidCreditCardIdIsProvided()
         {
             const decimal requestedPrice = 10.0m;
             const string requestedCardNumber = "7992739871";
@@ -191,8 +184,7 @@ namespace VendingMachine.Test
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
                 .Returns(requestedPaymentMethodId);
 
-            var paymentUseCase = new PaymentUseCase(
-                _application,
+            var paymentUseCase = new PayUseCase(
                 mockBuyView.Object,
                 listOfPaymentAlgorithm,
                 _listOfPaymentMethods
@@ -204,7 +196,7 @@ namespace VendingMachine.Test
         }
 
         [Test]
-        public void FailedCreditCardPaymentAttempt_DueToInvalidCreditCardIdFormat()
+        public void HavingThrownFormatException_WhenAnInvalidCreditCardIdFormatIsProvided()
         {
             const decimal requestedPrice = 10.0m;
             const string requestedCardNumber = "7992739871asd";
@@ -230,8 +222,7 @@ namespace VendingMachine.Test
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
                 .Returns(requestedPaymentMethodId);
 
-            var paymentUseCase = new PaymentUseCase(
-                _application,
+            var paymentUseCase = new PayUseCase(
                 mockBuyView.Object,
                 listOfPaymentAlgorithm,
                 _listOfPaymentMethods

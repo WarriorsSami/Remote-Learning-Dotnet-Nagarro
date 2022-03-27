@@ -5,14 +5,14 @@ using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.LoginUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Domain.Business;
-using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.Presentation;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business
 {
-    internal class VendingMachineApplication: IVendingMachineApplication
+    internal class VendingMachineApplication : IVendingMachineApplication
     {
-        private readonly List<IUseCase> _useCases = new();
+        private readonly List<ICommand> _commands = new();
         private readonly IMainDisplay _mainDisplay;
 
         private bool _turnOffWasRequested;
@@ -23,21 +23,13 @@ namespace VendingMachine.Business
         {
             _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
         }
-        
-        public void AddUseCase(IUseCase useCase)
-        {
-            if (useCase == null)
-                throw new ArgumentNullException(nameof(useCase));
 
-            _useCases.Add(useCase);
-        }
-        
-        public void AddRangeUseCase(IEnumerable<IUseCase> useCases)
+        public void AddRangeCommand(IEnumerable<ICommand> commands)
         {
-            if (useCases == null)
-                throw new ArgumentNullException(nameof(useCases));
+            if (commands == null)
+                throw new ArgumentNullException(nameof(commands));
 
-            _useCases.AddRange(useCases);
+            _commands.AddRange(commands);
         }
 
         public void Run()
@@ -46,13 +38,12 @@ namespace VendingMachine.Business
 
             while (!_turnOffWasRequested)
             {
-                var availableUseCases = _useCases
-                    .Where(x => x.CanExecute);
+                var availableCommands = _commands.Where(x => x.CanExecute);
 
-                var useCase = _mainDisplay.ChooseCommand(availableUseCases);
+                var command = _mainDisplay.ChooseCommand(availableCommands);
                 try
                 {
-                    useCase.Execute();
+                    command.Execute();
                 }
                 catch (InvalidCredentialsException e)
                 {

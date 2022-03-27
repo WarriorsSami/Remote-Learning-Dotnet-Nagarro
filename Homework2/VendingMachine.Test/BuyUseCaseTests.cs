@@ -4,38 +4,29 @@ using NUnit.Framework;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business;
-using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.DataAccess.IRepositories;
 using VendingMachine.Domain.Entities;
+using VendingMachine.Domain.Presentation;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Test
 {
     internal class BuyUseCaseTests
     {
-        private readonly IVendingMachineApplication _application;
-        private readonly IPaymentUseCase _paymentUseCase;
+        private readonly ICommand _payCommand;
         private readonly IProductRepository _productRepository;
-        
+
         public BuyUseCaseTests()
         {
-            var mockApplication = new Mock<IVendingMachineApplication>(); 
-            mockApplication.Setup(x =>
-                x.UserIsLoggedIn
-                ).Returns(false);
-            
-            _application = mockApplication.Object;
-            
-            var mockPaymentUseCase = new Mock<IPaymentUseCase>();
-            mockPaymentUseCase.Setup(x =>
-                x.Execute(It.IsAny<decimal>())
-                ).Verifiable(); 
-            mockPaymentUseCase.Setup(x =>
-                x.CanExecute
-                ).Returns(true);
-            
-            _paymentUseCase = mockPaymentUseCase.Object;
-            
+            var mockApplication = new Mock<IVendingMachineApplication>();
+            mockApplication.Setup(x => x.UserIsLoggedIn).Returns(false);
+
+            var mockPayCommand = new Mock<ICommand>();
+            mockPayCommand.Setup(x => x.Execute()).Verifiable();
+            mockPayCommand.Setup(x => x.CanExecute).Returns(true);
+
+            _payCommand = mockPayCommand.Object;
+
             var listOfProduct = new List<Product>
             {
                 new()
@@ -95,33 +86,33 @@ namespace VendingMachine.Test
                     Quantity = 0
                 }
             };
-            
+
             var mockProductRepository = new Mock<IProductRepository>();
-            
-            mockProductRepository.Setup(x =>
-                x.GetAll()
-                ).Returns(listOfProduct);
-            
-            mockProductRepository.Setup(x =>
-                x.GetById(It.IsAny<int>())
-                ).Returns((int id) => listOfProduct.Find(x => x.ColumnId == id));
-            
-            mockProductRepository.Setup(x =>
-                x.UpdateQuantity(It.IsAny<int>(), It.IsAny<int>())
-                ).Callback((int id, int quantity) =>
-                {
-                    var product = listOfProduct.Find(x => x.ColumnId == id);
-                    if (product != null)
+
+            mockProductRepository.Setup(x => x.GetAll()).Returns(listOfProduct);
+
+            mockProductRepository
+                .Setup(x => x.GetById(It.IsAny<int>()))
+                .Returns((int id) => listOfProduct.Find(x => x.ColumnId == id));
+
+            mockProductRepository
+                .Setup(x => x.UpdateQuantity(It.IsAny<int>(), It.IsAny<int>()))
+                .Callback(
+                    (int id, int quantity) =>
                     {
-                        product.Quantity = quantity;
+                        var product = listOfProduct.Find(x => x.ColumnId == id);
+                        if (product != null)
+                        {
+                            product.Quantity = quantity;
+                        }
                     }
-                });
-           
+                );
+
             _productRepository = mockProductRepository.Object;
         }
-        
+
         [Test]
-        public void BuyExistingProduct()
+        public void HavingPersistedProductQuantity_WhenAnExistingProductIsBought()
         {
             const string requestedId = "0";
             var productExpected = new Product
@@ -131,75 +122,55 @@ namespace VendingMachine.Test
                 Price = 1.5m,
                 Quantity = 8
             };
-            
+
             var mockBuyView = new Mock<IBuyView>();
-            mockBuyView.Setup(x =>
-                x.AskForProductCode()
-                ).Returns(requestedId);
-            
-            var buyUseCase = new BuyUseCase(_application, 
-                mockBuyView.Object,
-                _productRepository,
-                _paymentUseCase);
+            mockBuyView.Setup(x => x.AskForProductCode()).Returns(requestedId);
+
+            var buyUseCase = new BuyUseCase(mockBuyView.Object, _productRepository, _payCommand);
 
             buyUseCase.Execute();
             var result = _productRepository.GetById(int.Parse(requestedId));
- 
+
             Assert.AreEqual(productExpected.Quantity, result?.Quantity);
         }
-        
+
         [Test]
-        public void BuyNonExistingProduct()
+        public void HavingThrownProductNotFoundException_WhenANonExistingProductIsBought()
         {
             const string requestedId = "10";
-            
+
             var mockBuyView = new Mock<IBuyView>();
-            mockBuyView.Setup(x =>
-                x.AskForProductCode())
-                .Returns(requestedId);
-            
-            var buyUseCase = new BuyUseCase(_application,
-                mockBuyView.Object,
-                _productRepository,
-                _paymentUseCase);
+            mockBuyView.Setup(x => x.AskForProductCode()).Returns(requestedId);
+
+            var buyUseCase = new BuyUseCase(mockBuyView.Object, _productRepository, _payCommand);
 
             Assert.Throws<ProductNotFoundException>(() => buyUseCase.Execute());
         }
 
         [Test]
-        public void BuyOutOfStockProduct()
+        public void HavingThrownProductOutOfStockException_WhenRequiredProductIsOutOfStock()
         {
             const string requestedId = "8";
-            
+
             var mockBuyView = new Mock<IBuyView>();
-            mockBuyView.Setup(x =>
-                x.AskForProductCode())
-                .Returns(requestedId);
-            
-            var buyUseCase = new BuyUseCase(_application,
-                mockBuyView.Object,
-                _productRepository,
-                _paymentUseCase);
-            
-            Assert.Throws<ProductOutOfStockException>(() => buyUseCase.Execute()); 
+            mockBuyView.Setup(x => x.AskForProductCode()).Returns(requestedId);
+
+            var buyUseCase = new BuyUseCase(mockBuyView.Object, _productRepository, _payCommand);
+
+            Assert.Throws<ProductOutOfStockException>(() => buyUseCase.Execute());
         }
-        
+
         [Test]
-        public void CancelOrder()
+        public void HavingThrownCancelOrderException_WhenOrderIsCanceled()
         {
             const string requestedId = "";
-            
+
             var mockBuyView = new Mock<IBuyView>();
-            mockBuyView.Setup(x =>
-                x.AskForProductCode())
-                .Returns(requestedId);
-            
-            var buyUseCase = new BuyUseCase(_application,
-                mockBuyView.Object,
-                _productRepository,
-                _paymentUseCase);
-            
-            Assert.Throws<CancelOrderException>(() => buyUseCase.Execute());  
+            mockBuyView.Setup(x => x.AskForProductCode()).Returns(requestedId);
+
+            var buyUseCase = new BuyUseCase(mockBuyView.Object, _productRepository, _payCommand);
+
+            Assert.Throws<CancelOrderException>(() => buyUseCase.Execute());
         }
     }
 }

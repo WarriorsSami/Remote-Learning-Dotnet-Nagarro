@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.Presentation;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Presentation.Views
 {
     internal class MainDisplay : IMainDisplay 
     {
-        public IUseCase ChooseCommand(IEnumerable<IUseCase> useCases)
+        public ICommand ChooseCommand(IEnumerable<ICommand> commands)
         {
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Available commands:");
             Console.WriteLine();
             
-            var enumerable = useCases.ToList();
+            var enumerable = commands.ToList();
             foreach (var useCase in enumerable)
                 DisplayUseCase(useCase);
 
@@ -29,16 +29,16 @@ namespace VendingMachine.Presentation.Views
             }
         }
 
-        private static void DisplayUseCase(IUseCase useCase)
+        private static void DisplayUseCase(ICommand commands)
         {
             var oldColor = Console.ForegroundColor;
 
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write(useCase.Name);
+            Console.Write(commands.Name);
 
             Console.ForegroundColor = oldColor;
 
-            Console.WriteLine(" - " + useCase.Description);
+            Console.WriteLine(" - " + commands.Description);
         }
 
         private string ReadCommandName()
