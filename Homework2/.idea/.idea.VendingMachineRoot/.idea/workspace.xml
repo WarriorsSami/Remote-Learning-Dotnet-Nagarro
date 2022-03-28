@@ -6,22 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="77f2d2e7-0d07-48cb-97aa-7b58f7eabc97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LookUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LookUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/PaymentUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/PayUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IUseCases/IPaymentUseCase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IUseCases/IUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IUseCases/IUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IVendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IVendingMachineApplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IMainDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IMainDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/VendingMachine.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/VendingMachine.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/MainDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/MainDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/PaymentUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/PayUseCaseTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +46,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.VendingMachine">
+  <component name="RunManager">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -96,6 +80,7 @@
       <workItem from="1647365640467" duration="467000" />
       <workItem from="1647517616487" duration="4490000" />
       <workItem from="1648389064328" duration="15085000" />
+      <workItem from="1648482414301" duration="1422000" />
     </task>
     <servers />
   </component>

@@ -22,8 +22,13 @@ namespace VendingMachine
 {
     public static class ContainerConfig
     {
+        private static IContainer _container;
+        
         public static IContainer Build()
         {
+            if (_container != null)
+                return _container;
+            
             var builder = new ContainerBuilder();
 
             builder.RegisterType<MainDisplay>().As<IMainDisplay>().SingleInstance();
@@ -93,7 +98,8 @@ namespace VendingMachine
                 .As<IVendingMachineApplication>()
                 .SingleInstance();
 
-            return builder.Build();
+            _container = builder.Build();
+            return _container;
         }
     }
 }
