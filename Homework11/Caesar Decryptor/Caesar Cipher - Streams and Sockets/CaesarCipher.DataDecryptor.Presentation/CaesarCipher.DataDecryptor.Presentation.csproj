@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CaesarCipher.DataDecryptor.Business\CaesarCipher.DataDecryptor.Business.csproj" />
+      <ProjectReference Include="..\CaesarCipher.PresentationBase\CaesarCipher.PresentationBase.csproj" />
+    </ItemGroup>
+
+</Project>

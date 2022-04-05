@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CaesarCipher.DataDecryptor.DataAccess\CaesarCipher.DataDecryptor.DataAccess.csproj" />
+      <ProjectReference Include="..\CaesarCipher.DataDecryptor.Presentation\CaesarCipher.DataDecryptor.Presentation.csproj" />
+    </ItemGroup>
+
+</Project>
