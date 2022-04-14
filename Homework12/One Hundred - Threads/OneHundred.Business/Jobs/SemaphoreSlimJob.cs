@@ -6,14 +6,14 @@ using System.Threading;
 
 namespace iQuest.OneHundred.Business.Jobs
 {
-    internal class SemaphoreJob : IJob
+    internal class SemaphoreSlimJob : IJob
     {
-        private readonly Semaphore _pool = new Semaphore(0, 5);
+        private readonly SemaphoreSlim _pool = new SemaphoreSlim(0, 5);
         private long _value;
         public ushort ThreadCount { get; set; }
         public ulong IncrementCount { get; set; }
         public string Description { get; } =
-            "Incrementing the value using semaphore and interlocked";
+            "Incrementing the value using semaphore slim and interlocked";
 
         public JobResult Execute()
         {
@@ -41,7 +41,7 @@ namespace iQuest.OneHundred.Business.Jobs
             Thread thread = new Thread(
                 o =>
                 {
-                    _pool.WaitOne();
+                    _pool.Wait();
                     for (ulong i = 0; i < IncrementCount; i++)
                         Interlocked.Increment(ref _value);
                     _pool.Release();

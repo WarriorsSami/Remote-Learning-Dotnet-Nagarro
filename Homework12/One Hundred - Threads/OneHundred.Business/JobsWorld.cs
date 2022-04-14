@@ -11,7 +11,9 @@ namespace iQuest.OneHundred.Business
             new LockJob(),
             new MonitorJob(),
             new MutexJob(),
-            new SemaphoreJob()
+            new SemaphoreJob(),
+            new SemaphoreSlimJob(),
+            new EventWaitHandleJob()
         };
 
         public ushort ThreadCount { get; } = 100;

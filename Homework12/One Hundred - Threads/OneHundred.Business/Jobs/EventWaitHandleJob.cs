@@ -6,14 +6,13 @@ using System.Threading;
 
 namespace iQuest.OneHundred.Business.Jobs
 {
-    internal class SemaphoreJob : IJob
+    internal class EventWaitHandleJob : IJob
     {
-        private readonly Semaphore _pool = new Semaphore(0, 5);
+        private readonly EventWaitHandle _waitHandle = new AutoResetEvent(false);
         private long _value;
         public ushort ThreadCount { get; set; }
         public ulong IncrementCount { get; set; }
-        public string Description { get; } =
-            "Incrementing the value using semaphore and interlocked";
+        public string Description { get; } = "Incrementing the value using event wait handle";
 
         public JobResult Execute()
         {
@@ -30,8 +29,8 @@ namespace iQuest.OneHundred.Business.Jobs
                 .Select(x => StartNewThread())
                 .ToList();
 
-            _pool.Release(5);
-
+            _waitHandle.Set();
+            
             foreach (Thread thread in threads)
                 thread.Join();
         }
@@ -41,10 +40,10 @@ namespace iQuest.OneHundred.Business.Jobs
             Thread thread = new Thread(
                 o =>
                 {
-                    _pool.WaitOne();
+                    _waitHandle.WaitOne();
                     for (ulong i = 0; i < IncrementCount; i++)
-                        Interlocked.Increment(ref _value);
-                    _pool.Release();
+                        _value++;
+                    _waitHandle.Set();
                 }
             );
 
