@@ -18,3 +18,6 @@
 - [x] IDisposable and DI Frameworks (Autofac vs .NET Core DI)
 - [x] SRP, Command and Factory Method Pattern
 - [x] Serialization / Deserialization
+- [x] Stream and Sockets, TCP/UDP
+- [x] Multithreading and Asynchrounous Programming, System.Threading vs TPL
+- [x] Logging  
