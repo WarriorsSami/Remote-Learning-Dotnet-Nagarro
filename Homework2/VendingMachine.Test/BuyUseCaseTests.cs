@@ -3,26 +3,26 @@ using Moq;
 using NUnit.Framework;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.UseCases;
-using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.DataAccess.IRepositories;
 using VendingMachine.Domain.Entities;
-using VendingMachine.Domain.Presentation;
+using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Test
 {
     internal class BuyUseCaseTests
     {
-        private readonly ICommand _payCommand;
+        private readonly IPayCommand _payCommand;
         private readonly IProductRepository _productRepository;
 
         public BuyUseCaseTests()
         {
-            var mockApplication = new Mock<IVendingMachineApplication>();
-            mockApplication.Setup(x => x.UserIsLoggedIn).Returns(false);
+            var mockApplication = new Mock<IAuthenticationService>();
+            mockApplication.Setup(x => x.IsUserAuthenticated).Returns(false);
 
-            var mockPayCommand = new Mock<ICommand>();
-            mockPayCommand.Setup(x => x.Execute()).Verifiable();
+            var mockPayCommand = new Mock<IPayCommand>();
+            mockPayCommand.Setup(x => x.Execute(It.IsAny<decimal>())).Verifiable();
             mockPayCommand.Setup(x => x.CanExecute).Returns(true);
 
             _payCommand = mockPayCommand.Object;

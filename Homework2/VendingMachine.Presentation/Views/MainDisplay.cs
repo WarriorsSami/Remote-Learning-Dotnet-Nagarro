@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VendingMachine.Domain.Presentation;
+using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Presentation.Views
 {
-    internal class MainDisplay : IMainDisplay 
+    internal class MainDisplay : IMainDisplay
     {
         public ICommand ChooseCommand(IEnumerable<ICommand> commands)
         {
@@ -14,7 +14,7 @@ namespace VendingMachine.Presentation.Views
             Console.WriteLine();
             Console.WriteLine("Available commands:");
             Console.WriteLine();
-            
+
             var enumerable = commands.ToList();
             foreach (var useCase in enumerable)
                 DisplayUseCase(useCase);
@@ -24,7 +24,8 @@ namespace VendingMachine.Presentation.Views
                 var rawValue = ReadCommandName();
                 var selectedUseCase = enumerable.FirstOrDefault(x => x.Name == rawValue);
 
-                if (selectedUseCase != null) return selectedUseCase;
+                if (selectedUseCase != null)
+                    return selectedUseCase;
                 DisplayBase.DisplayLine("Invalid command. Please try again.", ConsoleColor.Red);
             }
         }

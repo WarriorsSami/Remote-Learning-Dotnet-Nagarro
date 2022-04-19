@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using VendingMachine.Business.CustomExceptions.LoginUseCaseExceptions;
-using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.Presentation.IViews;
 
 [assembly: InternalsVisibleTo("VendingMachine.Presentation")]
+
 namespace VendingMachine.Business.UseCases
 {
     internal class LoginUseCase : IUseCase
@@ -20,12 +20,9 @@ namespace VendingMachine.Business.UseCases
         public void Execute(params object[] args)
         {
             var password = _mainDisplay.AskForPassword();
-            var application = (IVendingMachineApplication)args[0];
+            var authService = (IAuthenticationService)args[0];
 
-            if (password == "super")
-                application.UserIsLoggedIn = true;
-            else
-                throw new InvalidCredentialsException("Invalid password");
+            authService.Login(password);
         }
     }
 }

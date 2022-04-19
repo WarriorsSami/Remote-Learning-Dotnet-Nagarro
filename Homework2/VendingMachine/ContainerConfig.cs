@@ -5,13 +5,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using VendingMachine.Business;
 using VendingMachine.Business.Helpers.Payment;
+using VendingMachine.Business.Services;
 using VendingMachine.Business.UseCases;
 using VendingMachine.DataAccess.Repositories;
 using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IHelpersPayment;
+using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.DataAccess.IRepositories;
-using VendingMachine.Domain.Presentation;
+using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 using VendingMachine.Presentation.Commands;
@@ -23,12 +25,12 @@ namespace VendingMachine
     public static class ContainerConfig
     {
         private static IContainer _container;
-        
+
         public static IContainer Build()
         {
             if (_container != null)
                 return _container;
-            
+
             var builder = new ContainerBuilder();
 
             builder.RegisterType<MainDisplay>().As<IMainDisplay>().SingleInstance();
@@ -79,7 +81,7 @@ namespace VendingMachine
 
             builder.RegisterType<BuyCommand>().As<ICommand>().SingleInstance();
             builder.RegisterType<LookCommand>().As<ICommand>().SingleInstance();
-            builder.RegisterType<PayCommand>().As<ICommand>().AsSelf().SingleInstance();
+            builder.RegisterType<PayCommand>().As<IPayCommand>().AsSelf().SingleInstance();
             builder.RegisterType<LoginCommand>().As<ICommand>().SingleInstance();
             builder.RegisterType<LogoutCommand>().As<ICommand>().SingleInstance();
             builder.RegisterType<TurnOffCommand>().As<ICommand>().SingleInstance();
@@ -92,6 +94,12 @@ namespace VendingMachine
             builder.RegisterType<LoginUseCase>().As<IUseCase>().AsSelf().SingleInstance();
             builder.RegisterType<LogoutUseCase>().As<IUseCase>().AsSelf().SingleInstance();
             builder.RegisterType<TurnOffUseCase>().As<IUseCase>().AsSelf().SingleInstance();
+
+            builder
+                .RegisterType<AuthenticationService>()
+                .As<IAuthenticationService>()
+                .SingleInstance();
+            builder.RegisterType<TurnOffService>().As<ITurnOffService>().SingleInstance();
 
             builder
                 .RegisterType<VendingMachineApplication>()

@@ -6,16 +6,19 @@ using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.IViews;
 
 [assembly: InternalsVisibleTo("VendingMachine")]
+
 namespace VendingMachine.Presentation.Views
 {
-    internal class BuyView: IBuyView
+    internal class BuyView : IBuyView
     {
         public void DisplayProduct(Product product)
         {
             DisplayBase.DisplayLine("You have bought the following product:", ConsoleColor.Cyan);
-            DisplayBase.DisplayLine($"{product.Name} - price: {product.Price}$, " +
-                        $"colId: {product.ColumnId}, qty: {product.Quantity}",
-                        ConsoleColor.Green);
+            DisplayBase.DisplayLine(
+                $"{product.Name} - price: {product.Price}$, "
+                    + $"colId: {product.ColumnId}, qty: {product.Quantity}",
+                ConsoleColor.Green
+            );
         }
 
         public string AskForProductCode()
@@ -30,7 +33,10 @@ namespace VendingMachine.Presentation.Views
         {
             foreach (var paymentMethod in paymentMethods)
             {
-                DisplayBase.DisplayLine($"{(int)paymentMethod.Id} - {paymentMethod.Name}", ConsoleColor.Green);
+                DisplayBase.DisplayLine(
+                    $"{(int)paymentMethod.Id} - {paymentMethod.Name}",
+                    ConsoleColor.Green
+                );
             }
         }
 
@@ -38,7 +44,7 @@ namespace VendingMachine.Presentation.Views
         {
             DisplayBase.DisplayLine("Please select a payment method:", ConsoleColor.Yellow);
             DisplayPaymentMethods(paymentMethods);
-            
+
             var paymentMethodId = int.Parse(Console.ReadLine() ?? "0");
             return paymentMethodId;
         }

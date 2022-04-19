@@ -1,18 +1,17 @@
-﻿using VendingMachine.Business.UseCases;
+﻿using System;
+using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business;
-using VendingMachine.Domain.Presentation;
+using VendingMachine.Domain.Presentation.ICommands;
 
 namespace VendingMachine.Presentation.Commands
 {
     internal class LookCommand : ICommand
     {
-        private readonly IVendingMachineApplication _application;
         private readonly IUseCaseFactory _useCaseFactory;
 
-        public LookCommand(IVendingMachineApplication application, IUseCaseFactory useCaseFactory)
+        public LookCommand(IUseCaseFactory useCaseFactory)
         {
-            _application = application;
-            _useCaseFactory = useCaseFactory;
+            _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
         }
 
         public string Name => "display";

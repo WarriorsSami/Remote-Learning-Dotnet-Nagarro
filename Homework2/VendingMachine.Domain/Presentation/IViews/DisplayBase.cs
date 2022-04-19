@@ -19,7 +19,7 @@ namespace VendingMachine.Domain.Presentation.IViews
             Console.Write(message);
             Console.ForegroundColor = oldColor;
         }
-        
+
         public static void DisplayError(Exception ex)
         {
             var oldColor = Console.ForegroundColor;
@@ -27,7 +27,7 @@ namespace VendingMachine.Domain.Presentation.IViews
             Console.WriteLine(ex);
             Console.ForegroundColor = oldColor;
         }
-        
+
         public static void Pause()
         {
             Console.ReadKey(true);

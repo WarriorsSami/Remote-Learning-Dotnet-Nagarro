@@ -5,38 +5,33 @@ using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.LoginUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Domain.Business;
-using VendingMachine.Domain.Presentation;
+using VendingMachine.Domain.Business.IServices;
+using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business
 {
     internal class VendingMachineApplication : IVendingMachineApplication
     {
-        private readonly List<ICommand> _commands = new();
+        private readonly List<ICommand> _commands;
         private readonly IMainDisplay _mainDisplay;
+        private readonly ITurnOffService _turnOffService;
 
-        private bool _turnOffWasRequested;
-
-        public bool UserIsLoggedIn { get; set; }
-
-        public VendingMachineApplication(IMainDisplay mainDisplay)
+        public VendingMachineApplication(
+            IEnumerable<ICommand> commands,
+            IMainDisplay mainDisplay,
+            ITurnOffService turnOffService
+        )
         {
+            _commands = commands.ToList();
             _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
-        }
-
-        public void AddRangeCommand(IEnumerable<ICommand> commands)
-        {
-            if (commands == null)
-                throw new ArgumentNullException(nameof(commands));
-
-            _commands.AddRange(commands);
+            _turnOffService = turnOffService ?? throw new ArgumentNullException(nameof(turnOffService));
         }
 
         public void Run()
         {
-            _turnOffWasRequested = false;
-
-            while (!_turnOffWasRequested)
+            _turnOffService.Initialize();
+            while (!_turnOffService.TurnOffRequested)
             {
                 var availableCommands = _commands.Where(x => x.CanExecute);
 
@@ -86,11 +81,6 @@ namespace VendingMachine.Business
                     DisplayBase.Pause();
                 }
             }
-        }
-
-        public void TurnOff()
-        {
-            _turnOffWasRequested = true;
         }
     }
 }

@@ -1,30 +1,29 @@
-﻿using VendingMachine.Business.UseCases;
+﻿using System;
+using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business;
-using VendingMachine.Domain.Presentation;
+using VendingMachine.Domain.Business.IServices;
+using VendingMachine.Domain.Presentation.ICommands;
 
 namespace VendingMachine.Presentation.Commands
 {
-    internal class PayCommand : ICommand
+    internal class PayCommand : IPayCommand
     {
-        private readonly IVendingMachineApplication _application;
+        private readonly IAuthenticationService _authService;
         private readonly IUseCaseFactory _useCaseFactory;
 
-        public PayCommand(
-            IVendingMachineApplication application,
-            IUseCaseFactory useCaseFactory
-        )
+        public PayCommand(IAuthenticationService authService, IUseCaseFactory useCaseFactory)
         {
-            _application = application;
-            _useCaseFactory = useCaseFactory;
+            _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+            _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
         }
 
         public string Name => "pay";
         public string Description => "Execute payment";
-        public bool CanExecute => !_application.UserIsLoggedIn;
+        public bool CanExecute => !_authService.IsUserAuthenticated;
 
-        public void Execute(params object[] args)
+        public void Execute(decimal price)
         {
-            _useCaseFactory.Create<PayUseCase>().Execute(args);
+            _useCaseFactory.Create<PayUseCase>().Execute(price);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VendingMachine.Domain.Presentation.ICommands;
 
 namespace VendingMachine.Domain.Presentation.IViews
 {

@@ -5,8 +5,8 @@ using NUnit.Framework;
 using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Business.Helpers.Payment;
 using VendingMachine.Business.UseCases;
-using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IHelpersPayment;
+using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Presentation.IViews;
 using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 
@@ -22,8 +22,8 @@ namespace VendingMachine.Test
         {
             _cardValidityAlgorithm = new LuhnCardValidator();
 
-            var mockApplication = new Mock<IVendingMachineApplication>();
-            mockApplication.Setup(x => x.UserIsLoggedIn).Returns(false);
+            var mockApplication = new Mock<IAuthenticationService>();
+            mockApplication.Setup(x => x.IsUserAuthenticated).Returns(false);
 
             _listOfPaymentMethods = new List<IPaymentMethod>
             {

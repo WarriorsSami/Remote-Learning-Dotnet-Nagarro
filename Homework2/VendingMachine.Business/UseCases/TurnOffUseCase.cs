@@ -1,4 +1,4 @@
-﻿using VendingMachine.Domain.Business;
+﻿using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
 
 namespace VendingMachine.Business.UseCases
@@ -7,8 +7,8 @@ namespace VendingMachine.Business.UseCases
     {
         public void Execute(params object[] args)
         {
-            var application = (IVendingMachineApplication)args[0];
-            application.TurnOff();
+            var turnOffService = (ITurnOffService)args[0];
+            turnOffService.TurnOff();
         }
     }
 }

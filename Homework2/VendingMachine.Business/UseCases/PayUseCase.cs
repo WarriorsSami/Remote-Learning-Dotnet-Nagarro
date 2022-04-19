@@ -32,7 +32,10 @@ namespace VendingMachine.Business.UseCases
         {
             var price = (decimal)args[0];
             var paymentMethodId = _buyView.AskForPaymentMethod(_paymentMethods);
-            if (_paymentMethods.FirstOrDefault(p => p.Id == (PaymentMethodType)paymentMethodId) == null)
+            if (
+                _paymentMethods.FirstOrDefault(p => p.Id == (PaymentMethodType)paymentMethodId)
+                == null
+            )
             {
                 throw new InvalidPaymentMethodIdException("Invalid payment method id");
             }

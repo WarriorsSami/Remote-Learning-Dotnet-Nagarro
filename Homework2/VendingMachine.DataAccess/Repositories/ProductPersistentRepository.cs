@@ -5,7 +5,7 @@ using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.DataAccess.Repositories
 {
-    internal class ProductPersistentRepository: IProductRepository
+    internal class ProductPersistentRepository : IProductRepository
     {
         private readonly ProductContext _context;
 

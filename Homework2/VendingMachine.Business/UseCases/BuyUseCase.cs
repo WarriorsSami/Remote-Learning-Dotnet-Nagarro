@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.DataAccess.IRepositories;
-using VendingMachine.Domain.Presentation;
+using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 
 [assembly: InternalsVisibleTo("VendingMachine.Test")]
@@ -15,12 +15,12 @@ namespace VendingMachine.Business.UseCases
     {
         private readonly IBuyView _buyView;
         private readonly IProductRepository _productRepository;
-        private readonly ICommand _payCommand;
+        private readonly IPayCommand _payCommand;
 
         public BuyUseCase(
             IBuyView buyView,
             IProductRepository productRepository,
-            ICommand payCommand
+            IPayCommand payCommand
         )
         {
             _buyView = buyView ?? throw new ArgumentNullException(nameof(buyView));
