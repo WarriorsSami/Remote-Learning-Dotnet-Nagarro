@@ -21,3 +21,4 @@
 - [x] Stream and Sockets, TCP / UDP
 - [x] Multithreading and Asynchronous Programming, System.Threading vs TPL
 - [x] Logging  
+- [x] Unit of Work, Repository and Entity Framework
