@@ -1,11 +1,10 @@
 ﻿using System;
-using VendingMachine.Domain.Presentation.IViews;
 
-namespace VendingMachine.Presentation.Views
+namespace VendingMachine.Domain.Presentation.IViews
 {
-    internal abstract class DisplayBase: IDisplayBase
+    public abstract class DisplayBase
     {
-        public void DisplayLine(string message, ConsoleColor color)
+        public static void DisplayLine(string message, ConsoleColor color)
         {
             var oldColor = Console.ForegroundColor;
             Console.ForegroundColor = color;
@@ -13,23 +12,23 @@ namespace VendingMachine.Presentation.Views
             Console.ForegroundColor = oldColor;
         }
 
-        public void Display(string message, ConsoleColor color)
+        public static void Display(string message, ConsoleColor color)
         {
             var oldColor = Console.ForegroundColor;
             Console.ForegroundColor = color;
             Console.Write(message);
             Console.ForegroundColor = oldColor;
         }
-        
-        public void DisplayError(Exception ex)
+
+        public static void DisplayError(Exception ex)
         {
             var oldColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(ex);
             Console.ForegroundColor = oldColor;
         }
-        
-        public void Pause()
+
+        public static void Pause()
         {
             Console.ReadKey(true);
         }

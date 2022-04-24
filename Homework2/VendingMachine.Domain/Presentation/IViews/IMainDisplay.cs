@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.Presentation.ICommands;
 
 namespace VendingMachine.Domain.Presentation.IViews
 {
-    public interface IMainDisplay: IDisplayBase
+    public interface IMainDisplay
     {
-        IUseCase ChooseCommand(IEnumerable<IUseCase> useCases);
+        ICommand ChooseCommand(IEnumerable<ICommand> commands);
         string AskForPassword();
     }
 }
