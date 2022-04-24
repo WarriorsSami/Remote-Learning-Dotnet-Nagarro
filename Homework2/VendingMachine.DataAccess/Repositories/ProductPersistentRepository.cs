@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using VendingMachine.DataAccess.EF.Migrations.Contexts;
 using VendingMachine.Domain.DataAccess.IRepositories;
 using VendingMachine.Domain.Entities;
+
+[assembly: InternalsVisibleTo("VendingMachine")]
 
 namespace VendingMachine.DataAccess.Repositories
 {

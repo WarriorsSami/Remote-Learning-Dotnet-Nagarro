@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <LangVersion>10</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
         <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
@@ -11,14 +12,11 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.4" />
-        
-      <ProjectReference Include="../VendingMachine.Business/VendingMachine.Business.csproj" />
-        
-      <ProjectReference Include="..\VendingMachine.DataAccess.EF.Migrations\VendingMachine.DataAccess.EF.Migrations.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\VendingMachine.Domain\VendingMachine.Domain.csproj" />
     </ItemGroup>
 
 </Project>

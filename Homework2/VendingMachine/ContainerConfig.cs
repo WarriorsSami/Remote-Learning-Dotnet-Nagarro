@@ -7,6 +7,7 @@ using VendingMachine.Business;
 using VendingMachine.Business.Helpers.Payment;
 using VendingMachine.Business.Services;
 using VendingMachine.Business.UseCases;
+using VendingMachine.DataAccess.EF.Migrations.Contexts;
 using VendingMachine.DataAccess.Repositories;
 using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IHelpersPayment;
@@ -24,13 +25,8 @@ namespace VendingMachine
 {
     public static class ContainerConfig
     {
-        private static IContainer _container;
-
         public static IContainer Build()
         {
-            if (_container != null)
-                return _container;
-
             var builder = new ContainerBuilder();
 
             builder.RegisterType<MainDisplay>().As<IMainDisplay>().SingleInstance();
@@ -58,20 +54,16 @@ namespace VendingMachine
             switch (persistenceType)
             {
                 case "Database":
-                    var connectionString = configuration.GetConnectionString("DefaultConnection");
-                    var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
-                    optionsBuilder.UseNpgsql(connectionString);
-                    var productContext = new ProductContext(optionsBuilder.Options);
-
-                    builder.RegisterInstance(productContext).As<ProductContext>().SingleInstance();
-                    builder
-                        .RegisterType<ProductPersistentRepository>()
-                        .As<IProductRepository>()
-                        .SingleInstance();
+                    builder.Register(x =>
+                    {
+                        var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
+                        optionsBuilder.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+                        return new ProductContext(optionsBuilder.Options);
+                    });
                     break;
                 case "InMemory":
                     builder
-                        .RegisterType<ProductRepository>()
+                        .RegisterType<ProductInMemoryRepository>()
                         .As<IProductRepository>()
                         .SingleInstance();
                     break;
@@ -106,8 +98,7 @@ namespace VendingMachine
                 .As<IVendingMachineApplication>()
                 .SingleInstance();
 
-            _container = builder.Build();
-            return _container;
+            return builder.Build();
         }
     }
 }

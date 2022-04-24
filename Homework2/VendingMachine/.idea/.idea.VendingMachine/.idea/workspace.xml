@@ -4,7 +4,9 @@
     <projectFile>VendingMachine.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="" />
+    <list default="true" id="0baa5d60-9707-45c4-9650-8cfd034f8369" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.VendingMachineRoot/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +80,7 @@
       <workItem from="1643014888498" duration="91000" />
       <workItem from="1643015080996" duration="367000" />
       <workItem from="1647074381618" duration="122000" />
+      <workItem from="1650463520010" duration="37000" />
     </task>
     <servers />
   </component>

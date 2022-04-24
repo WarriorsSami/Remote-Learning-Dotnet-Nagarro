@@ -1,17 +1,16 @@
-﻿#nullable enable
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using VendingMachine.Domain.DataAccess.IRepositories;
 using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.DataAccess.Repositories
 {
-    internal class ProductRepository : IProductRepository
+    internal class ProductInMemoryRepository : IProductRepository
     {
         private static readonly List<Product> Products = new();
 
         #region ProductRepository Constructor
-        public ProductRepository()
+        public ProductInMemoryRepository()
         {
             if (Products.Count != 0)
                 return;
@@ -85,7 +84,7 @@ namespace VendingMachine.DataAccess.Repositories
             return Products;
         }
 
-        public Product? GetById(int code)
+        public Product GetById(int code)
         {
             var product = Products.FirstOrDefault(product => product.ColumnId == code);
 

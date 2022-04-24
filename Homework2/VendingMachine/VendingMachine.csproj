@@ -2,8 +2,9 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <GenerateRuntimeConfigurationFiles>True</GenerateRuntimeConfigurationFiles>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,22 +17,23 @@
       <PackageReference Include="Autofac" Version="6.3.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.4" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\VendingMachine.Business\VendingMachine.Business.csproj" />
+      <ProjectReference Include="..\VendingMachine.DataAccess.EF.Migrations\VendingMachine.DataAccess.EF.Migrations.csproj" />
       <ProjectReference Include="..\VendingMachine.DataAccess\VendingMachine.DataAccess.csproj" />
       <ProjectReference Include="..\VendingMachine.Presentation\VendingMachine.Presentation.csproj" />
     </ItemGroup>
