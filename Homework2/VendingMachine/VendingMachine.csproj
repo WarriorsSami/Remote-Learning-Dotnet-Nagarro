@@ -33,7 +33,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\VendingMachine.Business\VendingMachine.Business.csproj" />
-      <ProjectReference Include="..\VendingMachine.DataAccess.EF.Migrations\VendingMachine.DataAccess.EF.Migrations.csproj" />
       <ProjectReference Include="..\VendingMachine.DataAccess\VendingMachine.DataAccess.csproj" />
       <ProjectReference Include="..\VendingMachine.Presentation\VendingMachine.Presentation.csproj" />
     </ItemGroup>

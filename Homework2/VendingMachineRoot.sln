@@ -1,18 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{64B0725D-D1CE-4714-A1D4-431A4BB5E9F3}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{64B0725D-D1CE-4714-A1D4-431A4BB5E9F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Test", "VendingMachine.Test\VendingMachine.Test.csproj", "{1ED965D6-CF68-4874-BEFD-DF49A4606110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Test", "VendingMachine.Test\VendingMachine.Test.csproj", "{1ED965D6-CF68-4874-BEFD-DF49A4606110}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Business", "VendingMachine.Business\VendingMachine.Business.csproj", "{5BB5A1E0-004A-4CAD-A42C-F09FED6F3097}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Business", "VendingMachine.Business\VendingMachine.Business.csproj", "{5BB5A1E0-004A-4CAD-A42C-F09FED6F3097}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.DataAccess", "VendingMachine.DataAccess\VendingMachine.DataAccess.csproj", "{2F4C319B-CDC6-4CDB-A8F5-8848CEA8384E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.DataAccess", "VendingMachine.DataAccess\VendingMachine.DataAccess.csproj", "{2F4C319B-CDC6-4CDB-A8F5-8848CEA8384E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Presentation", "VendingMachine.Presentation\VendingMachine.Presentation.csproj", "{A7F8F437-94FB-4146-A883-3526C4E8DA1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Presentation", "VendingMachine.Presentation\VendingMachine.Presentation.csproj", "{A7F8F437-94FB-4146-A883-3526C4E8DA1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Domain", "VendingMachine.Domain\VendingMachine.Domain.csproj", "{2BD56637-9BB5-4B6E-857A-432CEB55CD2E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.DataAccess.EF.Migrations", "VendingMachine.DataAccess.EF.Migrations\VendingMachine.DataAccess.EF.Migrations.csproj", "{96FE413D-A7C1-4A05-9C68-32D8C9DAEB02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine.Domain", "VendingMachine.Domain\VendingMachine.Domain.csproj", "{2BD56637-9BB5-4B6E-857A-432CEB55CD2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,9 +45,11 @@ Global
 		{2BD56637-9BB5-4B6E-857A-432CEB55CD2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BD56637-9BB5-4B6E-857A-432CEB55CD2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BD56637-9BB5-4B6E-857A-432CEB55CD2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96FE413D-A7C1-4A05-9C68-32D8C9DAEB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96FE413D-A7C1-4A05-9C68-32D8C9DAEB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96FE413D-A7C1-4A05-9C68-32D8C9DAEB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96FE413D-A7C1-4A05-9C68-32D8C9DAEB02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A694FF81-EE0C-4F90-8719-9FB87339045C}
 	EndGlobalSection
 EndGlobal

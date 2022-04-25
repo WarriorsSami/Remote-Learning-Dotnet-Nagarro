@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.Presentation.IViews;
-
-[assembly: InternalsVisibleTo("VendingMachine.Presentation")]
 
 namespace VendingMachine.Business.UseCases
 {

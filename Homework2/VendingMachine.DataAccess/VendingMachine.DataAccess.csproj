@@ -17,8 +17,6 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.4" />
         
       <ProjectReference Include="../VendingMachine.Business/VendingMachine.Business.csproj" />
-        
-      <ProjectReference Include="..\VendingMachine.DataAccess.EF.Migrations\VendingMachine.DataAccess.EF.Migrations.csproj" />
     </ItemGroup>
 
 </Project>

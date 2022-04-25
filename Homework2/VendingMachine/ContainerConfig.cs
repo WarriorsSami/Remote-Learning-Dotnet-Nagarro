@@ -7,7 +7,7 @@ using VendingMachine.Business;
 using VendingMachine.Business.Helpers.Payment;
 using VendingMachine.Business.Services;
 using VendingMachine.Business.UseCases;
-using VendingMachine.DataAccess.EF.Migrations.Contexts;
+using VendingMachine.DataAccess.Contexts;
 using VendingMachine.DataAccess.Repositories;
 using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IHelpersPayment;

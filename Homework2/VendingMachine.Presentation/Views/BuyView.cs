@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using VendingMachine.Domain.Business.IHelpersPayment;
 using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.IViews;
-
-[assembly: InternalsVisibleTo("VendingMachine")]
 
 namespace VendingMachine.Presentation.Views
 {
