@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="77f2d2e7-0d07-48cb-97aa-7b58f7eabc97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Contexts/ProductContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Contexts/ProductContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +110,7 @@
       <workItem from="1650559693121" duration="2620000" />
       <workItem from="1650825132163" duration="415000" />
       <workItem from="1650825941587" duration="226000" />
-      <workItem from="1650903663268" duration="2518000" />
+      <workItem from="1650903663268" duration="3236000" />
     </task>
     <servers />
   </component>
