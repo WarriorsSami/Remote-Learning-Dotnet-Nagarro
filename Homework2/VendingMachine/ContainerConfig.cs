@@ -57,11 +57,9 @@ namespace VendingMachine
                     builder.Register(
                         _ =>
                         {
-                            var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
-                            optionsBuilder.UseNpgsql(
-                                configuration.GetConnectionString("DefaultConnection")
+                            return new ProductContextFactory().CreateDbContext(
+                                new[] { configuration.GetConnectionString("DefaultConnection") }
                             );
-                            return new ProductContext(optionsBuilder.Options);
                         }
                     );
                     builder
