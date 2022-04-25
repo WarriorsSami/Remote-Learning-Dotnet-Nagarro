@@ -54,12 +54,20 @@ namespace VendingMachine
             switch (persistenceType)
             {
                 case "Database":
-                    builder.Register(x =>
-                    {
-                        var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
-                        optionsBuilder.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
-                        return new ProductContext(optionsBuilder.Options);
-                    });
+                    builder.Register(
+                        _ =>
+                        {
+                            var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
+                            optionsBuilder.UseNpgsql(
+                                configuration.GetConnectionString("DefaultConnection")
+                            );
+                            return new ProductContext(optionsBuilder.Options);
+                        }
+                    );
+                    builder
+                        .RegisterType<ProductPersistentRepository>()
+                        .As<IProductRepository>()
+                        .SingleInstance();
                     break;
                 case "InMemory":
                     builder

@@ -14,7 +14,7 @@ namespace VendingMachine.Presentation.Commands
             _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
         }
 
-        public string Name => "display";
+        public string Name => "list";
         public string Description =>
             "Display the list of available products stored in the vending machine";
         public bool CanExecute => true;

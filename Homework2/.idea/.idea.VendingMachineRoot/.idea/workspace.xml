@@ -7,20 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77f2d2e7-0d07-48cb-97aa-7b58f7eabc97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Migrations/20220109121452_InitialCreateProductTable.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Migrations/20220109121452_InitialCreateProductTable.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Migrations/20220109121452_InitialCreateProductTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Migrations/20220109121452_InitialCreateProductTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Migrations/ProductContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Migrations/ProductContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Contexts/ProductContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductInMemoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/VendingMachine.DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/VendingMachine.DataAccess.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/VendingMachine.Presentation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/VendingMachine.Presentation.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/VendingMachine.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/VendingMachine.Test.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachineRoot.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachineRoot.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +108,8 @@
       <workItem from="1650463593696" duration="908000" />
       <workItem from="1650556290034" duration="3325000" />
       <workItem from="1650559693121" duration="2620000" />
+      <workItem from="1650825132163" duration="415000" />
+      <workItem from="1650825941587" duration="226000" />
     </task>
     <servers />
   </component>

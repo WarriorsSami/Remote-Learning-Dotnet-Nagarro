@@ -1,10 +1,7 @@
 ﻿using System;
 using Autofac;
-using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IUseCases;
-using VendingMachine.Domain.Presentation.ICommands;
-using VendingMachine.Presentation.Commands;
 
 namespace VendingMachine
 {
@@ -18,13 +15,7 @@ namespace VendingMachine
         }
 
         public T Create<T>() where T : IUseCase
-        {
-            if (typeof(T) == typeof(BuyUseCase))
-            {
-                return _lifetimeScope.Resolve<T>(
-                    new TypedParameter(typeof(ICommand), _lifetimeScope.Resolve<PayCommand>())
-                );
-            }
+        { 
             return _lifetimeScope.Resolve<T>();
         }
     }
