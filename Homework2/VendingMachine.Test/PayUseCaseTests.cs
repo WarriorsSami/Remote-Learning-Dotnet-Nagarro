@@ -10,225 +10,224 @@ using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Presentation.IViews;
 using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 
-namespace VendingMachine.Test
+namespace VendingMachine.Test;
+
+internal class PayUseCaseTests
 {
-    internal class PayUseCaseTests
+    private readonly ICardValidityAlgorithm _cardValidityAlgorithm;
+
+    private readonly IEnumerable<IPaymentMethod> _listOfPaymentMethods;
+
+    public PayUseCaseTests()
     {
-        private readonly ICardValidityAlgorithm _cardValidityAlgorithm;
+        _cardValidityAlgorithm = new LuhnCardValidator();
 
-        private readonly IEnumerable<IPaymentMethod> _listOfPaymentMethods;
+        var mockApplication = new Mock<IAuthenticationService>();
+        mockApplication.Setup(x => x.IsUserAuthenticated).Returns(false);
 
-        public PayUseCaseTests()
+        _listOfPaymentMethods = new List<IPaymentMethod>
         {
-            _cardValidityAlgorithm = new LuhnCardValidator();
+            new CashPaymentMethod(),
+            new CreditCardPaymentMethod()
+        };
+    }
 
-            var mockApplication = new Mock<IAuthenticationService>();
-            mockApplication.Setup(x => x.IsUserAuthenticated).Returns(false);
+    [Test]
+    public void NotHavingThrown_WhenSuccessfulCashPaymentAttemptIsMade()
+    {
+        const int requestedPaymentMethodId = 0;
+        const decimal requestedPrice = 10.0m;
+        const decimal requestedChange = 8.0m;
 
-            _listOfPaymentMethods = new List<IPaymentMethod>
-            {
-                new CashPaymentMethod(),
-                new CreditCardPaymentMethod()
-            };
-        }
+        var mockCardValidator = new Mock<ICardValidityAlgorithm>();
+        var mockCashTerminal = new Mock<ICashTerminal>();
+        var mockCreditCardTerminal = new Mock<ICardTerminal>();
 
-        [Test]
-        public void NotHavingThrown_WhenSuccessfulCashPaymentAttemptIsMade()
+        mockCashTerminal
+            .SetupSequence(x => x.AskForMoney())
+            .Returns(1)
+            .Returns(2)
+            .Returns(5)
+            .Returns(10);
+
+        mockCashTerminal
+            .Setup(x => x.GiveBackChange(It.IsAny<decimal>()))
+            .Callback<decimal>(
+                x =>
+                {
+                    if (x != requestedChange)
+                        Assert.Fail();
+                }
+            )
+            .Verifiable();
+
+        var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
-            const int requestedPaymentMethodId = 0;
-            const decimal requestedPrice = 10.0m;
-            const decimal requestedChange = 8.0m;
+            new CashPaymentAlgorithm(mockCashTerminal.Object),
+            new CreditCardPaymentAlgorithm(
+                mockCreditCardTerminal.Object,
+                mockCardValidator.Object
+            )
+        };
 
-            var mockCardValidator = new Mock<ICardValidityAlgorithm>();
-            var mockCashTerminal = new Mock<ICashTerminal>();
-            var mockCreditCardTerminal = new Mock<ICardTerminal>();
+        var mockBuyView = new Mock<IBuyView>();
 
-            mockCashTerminal
-                .SetupSequence(x => x.AskForMoney())
-                .Returns(1)
-                .Returns(2)
-                .Returns(5)
-                .Returns(10);
+        mockBuyView
+            .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
+            .Returns(requestedPaymentMethodId);
 
-            mockCashTerminal
-                .Setup(x => x.GiveBackChange(It.IsAny<decimal>()))
-                .Callback<decimal>(
-                    x =>
-                    {
-                        if (x != requestedChange)
-                            Assert.Fail();
-                    }
-                )
-                .Verifiable();
+        var paymentUseCase = new PayUseCase(
+            mockBuyView.Object,
+            listOfPaymentAlgorithm,
+            _listOfPaymentMethods
+        );
 
-            var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
-            {
-                new CashPaymentAlgorithm(mockCashTerminal.Object),
-                new CreditCardPaymentAlgorithm(
-                    mockCreditCardTerminal.Object,
-                    mockCardValidator.Object
-                )
-            };
+        Assert.DoesNotThrow(() => paymentUseCase.Execute(requestedPrice));
+    }
 
-            var mockBuyView = new Mock<IBuyView>();
+    [Test]
+    public void HavingThrownInvalidPaymentMethodIdException_WhenAnInvalidPaymentMethodIdIsProvided()
+    {
+        const decimal requestedPrice = 10.0m;
+        const int requestedPaymentMethodId = 2;
 
-            mockBuyView
-                .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
-                .Returns(requestedPaymentMethodId);
+        var mockCardValidator = new Mock<ICardValidityAlgorithm>();
+        var mockCashTerminal = new Mock<ICashTerminal>();
+        var mockCreditCardTerminal = new Mock<ICardTerminal>();
 
-            var paymentUseCase = new PayUseCase(
-                mockBuyView.Object,
-                listOfPaymentAlgorithm,
-                _listOfPaymentMethods
-            );
-
-            Assert.DoesNotThrow(() => paymentUseCase.Execute(requestedPrice));
-        }
-
-        [Test]
-        public void HavingThrownInvalidPaymentMethodIdException_WhenAnInvalidPaymentMethodIdIsProvided()
+        var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
-            const decimal requestedPrice = 10.0m;
-            const int requestedPaymentMethodId = 2;
+            new CashPaymentAlgorithm(mockCashTerminal.Object),
+            new CreditCardPaymentAlgorithm(
+                mockCreditCardTerminal.Object,
+                mockCardValidator.Object
+            )
+        };
 
-            var mockCardValidator = new Mock<ICardValidityAlgorithm>();
-            var mockCashTerminal = new Mock<ICashTerminal>();
-            var mockCreditCardTerminal = new Mock<ICardTerminal>();
+        var mockBuyView = new Mock<IBuyView>();
 
-            var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
-            {
-                new CashPaymentAlgorithm(mockCashTerminal.Object),
-                new CreditCardPaymentAlgorithm(
-                    mockCreditCardTerminal.Object,
-                    mockCardValidator.Object
-                )
-            };
+        mockBuyView
+            .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
+            .Returns(requestedPaymentMethodId);
 
-            var mockBuyView = new Mock<IBuyView>();
+        var paymentUseCase = new PayUseCase(
+            mockBuyView.Object,
+            listOfPaymentAlgorithm,
+            _listOfPaymentMethods
+        );
 
-            mockBuyView
-                .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
-                .Returns(requestedPaymentMethodId);
+        Assert.Throws<InvalidPaymentMethodIdException>(
+            () => paymentUseCase.Execute(requestedPrice)
+        );
+    }
 
-            var paymentUseCase = new PayUseCase(
-                mockBuyView.Object,
-                listOfPaymentAlgorithm,
-                _listOfPaymentMethods
-            );
+    [Test]
+    public void NotHavingThrown_WhenSuccessfulCreditCardPaymentAttemptIsMade()
+    {
+        const decimal requestedPrice = 10.0m;
+        const string requestedCardNumber = "79927398713";
+        const int requestedPaymentMethodId = 1;
 
-            Assert.Throws<InvalidPaymentMethodIdException>(
-                () => paymentUseCase.Execute(requestedPrice)
-            );
-        }
+        var mockCashTerminal = new Mock<ICashTerminal>();
+        var mockCreditCardTerminal = new Mock<ICardTerminal>();
 
-        [Test]
-        public void NotHavingThrown_WhenSuccessfulCreditCardPaymentAttemptIsMade()
+        mockCreditCardTerminal.Setup(x => x.AskForCardNumber()).Returns(requestedCardNumber);
+
+        var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
-            const decimal requestedPrice = 10.0m;
-            const string requestedCardNumber = "79927398713";
-            const int requestedPaymentMethodId = 1;
+            new CashPaymentAlgorithm(mockCashTerminal.Object),
+            new CreditCardPaymentAlgorithm(
+                mockCreditCardTerminal.Object,
+                _cardValidityAlgorithm
+            )
+        };
 
-            var mockCashTerminal = new Mock<ICashTerminal>();
-            var mockCreditCardTerminal = new Mock<ICardTerminal>();
+        var mockBuyView = new Mock<IBuyView>();
 
-            mockCreditCardTerminal.Setup(x => x.AskForCardNumber()).Returns(requestedCardNumber);
+        mockBuyView
+            .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
+            .Returns(requestedPaymentMethodId);
 
-            var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
-            {
-                new CashPaymentAlgorithm(mockCashTerminal.Object),
-                new CreditCardPaymentAlgorithm(
-                    mockCreditCardTerminal.Object,
-                    _cardValidityAlgorithm
-                )
-            };
+        var paymentUseCase = new PayUseCase(
+            mockBuyView.Object,
+            listOfPaymentAlgorithm,
+            _listOfPaymentMethods
+        );
 
-            var mockBuyView = new Mock<IBuyView>();
+        Assert.DoesNotThrow(() => paymentUseCase.Execute(requestedPrice));
+    }
 
-            mockBuyView
-                .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
-                .Returns(requestedPaymentMethodId);
+    [Test]
+    public void HavingThrownInvalidCreditCardIdException_WhenAnInvalidCreditCardIdIsProvided()
+    {
+        const decimal requestedPrice = 10.0m;
+        const string requestedCardNumber = "7992739871";
+        const int requestedPaymentMethodId = 1;
 
-            var paymentUseCase = new PayUseCase(
-                mockBuyView.Object,
-                listOfPaymentAlgorithm,
-                _listOfPaymentMethods
-            );
+        var mockCashTerminal = new Mock<ICashTerminal>();
+        var mockCreditCardTerminal = new Mock<ICardTerminal>();
 
-            Assert.DoesNotThrow(() => paymentUseCase.Execute(requestedPrice));
-        }
+        mockCreditCardTerminal.Setup(x => x.AskForCardNumber()).Returns(requestedCardNumber);
 
-        [Test]
-        public void HavingThrownInvalidCreditCardIdException_WhenAnInvalidCreditCardIdIsProvided()
+        var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
-            const decimal requestedPrice = 10.0m;
-            const string requestedCardNumber = "7992739871";
-            const int requestedPaymentMethodId = 1;
+            new CashPaymentAlgorithm(mockCashTerminal.Object),
+            new CreditCardPaymentAlgorithm(
+                mockCreditCardTerminal.Object,
+                _cardValidityAlgorithm
+            )
+        };
 
-            var mockCashTerminal = new Mock<ICashTerminal>();
-            var mockCreditCardTerminal = new Mock<ICardTerminal>();
+        var mockBuyView = new Mock<IBuyView>();
 
-            mockCreditCardTerminal.Setup(x => x.AskForCardNumber()).Returns(requestedCardNumber);
+        mockBuyView
+            .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
+            .Returns(requestedPaymentMethodId);
 
-            var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
-            {
-                new CashPaymentAlgorithm(mockCashTerminal.Object),
-                new CreditCardPaymentAlgorithm(
-                    mockCreditCardTerminal.Object,
-                    _cardValidityAlgorithm
-                )
-            };
+        var paymentUseCase = new PayUseCase(
+            mockBuyView.Object,
+            listOfPaymentAlgorithm,
+            _listOfPaymentMethods
+        );
 
-            var mockBuyView = new Mock<IBuyView>();
+        Assert.Throws<InvalidCreditCardIdException>(
+            () => paymentUseCase.Execute(requestedPrice)
+        );
+    }
 
-            mockBuyView
-                .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
-                .Returns(requestedPaymentMethodId);
+    [Test]
+    public void HavingThrownFormatException_WhenAnInvalidCreditCardIdFormatIsProvided()
+    {
+        const decimal requestedPrice = 10.0m;
+        const string requestedCardNumber = "7992739871asd";
+        const int requestedPaymentMethodId = 1;
 
-            var paymentUseCase = new PayUseCase(
-                mockBuyView.Object,
-                listOfPaymentAlgorithm,
-                _listOfPaymentMethods
-            );
+        var mockCashTerminal = new Mock<ICashTerminal>();
+        var mockCreditCardTerminal = new Mock<ICardTerminal>();
 
-            Assert.Throws<InvalidCreditCardIdException>(
-                () => paymentUseCase.Execute(requestedPrice)
-            );
-        }
+        mockCreditCardTerminal.Setup(x => x.AskForCardNumber()).Returns(requestedCardNumber);
 
-        [Test]
-        public void HavingThrownFormatException_WhenAnInvalidCreditCardIdFormatIsProvided()
+        var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
-            const decimal requestedPrice = 10.0m;
-            const string requestedCardNumber = "7992739871asd";
-            const int requestedPaymentMethodId = 1;
+            new CashPaymentAlgorithm(mockCashTerminal.Object),
+            new CreditCardPaymentAlgorithm(
+                mockCreditCardTerminal.Object,
+                _cardValidityAlgorithm
+            )
+        };
 
-            var mockCashTerminal = new Mock<ICashTerminal>();
-            var mockCreditCardTerminal = new Mock<ICardTerminal>();
+        var mockBuyView = new Mock<IBuyView>();
 
-            mockCreditCardTerminal.Setup(x => x.AskForCardNumber()).Returns(requestedCardNumber);
+        mockBuyView
+            .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
+            .Returns(requestedPaymentMethodId);
 
-            var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
-            {
-                new CashPaymentAlgorithm(mockCashTerminal.Object),
-                new CreditCardPaymentAlgorithm(
-                    mockCreditCardTerminal.Object,
-                    _cardValidityAlgorithm
-                )
-            };
+        var paymentUseCase = new PayUseCase(
+            mockBuyView.Object,
+            listOfPaymentAlgorithm,
+            _listOfPaymentMethods
+        );
 
-            var mockBuyView = new Mock<IBuyView>();
-
-            mockBuyView
-                .Setup(x => x.AskForPaymentMethod(It.IsAny<IEnumerable<IPaymentMethod>>()))
-                .Returns(requestedPaymentMethodId);
-
-            var paymentUseCase = new PayUseCase(
-                mockBuyView.Object,
-                listOfPaymentAlgorithm,
-                _listOfPaymentMethods
-            );
-
-            Assert.Throws<FormatException>(() => paymentUseCase.Execute(requestedPrice));
-        }
+        Assert.Throws<FormatException>(() => paymentUseCase.Execute(requestedPrice));
     }
 }

@@ -5,6 +5,10 @@
         <LangVersion>10</LangVersion>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile></DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\VendingMachine.Business\VendingMachine.Business.csproj" />
       <ProjectReference Include="..\VendingMachine.DataAccess\VendingMachine.DataAccess.csproj" />

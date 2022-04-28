@@ -1,14 +1,13 @@
 ﻿using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
 
-namespace VendingMachine.Business.UseCases
+namespace VendingMachine.Business.UseCases;
+
+internal class TurnOffUseCase : IUseCase
 {
-    internal class TurnOffUseCase : IUseCase
+    public void Execute(params object[] args)
     {
-        public void Execute(params object[] args)
-        {
-            var turnOffService = (ITurnOffService)args[0];
-            turnOffService.TurnOff();
-        }
+        var turnOffService = (ITurnOffService)args[0];
+        turnOffService.TurnOff();
     }
 }

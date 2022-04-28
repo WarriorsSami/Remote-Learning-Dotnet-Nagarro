@@ -1,8 +1,7 @@
-﻿namespace VendingMachine.Domain.Business.IHelpersPayment
+﻿namespace VendingMachine.Domain.Business.IHelpersPayment;
+
+public enum PaymentMethodType
 {
-    public enum PaymentMethodType
-    {
-        Cash,
-        CreditCard
-    }
+    Cash,
+    CreditCard
 }

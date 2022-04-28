@@ -1,8 +1,7 @@
-namespace VendingMachine.Domain.Presentation.IViews.IPaymentTerminals
+namespace VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
+
+public interface ICashTerminal
 {
-    public interface ICashTerminal
-    {
-        decimal AskForMoney();
-        void GiveBackChange(decimal change);
-    }
+    decimal AskForMoney();
+    void GiveBackChange(decimal change);
 }

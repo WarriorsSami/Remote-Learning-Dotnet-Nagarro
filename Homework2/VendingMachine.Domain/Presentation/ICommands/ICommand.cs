@@ -1,11 +1,10 @@
-﻿namespace VendingMachine.Domain.Presentation.ICommands
-{
-    public interface ICommand
-    {
-        string Name { get; }
-        string Description { get; }
-        bool CanExecute { get; }
+﻿namespace VendingMachine.Domain.Presentation.ICommands;
 
-        void Execute(params object[] args);
-    }
+public interface ICommand
+{
+    string Name { get; }
+    string Description { get; }
+    bool CanExecute { get; }
+
+    void Execute(params object[] args);
 }
