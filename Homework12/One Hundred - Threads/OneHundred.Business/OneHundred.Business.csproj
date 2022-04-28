@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>iQuest.OneHundred.Business</AssemblyName>
+        <RootNamespace>iQuest.OneHundred.Business</RootNamespace>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <Company>Nagarro iQuest</Company>
+        <Authors>Remote Learning</Authors>
+        <Product>One Hundred</Product>
+        <Description>This is an exercise used in the Remote Learning program from Naraggo iQuest.</Description>
+        <Copyright>Copyright © Naraggo iQuest 2020</Copyright>
+    </PropertyGroup>
+
+</Project>
