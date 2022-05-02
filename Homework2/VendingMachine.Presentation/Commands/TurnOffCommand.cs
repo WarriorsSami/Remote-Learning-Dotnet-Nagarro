@@ -9,18 +9,15 @@ namespace VendingMachine.Presentation.Commands;
 internal class TurnOffCommand : ICommand
 {
     private readonly IAuthenticationService _authService;
-    private readonly ITurnOffService _turnOffService;
     private readonly IUseCaseFactory _useCaseFactory;
 
     public TurnOffCommand(
         IAuthenticationService authService,
-        IUseCaseFactory useCaseFactory,
-        ITurnOffService turnOffService
+        IUseCaseFactory useCaseFactory
     )
     {
         _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
-        _turnOffService = turnOffService ?? throw new ArgumentNullException(nameof(turnOffService));
     }
 
     public string Name => "exit";
@@ -29,8 +26,8 @@ internal class TurnOffCommand : ICommand
 
     public bool CanExecute => _authService.IsUserAuthenticated;
 
-    public void Execute(params object[] args)
+    public void Execute()
     {
-        _useCaseFactory.Create<TurnOffUseCase>().Execute(_turnOffService);
+        _useCaseFactory.Create<TurnOffUseCase>().Execute();
     }
 }

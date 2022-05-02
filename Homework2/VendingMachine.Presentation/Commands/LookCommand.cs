@@ -19,7 +19,7 @@ internal class LookCommand : ICommand
         "Display the list of available products stored in the vending machine";
     public bool CanExecute => true;
 
-    public void Execute(params object[] args)
+    public void Execute()
     {
         _useCaseFactory.Create<LookUseCase>().Execute();
     }

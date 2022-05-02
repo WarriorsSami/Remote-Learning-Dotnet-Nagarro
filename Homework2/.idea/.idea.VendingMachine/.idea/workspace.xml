@@ -5,35 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SupplyExistingProductUseCase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SupplyNewProductUseCase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/QuantitySupply.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IDisplayView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/ISupplyProductView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyExistingProductCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyNewProductCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/SupplyProductView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachineRoot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Contexts/ProductContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Migrations/20220109121452_InitialCreateProductTable.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Migrations/20220109121452_InitialCreateProductTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/Migrations/ProductContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess.EF.Migrations/VendingMachine.DataAccess.EF.Migrations.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Contexts/ProductContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Contexts/ProductContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/CustomExceptions/PaymentUseCaseExceptions/InvalidCreditCardIdException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/CustomExceptions/PaymentUseCaseExceptions/InvalidCreditCardIdException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductInMemoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductInMemoryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IUseCaseFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/IUseCaseFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/ICommands/ICommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/ICommands/ICommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/PayCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/PayCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/VendingMachine.Presentation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/VendingMachine.Presentation.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/MainDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/MainDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/PaymentTerminals/CashPaymentTerminal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/PaymentTerminals/CashPaymentTerminal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/PaymentTerminals/CreditCardPaymentTerminal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/PaymentTerminals/CreditCardPaymentTerminal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ShelfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ShelfView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/PayUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/PayUseCaseTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/UseCaseFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/UseCaseFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachineRoot.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachineRoot.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,21 +50,23 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="21pD9I4eORqf7ZQtA83Ifl96p10" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Project.VendingMachine">
+}</component>
+  <component name="RunManager">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -95,6 +97,9 @@
       <workItem from="1638628995766" duration="854000" />
       <workItem from="1651140042769" duration="112000" />
       <workItem from="1651146739954" duration="830000" />
+      <workItem from="1651471523841" duration="1677000" />
+      <workItem from="1651481704057" duration="69000" />
+      <workItem from="1651471656996" duration="6303000" />
     </task>
     <servers />
   </component>
@@ -104,6 +109,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

@@ -11,16 +11,15 @@ internal class BuyView : IBuyView
     public void DisplayProduct(Product product)
     {
         DisplayBase.DisplayLine("You have bought the following product:", ConsoleColor.Cyan);
-        DisplayBase.DisplayLine(
-            $"{product.Name} - price: {product.Price}$, "
-            + $"colId: {product.ColumnId}, qty: {product.Quantity}",
-            ConsoleColor.Green
-        );
+        DisplayBase.DisplayLine(product.ToString(), ConsoleColor.Green);
     }
 
     public string AskForProductCode()
     {
-        DisplayBase.DisplayLine("Please enter the product code:", ConsoleColor.Yellow);
+        DisplayBase.DisplayLine(
+            "Enter the id for the product you wanna buy:",
+            ConsoleColor.Yellow
+        );
         var productCode = Console.ReadLine() ?? string.Empty;
 
         return productCode;

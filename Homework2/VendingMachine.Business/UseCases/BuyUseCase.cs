@@ -2,6 +2,7 @@
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Dtos;
 using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 
@@ -48,7 +49,9 @@ internal class BuyUseCase : IUseCase
             }
 
             _payCommand.Execute(product.Price);
-            _productRepository.UpdateQuantity(productCode, product.Quantity - 1);
+            _productRepository.UpdateQuantity(
+                new QuantitySupply { ColumnId = productCode, Quantity = product.Quantity - 1 }
+            );
 
             _buyView.DisplayProduct(product);
         }

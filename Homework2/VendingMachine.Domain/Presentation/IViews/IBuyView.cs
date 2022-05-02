@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using VendingMachine.Domain.Business.IHelpersPayment;
-using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.Domain.Presentation.IViews;
 
-public interface IBuyView
+public interface IBuyView: IDisplayView
 {
-    void DisplayProduct(Product product);
     string AskForProductCode();
     int AskForPaymentMethod(IEnumerable<IPaymentMethod> paymentMethods);
     void DisplayCommand(string command);

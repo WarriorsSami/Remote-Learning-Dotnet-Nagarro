@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VendingMachine.Domain.Dtos;
 using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.Domain.DataAccess.IRepositories;
@@ -7,5 +8,7 @@ public interface IProductRepository
 {
     IEnumerable<Product> GetAll();
     Product GetById(int code);
-    void UpdateQuantity(int code, int quantity);
+    void AddOrReplace(Product product);
+    void UpdateQuantity(QuantitySupply quantitySupply);
+    void IncreaseQuantity(QuantitySupply quantitySupply);
 }

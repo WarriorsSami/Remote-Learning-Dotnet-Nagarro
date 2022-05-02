@@ -21,7 +21,7 @@ internal class BuyCommand : ICommand
     public string Description => "Buy & Pay for a product";
     public bool CanExecute => !_authService.IsUserAuthenticated;
 
-    public void Execute(params object[] args)
+    public void Execute()
     {
         _useCaseFactory.Create<BuyUseCase>().Execute();
     }

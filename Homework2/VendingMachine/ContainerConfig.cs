@@ -31,22 +31,18 @@ public static class ContainerConfig
         builder.RegisterType<MainDisplay>().As<IMainDisplay>().SingleInstance();
         builder.RegisterType<BuyView>().As<IBuyView>().SingleInstance();
         builder.RegisterType<ShelfView>().As<IShelfView>().SingleInstance();
+        builder.RegisterType<SupplyProductView>().As<ISupplyProductView>().SingleInstance();
 
         builder.RegisterType<CashPaymentTerminal>().As<ICashTerminal>().SingleInstance();
         builder.RegisterType<CreditCardPaymentTerminal>().As<ICardTerminal>().SingleInstance();
         builder.RegisterType<CashPaymentAlgorithm>().As<IPaymentAlgorithm>().SingleInstance();
-        builder
-            .RegisterType<CreditCardPaymentAlgorithm>()
-            .As<IPaymentAlgorithm>()
-            .SingleInstance();
+        builder.RegisterType<CreditCardPaymentAlgorithm>().As<IPaymentAlgorithm>().SingleInstance();
         builder.RegisterType<CashPaymentMethod>().As<IPaymentMethod>().SingleInstance();
         builder.RegisterType<CreditCardPaymentMethod>().As<IPaymentMethod>().SingleInstance();
         builder.RegisterType<LuhnCardValidator>().As<ICardValidityAlgorithm>().SingleInstance();
 
         var configuration = new ConfigurationBuilder()
-            .Add(
-                new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true }
-            )
+            .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
             .Build();
         var persistenceType = configuration.GetSection("PersistenceType").Value;
 
@@ -76,12 +72,16 @@ public static class ContainerConfig
                 throw new Exception("Invalid persistence type");
         }
 
+        var reportType = configuration.GetSection("ReportType").Value;
+
         builder.RegisterType<BuyCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<LookCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<PayCommand>().As<IPayCommand>().AsSelf().SingleInstance();
         builder.RegisterType<LoginCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<LogoutCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<TurnOffCommand>().As<ICommand>().SingleInstance();
+        builder.RegisterType<SupplyExistingProductCommand>().As<ICommand>().SingleInstance();
+        builder.RegisterType<SupplyNewProductCommand>().As<ICommand>().SingleInstance();
 
         builder.RegisterType<UseCaseFactory>().As<IUseCaseFactory>().SingleInstance();
 
@@ -91,11 +91,14 @@ public static class ContainerConfig
         builder.RegisterType<LoginUseCase>().As<IUseCase>().AsSelf().SingleInstance();
         builder.RegisterType<LogoutUseCase>().As<IUseCase>().AsSelf().SingleInstance();
         builder.RegisterType<TurnOffUseCase>().As<IUseCase>().AsSelf().SingleInstance();
-
         builder
-            .RegisterType<AuthenticationService>()
-            .As<IAuthenticationService>()
+            .RegisterType<SupplyExistingProductUseCase>()
+            .As<IUseCase>()
+            .AsSelf()
             .SingleInstance();
+        builder.RegisterType<SupplyNewProductUseCase>().As<IUseCase>().AsSelf().SingleInstance();
+
+        builder.RegisterType<AuthenticationService>().As<IAuthenticationService>().SingleInstance();
         builder.RegisterType<TurnOffService>().As<ITurnOffService>().SingleInstance();
 
         builder

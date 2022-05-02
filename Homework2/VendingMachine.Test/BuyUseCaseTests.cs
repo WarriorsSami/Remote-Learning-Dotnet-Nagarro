@@ -5,6 +5,7 @@ using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Dtos;
 using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
@@ -96,7 +97,16 @@ internal class BuyUseCaseTests
             .Returns((int id) => listOfProduct.Find(x => x.ColumnId == id));
 
         mockProductRepository
-            .Setup(x => x.UpdateQuantity(It.IsAny<int>(), It.IsAny<int>()))
+            .Setup(
+                x =>
+                    x.UpdateQuantity(
+                        new QuantitySupply
+                        {
+                            ColumnId = It.IsAny<int>(),
+                            Quantity = It.IsAny<int>()
+                        }
+                    )
+            )
             .Callback(
                 (int id, int quantity) =>
                 {

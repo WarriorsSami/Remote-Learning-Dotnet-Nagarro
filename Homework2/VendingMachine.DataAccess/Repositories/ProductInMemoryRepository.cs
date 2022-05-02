@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Dtos;
 using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.DataAccess.Repositories;
@@ -91,12 +92,36 @@ internal class ProductInMemoryRepository : IProductRepository
         return product;
     }
 
-    public void UpdateQuantity(int code, int quantity)
+    public void UpdateQuantity(QuantitySupply quantitySupply)
     {
-        var product = Products.FirstOrDefault(p => p.ColumnId == code);
+        var product = Products.FirstOrDefault(p => p.ColumnId == quantitySupply.ColumnId);
         if (product != null)
         {
-            product.Quantity = quantity;
+            product.Quantity = quantitySupply.Quantity;
+        }
+    }
+    
+    public void IncreaseQuantity(QuantitySupply quantitySupply)
+    {
+        var product = Products.FirstOrDefault(p => p.ColumnId == quantitySupply.ColumnId);
+        if (product != null)
+        {
+            product.Quantity += quantitySupply.Quantity;
+        }
+    }
+    
+    public void AddOrReplace(Product product)
+    {
+        var productToUpdate = Products.FirstOrDefault(p => p.ColumnId == product.ColumnId);
+        if (productToUpdate != null)
+        {
+            productToUpdate.Name = product.Name;
+            productToUpdate.Price = product.Price;
+            productToUpdate.Quantity = product.Quantity;
+        }
+        else
+        {
+            Products.Add(product);
         }
     }
 }

@@ -23,8 +23,8 @@ internal class LogoutCommand : ICommand
 
     public bool CanExecute => _authService.IsUserAuthenticated;
 
-    public void Execute(params object[] args)
+    public void Execute()
     {
-        _useCaseFactory.Create<LogoutUseCase>().Execute(_authService);
+        _useCaseFactory.Create<LogoutUseCase>().Execute();
     }
 }

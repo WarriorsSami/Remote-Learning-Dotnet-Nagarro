@@ -75,6 +75,16 @@ internal class VendingMachineApplication : IVendingMachineApplication
                 DisplayBase.DisplayError(e);
                 DisplayBase.Pause();
             }
+            catch (ArgumentNullException e)
+            {
+                DisplayBase.DisplayError(e);
+                DisplayBase.Pause();
+            }
+            catch (OverflowException e)
+            {
+                DisplayBase.DisplayError(e);
+                DisplayBase.Pause();
+            }
             catch (Exception e)
             {
                 DisplayBase.DisplayError(e);
