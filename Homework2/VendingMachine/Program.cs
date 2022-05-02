@@ -1,34 +1,30 @@
 ﻿using System;
+using Autofac;
+using VendingMachine;
+using VendingMachine.Domain.Business;
 
-namespace VendingMachine
+try
 {
-    internal static class Program
-    {
-        private static void Main(string[] args)
-        {
-            try
-            {
-                var bootstrapper = new Bootstrapper();
-                bootstrapper.Run();
-            }
-            catch (Exception e)
-            {
-                DisplayError(e);
-                Pause();
-            }
-        }
+    using var context = ContainerConfig.Build().BeginLifetimeScope();
+    var app = context.Resolve<IVendingMachineApplication>();
 
-        private static void DisplayError(Exception ex)
-        {
-            var oldColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(ex);
-            Console.ForegroundColor = oldColor;
-        }
+    app.Run();
+}
+catch (Exception ex)
+{
+    DisplayError(ex);
+    Pause();
+}
 
-        private static void Pause()
-        {
-            Console.ReadKey(true);
-        }
-    }
+static void DisplayError(Exception ex)
+{
+    var oldColor = Console.ForegroundColor;
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine(ex);
+    Console.ForegroundColor = oldColor;
+}
+
+static void Pause()
+{
+    Console.ReadKey(true);
 }

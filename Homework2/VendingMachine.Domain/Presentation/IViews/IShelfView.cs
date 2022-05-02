@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using VendingMachine.DataAccess.Models;
+using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.Domain.Presentation.IViews
 {

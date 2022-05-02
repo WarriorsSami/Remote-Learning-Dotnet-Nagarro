@@ -9,24 +9,29 @@ namespace VendingMachine.Migrations
         {
             migrationBuilder.CreateTable(
                 name: "products",
-                columns: table => new
-                {
-                    ColumnId = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    Quantity = table.Column<int>(type: "integer", nullable: false)
-                },
+                columns: table =>
+                    new
+                    {
+                        ColumnId = table
+                            .Column<int>(type: "integer", nullable: false)
+                            .Annotation(
+                                "Npgsql:ValueGenerationStrategy",
+                                NpgsqlValueGenerationStrategy.IdentityByDefaultColumn
+                            ),
+                        Name = table.Column<string>(type: "text", nullable: true),
+                        Price = table.Column<decimal>(type: "numeric", nullable: false),
+                        Quantity = table.Column<int>(type: "integer", nullable: false)
+                    },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_products", x => x.ColumnId);
-                });
+                }
+            );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "products");
+            migrationBuilder.DropTable(name: "products");
         }
     }
 }

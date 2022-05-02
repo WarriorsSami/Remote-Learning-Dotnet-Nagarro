@@ -6,6 +6,5 @@
 
     <ItemGroup>
       <Folder Include="DataAccess" />
-      <Folder Include="Presentation" />
     </ItemGroup>
 </Project>
