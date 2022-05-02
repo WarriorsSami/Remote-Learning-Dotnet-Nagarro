@@ -6,7 +6,7 @@ namespace iQuest.StarFiles.UniverseModel
     /// A binary star is a star system consisting of two stars orbiting around their common barycenter.
     /// Out BinaryStar instance will create two files (the main one from the base class and an additional one).
     /// </summary>
-    internal class BinaryStar : SimpleStar, IDisposable
+    internal class BinaryStar : SimpleStar
     {
         private readonly Random _random = new Random();
         private WinApiFile _additionalFile;
@@ -94,7 +94,5 @@ namespace iQuest.StarFiles.UniverseModel
                 _disposed = true;
             }
         }
-
-        ~BinaryStar() => Dispose(false);
     }
 }

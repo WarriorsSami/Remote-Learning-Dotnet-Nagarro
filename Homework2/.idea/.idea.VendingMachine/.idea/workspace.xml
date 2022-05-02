@@ -5,26 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/.idea/.idea.VendingMachineTests/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/UnitTest1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/VendingMachineTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachineTests/VendingMachineTests.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.Remote-Learning-Dotnet-Nagarro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SupplyExistingProductUseCase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SupplyNewProductUseCase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/QuantitySupply.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IDisplayView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/ISupplyProductView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyExistingProductCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyNewProductCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/SupplyProductView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/CustomExceptions/PaymentUseCaseExceptions/InvalidCreditCardIdException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/CustomExceptions/PaymentUseCaseExceptions/InvalidCreditCardIdException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductInMemoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductInMemoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/ICommands/ICommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/ICommands/ICommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,26 +44,28 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/VendingMachine/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/VendingMachineTests/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VendingMachine/Program.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="21pD9I4eORqf7ZQtA83Ifl96p10" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/VendingMachineTests/VendingMachineTests.csproj" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.environmentSetup" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -84,15 +95,36 @@
       <option name="presentableId" value="Default" />
       <updated>1638628981617</updated>
       <workItem from="1638628995766" duration="854000" />
+      <workItem from="1651140042769" duration="112000" />
+      <workItem from="1651146739954" duration="830000" />
+      <workItem from="1651471523841" duration="1677000" />
+      <workItem from="1651481704057" duration="69000" />
+      <workItem from="1651471656996" duration="6303000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

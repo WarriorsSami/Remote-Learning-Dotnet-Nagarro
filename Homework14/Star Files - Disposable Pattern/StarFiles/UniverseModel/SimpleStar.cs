@@ -60,7 +60,5 @@ namespace iQuest.StarFiles.UniverseModel
                 _disposed = true;
             }
         }
-
-        ~SimpleStar() => Dispose(false);
     }
 }

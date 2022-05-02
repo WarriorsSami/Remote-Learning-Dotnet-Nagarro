@@ -46,7 +46,5 @@ namespace iQuest.StarFiles.UniverseModel
                 _disposed = true;
             }            
         }
-
-        ~Universe() => Dispose(false);
     }
 }

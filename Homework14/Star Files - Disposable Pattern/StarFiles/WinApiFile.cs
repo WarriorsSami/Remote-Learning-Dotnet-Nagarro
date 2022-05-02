@@ -125,7 +125,5 @@ namespace iQuest.StarFiles
                 _disposed = true;
             }
         }
-
-        ~WinApiFile() => Dispose(false);
     }
 }
