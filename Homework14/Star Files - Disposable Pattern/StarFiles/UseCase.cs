@@ -7,19 +7,12 @@ namespace iQuest.StarFiles
     {
         public void Execute()
         {
-            Universe universe = null;
             string starFilePath, binaryStarFilePath1, binaryStarFilePath2;
 
-            try
+            using (var universe = new Universe())
             {
-                universe = new Universe();
-
                 starFilePath = GenerateStar(universe);
                 (binaryStarFilePath1, binaryStarFilePath2) = GenerateBinaryStar(universe);
-            }
-            finally
-            {
-                universe?.Dispose();
             }
 
             DisplayFileContent(starFilePath);
