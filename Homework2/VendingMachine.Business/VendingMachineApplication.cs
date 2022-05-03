@@ -5,86 +5,82 @@ using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.LoginUseCaseExceptions;
 using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Domain.Business;
-using VendingMachine.Domain.Business.IUseCases;
+using VendingMachine.Domain.Business.IServices;
+using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business
 {
-    internal class VendingMachineApplication: IVendingMachineApplication
+    internal class VendingMachineApplication : IVendingMachineApplication
     {
-        private readonly List<IUseCase> _useCases;
+        private readonly List<ICommand> _commands;
         private readonly IMainDisplay _mainDisplay;
+        private readonly ITurnOffService _turnOffService;
 
-        private bool _turnOffWasRequested;
-
-        public bool UserIsLoggedIn { get; set; }
-
-        public VendingMachineApplication(List<IUseCase> useCases, IMainDisplay mainDisplay)
+        public VendingMachineApplication(
+            IEnumerable<ICommand> commands,
+            IMainDisplay mainDisplay,
+            ITurnOffService turnOffService
+        )
         {
-            _useCases = useCases ?? throw new ArgumentNullException(nameof(useCases));
+            _commands = commands.ToList();
             _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
+            _turnOffService = turnOffService ?? throw new ArgumentNullException(nameof(turnOffService));
         }
 
         public void Run()
         {
-            _turnOffWasRequested = false;
-
-            while (!_turnOffWasRequested)
+            _turnOffService.Initialize();
+            while (!_turnOffService.TurnOffRequested)
             {
-                var availableUseCases = _useCases
-                    .Where(x => x.CanExecute);
+                var availableCommands = _commands.Where(x => x.CanExecute);
 
-                var useCase = _mainDisplay.ChooseCommand(availableUseCases);
+                var command = _mainDisplay.ChooseCommand(availableCommands);
                 try
                 {
-                    useCase.Execute();
+                    command.Execute();
                 }
                 catch (InvalidCredentialsException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (ProductNotFoundException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (ProductOutOfStockException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (CancelOrderException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (InvalidPaymentMethodIdException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (InvalidCreditCardIdException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (FormatException e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
                 catch (Exception e)
                 {
-                    _mainDisplay.DisplayError(e);
-                    _mainDisplay.Pause();
+                    DisplayBase.DisplayError(e);
+                    DisplayBase.Pause();
                 }
             }
-        }
-
-        public void TurnOff()
-        {
-            _turnOffWasRequested = true;
         }
     }
 }

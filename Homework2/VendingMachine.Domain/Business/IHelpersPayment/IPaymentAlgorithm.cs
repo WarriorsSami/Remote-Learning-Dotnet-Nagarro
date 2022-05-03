@@ -1,6 +1,4 @@
-﻿using VendingMachine.Business.Helpers.Payment;
-
-namespace VendingMachine.Domain.Business.IHelpersPayment
+﻿namespace VendingMachine.Domain.Business.IHelpersPayment
 {
     public interface IPaymentAlgorithm
     {

@@ -1,36 +1,28 @@
 ﻿using System;
-using VendingMachine.Business.CustomExceptions.LoginUseCaseExceptions;
-using VendingMachine.Domain.Business;
+using System.Runtime.CompilerServices;
+using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.Presentation.IViews;
+
+[assembly: InternalsVisibleTo("VendingMachine.Presentation")]
 
 namespace VendingMachine.Business.UseCases
 {
     internal class LoginUseCase : IUseCase
     {
-        private readonly IVendingMachineApplication _application;
         private readonly IMainDisplay _mainDisplay;
 
-        public string Name => "login";
-
-        public string Description => "Get access to administration buttons.";
-
-        public bool CanExecute => !_application.UserIsLoggedIn;
-
-        public LoginUseCase(IVendingMachineApplication application, IMainDisplay mainDisplay)
+        public LoginUseCase(IMainDisplay mainDisplay)
         {
-            _application = application ?? throw new ArgumentNullException(nameof(application));
             _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
         }
 
-        public void Execute()
+        public void Execute(params object[] args)
         {
             var password = _mainDisplay.AskForPassword();
+            var authService = (IAuthenticationService)args[0];
 
-            if (password == "supercalifragilisticexpialidocious")
-                _application.UserIsLoggedIn = true;
-            else
-                throw new InvalidCredentialsException("Invalid password");
+            authService.Login(password);
         }
     }
 }

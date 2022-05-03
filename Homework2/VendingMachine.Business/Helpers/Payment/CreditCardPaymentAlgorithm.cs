@@ -4,16 +4,19 @@ using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 
 namespace VendingMachine.Business.Helpers.Payment
 {
-    public class CreditCardPaymentAlgorithm: IPaymentAlgorithm
+    public class CreditCardPaymentAlgorithm : IPaymentAlgorithm
     {
         public PaymentMethodType Id => PaymentMethodType.CreditCard;
         public string Name => "Credit Card";
         public string Command => "Please insert your credit card credentials!";
-        
+
         private readonly ICardTerminal _terminal;
         private readonly ICardValidityAlgorithm _validityAlgorithm;
 
-        public CreditCardPaymentAlgorithm(ICardTerminal terminal, ICardValidityAlgorithm validityAlgorithm)
+        public CreditCardPaymentAlgorithm(
+            ICardTerminal terminal,
+            ICardValidityAlgorithm validityAlgorithm
+        )
         {
             _terminal = terminal;
             _validityAlgorithm = validityAlgorithm;
