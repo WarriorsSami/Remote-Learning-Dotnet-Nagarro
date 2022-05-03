@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using VendingMachine.DataAccess.Contexts;
 using VendingMachine.Domain.DataAccess.IRepositories;
 using VendingMachine.Domain.Dtos;

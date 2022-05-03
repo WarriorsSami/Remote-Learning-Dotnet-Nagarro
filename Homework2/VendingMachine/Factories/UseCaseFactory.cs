@@ -3,7 +3,7 @@ using Autofac;
 using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IUseCases;
 
-namespace VendingMachine;
+namespace VendingMachine.Factories;
 
 internal class UseCaseFactory : IUseCaseFactory
 {

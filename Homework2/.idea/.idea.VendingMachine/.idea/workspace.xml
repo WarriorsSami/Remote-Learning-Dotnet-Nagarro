@@ -5,35 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SupplyExistingProductUseCase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SupplyNewProductUseCase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/QuantitySupply.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IDisplayView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/ISupplyProductView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyExistingProductCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyNewProductCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/SupplyProductView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/ISerializerFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Factories/SerializerFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/SerializerConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/CustomExceptions/PaymentUseCaseExceptions/InvalidCreditCardIdException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/CustomExceptions/PaymentUseCaseExceptions/InvalidCreditCardIdException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/BuyUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LoginUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/LogoutUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/TurnOffUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/VendingMachineApplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductInMemoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductInMemoryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/VendingMachine.DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/VendingMachine.DataAccess.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/ICommands/ICommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/ICommands/ICommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IBuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/BuyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Test/BuyUseCaseTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/VendingMachine.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/VendingMachine.Domain.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/UseCaseFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Factories/UseCaseFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +51,11 @@
 }</component>
   <component name="RunManager">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/VendingMachine/bin/Debug/net6.0/VendingMachine.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/VendingMachine/bin/Debug/net6.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="1" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" />
@@ -80,7 +63,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value="net6.0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -100,6 +83,7 @@
       <workItem from="1651471523841" duration="1677000" />
       <workItem from="1651481704057" duration="69000" />
       <workItem from="1651471656996" duration="6303000" />
+      <workItem from="1651568394303" duration="7417000" />
     </task>
     <servers />
   </component>

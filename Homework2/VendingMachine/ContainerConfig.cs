@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Autofac;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
@@ -9,6 +10,7 @@ using VendingMachine.Business.UseCases;
 using VendingMachine.DataAccess.Contexts;
 using VendingMachine.DataAccess.Repositories;
 using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IFactories;
 using VendingMachine.Domain.Business.IHelpersPayment;
 using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
@@ -16,6 +18,7 @@ using VendingMachine.Domain.DataAccess.IRepositories;
 using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
+using VendingMachine.Factories;
 using VendingMachine.Presentation.Commands;
 using VendingMachine.Presentation.Views;
 using VendingMachine.Presentation.Views.PaymentTerminals;
@@ -32,6 +35,7 @@ public static class ContainerConfig
         builder.RegisterType<BuyView>().As<IBuyView>().SingleInstance();
         builder.RegisterType<ShelfView>().As<IShelfView>().SingleInstance();
         builder.RegisterType<SupplyProductView>().As<ISupplyProductView>().SingleInstance();
+        builder.RegisterType<ReportsView>().As<IReportsView>().SingleInstance();
 
         builder.RegisterType<CashPaymentTerminal>().As<ICashTerminal>().SingleInstance();
         builder.RegisterType<CreditCardPaymentTerminal>().As<ICardTerminal>().SingleInstance();
@@ -73,6 +77,19 @@ public static class ContainerConfig
         }
 
         var reportType = configuration.GetSection("ReportType").Value;
+        if (new[] { "xml", "json" }.Contains(reportType))
+        {
+            builder
+                .RegisterInstance(new SerializerConfiguration { Type = reportType })
+                .As<SerializerConfiguration>()
+                .SingleInstance();
+        }
+        else
+        {
+            throw new Exception("Invalid report type");
+        }
+
+        builder.RegisterType<ReportsRepository>().As<IReportsRepository>().SingleInstance();
 
         builder.RegisterType<BuyCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<LookCommand>().As<ICommand>().SingleInstance();
@@ -82,8 +99,10 @@ public static class ContainerConfig
         builder.RegisterType<TurnOffCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<SupplyExistingProductCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<SupplyNewProductCommand>().As<ICommand>().SingleInstance();
+        builder.RegisterType<StockReportCommand>().As<ICommand>().SingleInstance();
 
         builder.RegisterType<UseCaseFactory>().As<IUseCaseFactory>().SingleInstance();
+        builder.RegisterType<SerializerFactory>().As<ISerializerFactory>().SingleInstance();
 
         builder.RegisterType<BuyUseCase>().As<IUseCase>().AsSelf().SingleInstance();
         builder.RegisterType<PayUseCase>().As<IUseCase>().AsSelf().SingleInstance();
@@ -97,6 +116,7 @@ public static class ContainerConfig
             .AsSelf()
             .SingleInstance();
         builder.RegisterType<SupplyNewProductUseCase>().As<IUseCase>().AsSelf().SingleInstance();
+        builder.RegisterType<StockReportUseCase>().As<IUseCase>().AsSelf().SingleInstance();
 
         builder.RegisterType<AuthenticationService>().As<IAuthenticationService>().SingleInstance();
         builder.RegisterType<TurnOffService>().As<ITurnOffService>().SingleInstance();
