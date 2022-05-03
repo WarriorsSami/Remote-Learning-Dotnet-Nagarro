@@ -1,0 +1,56 @@
+{
+  "StockReport": [
+    {
+      "Name": "Coca-Cola",
+      "Quantity": 2
+    },
+    {
+      "Name": "Fanta",
+      "Quantity": 4
+    },
+    {
+      "Name": "Snickers",
+      "Quantity": 6
+    },
+    {
+      "Name": "Milka",
+      "Quantity": 8
+    },
+    {
+      "Name": "Hot Chocolate",
+      "Quantity": 5
+    },
+    {
+      "Name": "Orange Juice",
+      "Quantity": 2
+    },
+    {
+      "Name": "Granini",
+      "Quantity": 10
+    },
+    {
+      "Name": "Pepsi",
+      "Quantity": 10
+    },
+    {
+      "Name": "Wiskey",
+      "Quantity": 5
+    },
+    {
+      "Name": "Sprite",
+      "Quantity": 20
+    },
+    {
+      "Name": "Cappy Pulpy",
+      "Quantity": 22
+    },
+    {
+      "Name": "7-Up",
+      "Quantity": 13
+    },
+    {
+      "Name": "Bounty",
+      "Quantity": 18
+    }
+  ]
+}

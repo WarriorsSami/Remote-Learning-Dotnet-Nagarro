@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/ISerializerFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine/Factories/SerializerFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine/SerializerConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 141708.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 141838.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 141950.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 143034.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 143158.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ProductPersistentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/VendingMachine.DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/VendingMachine.DataAccess.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/VendingMachine.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/VendingMachine.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/UseCaseFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Factories/UseCaseFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/StockReportUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/StockReportUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ReportsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ReportsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/ISerializerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/ISerializerFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IReportsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IReportsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IReportsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IReportsView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ReportsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ReportsView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/Factories/SerializerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Factories/SerializerFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/appsettings.json" afterDir="false" />
     </list>
@@ -40,15 +43,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/VendingMachine/bin/Debug/net6.0/VendingMachine.exe" />
@@ -83,7 +88,7 @@
       <workItem from="1651471523841" duration="1677000" />
       <workItem from="1651481704057" duration="69000" />
       <workItem from="1651471656996" duration="6303000" />
-      <workItem from="1651568394303" duration="7417000" />
+      <workItem from="1651568394303" duration="9295000" />
     </task>
     <servers />
   </component>
@@ -105,7 +110,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat(report): create stock report functionality&#10;&#10;Create StockReport UseCase, Command and related Repository and Serializer Factory" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

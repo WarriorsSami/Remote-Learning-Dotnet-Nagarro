@@ -1,8 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using VendingMachine.Domain.Business.IFactories;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace VendingMachine.Factories;
 
@@ -15,16 +17,20 @@ internal class SerializerFactory: ISerializerFactory
         _config = config ?? throw new ArgumentNullException(nameof(config));
     }
 
-    public void Serialize<TReport>(TReport report, string fileName)
+    public void Serialize<TReport>(TReport report, ref string filePath) where TReport: class
     {
-        fileName += $".{_config.Type}";
-        using var stream = new FileStream(fileName, FileMode.Create);
+        filePath += $".{_config.Type}";
+        using var stream = new FileStream(filePath, FileMode.Create);
         using var writer = new StreamWriter(stream);
         
         switch (_config.Type)
         {
             case "xml":
-                new XmlSerializer(typeof(TReport)).Serialize(writer, report);
+                var settings = new XmlWriterSettings {Indent = true, IndentChars = "\t"};
+                using (var xmlWriter = XmlWriter.Create(writer, settings))
+                {
+                    new XmlSerializer(typeof(TReport)).Serialize(xmlWriter, report);
+                }
                 break;
             case "json":
                 using (var jsonWriter = new JsonTextWriter(writer) { Formatting = Formatting.Indented })

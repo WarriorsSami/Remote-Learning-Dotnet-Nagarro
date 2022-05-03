@@ -10,11 +10,12 @@ internal class ReportsView : IReportsView
         throw new NotImplementedException();
     }
 
-    public void DisplaySuccessMessage(string detail)
+    public void DisplaySuccessMessage(string detail, string filePath)
     {
         DisplayBase.DisplayLine(
-            $"{detail} report has been successfully generated",
-            ConsoleColor.Cyan
+            $"A new {detail} Report has been successfully generated.\n"
+                + $"Please refer to the file {filePath} for a more detailed output.",
+            ConsoleColor.Green
         );
     }
 }

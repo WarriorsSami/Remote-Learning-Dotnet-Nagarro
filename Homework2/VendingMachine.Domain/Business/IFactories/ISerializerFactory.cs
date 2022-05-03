@@ -2,5 +2,5 @@
 
 public interface ISerializerFactory
 {
-   void Serialize<TReport>(TReport report, string fileName); 
+   void Serialize<TReport>(TReport report, ref string filePath) where TReport: class; 
 }

@@ -33,8 +33,8 @@ internal class StockReportUseCase : IUseCase
         {
             Products = products.ToArray()
         };
-        
-        _reportsRepository.Add(stockReport);
-        _reportsView.DisplaySuccessMessage("Stock");
+
+        _reportsRepository.Add(stockReport, out var filePath);
+        _reportsView.DisplaySuccessMessage("Stock", filePath);
     }
 }

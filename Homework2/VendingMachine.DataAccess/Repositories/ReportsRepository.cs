@@ -7,7 +7,9 @@ namespace VendingMachine.DataAccess.Repositories;
 
 internal class ReportsRepository : IReportsRepository
 {
-    private const string RootDirectoryPath = "Data";
+    // TODO: Change to a proper path retrieval
+    private readonly string _rootDirectoryPath =
+        $"{Directory.GetParent(Directory.GetCurrentDirectory())!.Parent!.Parent}\\Data";
     private readonly ISerializerFactory _serializerFactory;
 
     public ReportsRepository(ISerializerFactory serializerFactory)
@@ -16,10 +18,10 @@ internal class ReportsRepository : IReportsRepository
             serializerFactory ?? throw new ArgumentNullException(nameof(serializerFactory));
     }
 
-    public void Add<TReport>(TReport report)
+    public void Add<TReport>(TReport report, out string filePath) where TReport : class
     {
-        var filename = $"{typeof(TReport).Name} - {DateTime.Now:yyyy MM dd HHmmss}";
-        var path = Path.Combine(RootDirectoryPath, $"{typeof(TReport).Name}s", filename);
-        _serializerFactory.Serialize(report, path);
+        var file = $"{typeof(TReport).Name} - {DateTime.Now:yyyy MM dd HHmmss}";
+        filePath = Path.Combine(_rootDirectoryPath, $"{typeof(TReport).Name}s", file);
+        _serializerFactory.Serialize(report, ref filePath);
     }
 }

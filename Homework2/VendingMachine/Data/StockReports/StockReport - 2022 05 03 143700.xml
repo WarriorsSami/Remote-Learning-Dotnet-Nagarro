@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StockReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Product>
+		<Name>Coca-Cola</Name>
+		<Quantity>2</Quantity>
+	</Product>
+	<Product>
+		<Name>Fanta</Name>
+		<Quantity>4</Quantity>
+	</Product>
+	<Product>
+		<Name>Snickers</Name>
+		<Quantity>6</Quantity>
+	</Product>
+	<Product>
+		<Name>Milka</Name>
+		<Quantity>8</Quantity>
+	</Product>
+	<Product>
+		<Name>Hot Chocolate</Name>
+		<Quantity>5</Quantity>
+	</Product>
+	<Product>
+		<Name>Orange Juice</Name>
+		<Quantity>2</Quantity>
+	</Product>
+	<Product>
+		<Name>Granini</Name>
+		<Quantity>10</Quantity>
+	</Product>
+	<Product>
+		<Name>Pepsi</Name>
+		<Quantity>10</Quantity>
+	</Product>
+	<Product>
+		<Name>Wiskey</Name>
+		<Quantity>5</Quantity>
+	</Product>
+	<Product>
+		<Name>Sprite</Name>
+		<Quantity>20</Quantity>
+	</Product>
+	<Product>
+		<Name>Cappy Pulpy</Name>
+		<Quantity>22</Quantity>
+	</Product>
+	<Product>
+		<Name>7-Up</Name>
+		<Quantity>13</Quantity>
+	</Product>
+	<Product>
+		<Name>Bounty</Name>
+		<Quantity>18</Quantity>
+	</Product>
+</StockReport>

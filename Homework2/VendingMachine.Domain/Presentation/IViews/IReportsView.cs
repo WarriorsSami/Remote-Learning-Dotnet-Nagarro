@@ -2,5 +2,5 @@
 public interface IReportsView
 {
     void AskForTimeInterval();
-    void DisplaySuccessMessage(string detail);
+    void DisplaySuccessMessage(string detail, string filePath);
 }
