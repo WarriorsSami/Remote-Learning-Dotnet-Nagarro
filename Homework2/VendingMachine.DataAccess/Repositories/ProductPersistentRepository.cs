@@ -1,37 +1,65 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using VendingMachine.DataAccess.Contexts;
 using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Dtos;
 using VendingMachine.Domain.Entities;
 
-namespace VendingMachine.DataAccess.Repositories
+namespace VendingMachine.DataAccess.Repositories;
+
+internal class ProductPersistentRepository : IProductRepository
 {
-    internal class ProductPersistentRepository : IProductRepository
+    private readonly ProductContext _context;
+
+    public ProductPersistentRepository(ProductContext context)
     {
-        private readonly ProductContext _context;
+        _context = context;
+    }
 
-        public ProductPersistentRepository(ProductContext context)
+    public IEnumerable<Product> GetAll()
+    {
+        return _context.Products.ToList();
+    }
+
+    public Product GetById(int code)
+    {
+        return _context.Products.FirstOrDefault(p => p.ColumnId == code);
+    }
+
+    public void UpdateQuantity(QuantitySupply quantitySupply)
+    {
+        var product = _context.Products.FirstOrDefault(p => p.ColumnId == quantitySupply.ColumnId);
+        if (product != null)
         {
-            _context = context;
+            product.Quantity = quantitySupply.Quantity;
+            _context.SaveChanges();
         }
+    }
 
-        public IEnumerable<Product> GetAll()
+    public void IncreaseQuantity(QuantitySupply quantitySupply)
+    {
+        var product = _context.Products.FirstOrDefault(p => p.ColumnId == quantitySupply.ColumnId);
+        if (product != null)
         {
-            return _context.Products.ToList();
+            product.Quantity += quantitySupply.Quantity;
+            _context.SaveChanges();
         }
+    }
 
-        public Product GetById(int code)
+    public void AddOrReplace(Product product)
+    {
+        var existingProduct = _context.Products.FirstOrDefault(p => p.ColumnId == product.ColumnId);
+        
+        if (existingProduct != null)
         {
-            return _context.Products.FirstOrDefault(p => p.ColumnId == code);
+            _context.Entry(existingProduct).CurrentValues.SetValues(product);
+            _context.SaveChanges();
         }
-
-        public void UpdateQuantity(int code, int quantity)
+        else
         {
-            var product = _context.Products.FirstOrDefault(p => p.ColumnId == code);
-            if (product != null)
-            {
-                product.Quantity = quantity;
-                _context.SaveChanges();
-            }
+            _context.Products.Add(product);
+            _context.SaveChanges();
         }
     }
 }
