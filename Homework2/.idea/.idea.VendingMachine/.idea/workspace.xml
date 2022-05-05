@@ -4,23 +4,7 @@
     <projectFile>VendingMachine/VendingMachine.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 141708.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 141838.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 141950.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 143034.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReports/StockReport - 2022 05 03 143158.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/StockReportUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/StockReportUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ReportsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ReportsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/ISerializerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/ISerializerFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IReportsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/IReportsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IReportsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Presentation/IViews/IReportsView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ReportsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Views/ReportsView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/Factories/SerializerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Factories/SerializerFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/VendingMachine.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VendingMachine/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/appsettings.json" afterDir="false" />
-    </list>
+    <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +14,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/34e887b2733e1da4a9628aaff03189d4bd7842f082e12097939f9428535c39/CastleProxyFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/a878fab8a71ae1fdf611e9d11648692b61882d0afa4b8ad56c3ddd8f8c3f428/IVerifies.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VendingMachine/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -43,18 +29,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected=".NET Project.VendingMachine">
     <configuration name="VendingMachine" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/VendingMachine/bin/Debug/net6.0/VendingMachine.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -88,7 +79,10 @@
       <workItem from="1651471523841" duration="1677000" />
       <workItem from="1651481704057" duration="69000" />
       <workItem from="1651471656996" duration="6303000" />
-      <workItem from="1651568394303" duration="9295000" />
+      <workItem from="1651568394303" duration="9400000" />
+      <workItem from="1651582903557" duration="511000" />
+      <workItem from="1651595552037" duration="3535000" />
+      <workItem from="1651728328119" duration="8918000" />
     </task>
     <servers />
   </component>

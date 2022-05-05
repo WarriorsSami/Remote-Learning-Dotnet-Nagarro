@@ -1,6 +1,9 @@
-﻿namespace VendingMachine.Domain.Presentation.IViews;
+﻿using VendingMachine.Domain.Dtos;
+
+namespace VendingMachine.Domain.Presentation.IViews;
+
 public interface IReportsView
 {
-    void AskForTimeInterval();
+    TimeInterval AskForTimeInterval();
     void DisplaySuccessMessage(string detail, string filePath);
 }

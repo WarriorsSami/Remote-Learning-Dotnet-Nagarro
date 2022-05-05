@@ -21,7 +21,7 @@ public class CashPaymentAlgorithm : IPaymentAlgorithm
         var currentAmountOfMoney = 0.0m;
         while (currentAmountOfMoney < price)
         {
-            currentAmountOfMoney += _terminal.AskForMoney();
+            currentAmountOfMoney += _terminal.AskForMoney(price - currentAmountOfMoney);
             if (currentAmountOfMoney > price)
             {
                 _terminal.GiveBackChange(currentAmountOfMoney - price);

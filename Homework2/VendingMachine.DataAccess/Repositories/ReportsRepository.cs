@@ -18,10 +18,10 @@ internal class ReportsRepository : IReportsRepository
             serializerFactory ?? throw new ArgumentNullException(nameof(serializerFactory));
     }
 
-    public void Add<TReport>(TReport report, out string filePath) where TReport : class
+    public void Add<TReport>(TReport report, ref string filePath) where TReport : class
     {
-        var file = $"{typeof(TReport).Name} - {DateTime.Now:yyyy MM dd HHmmss}";
-        filePath = Path.Combine(_rootDirectoryPath, $"{typeof(TReport).Name}s", file);
+        filePath += $" - {DateTime.UtcNow:yyyy MM dd HHmmss}";
+        filePath = Path.Combine(_rootDirectoryPath, $"{typeof(TReport).Name}s", filePath);
         _serializerFactory.Serialize(report, ref filePath);
     }
 }

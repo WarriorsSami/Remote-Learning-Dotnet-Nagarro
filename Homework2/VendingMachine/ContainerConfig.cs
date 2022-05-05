@@ -53,23 +53,45 @@ public static class ContainerConfig
         switch (persistenceType)
         {
             case "Database":
-                builder.Register(
-                    _ =>
-                    {
-                        return new ProductContextFactory().CreateDbContext(
-                            new[] { configuration.GetConnectionString("DefaultConnection") }
-                        );
-                    }
-                );
+                builder
+                    .Register(
+                        _ =>
+                        {
+                            return new ProductContextFactory().CreateDbContext(
+                                new[] { configuration.GetConnectionString("DefaultConnection") }
+                            );
+                        }
+                    )
+                    .SingleInstance();
                 builder
                     .RegisterType<ProductPersistentRepository>()
                     .As<IProductRepository>()
+                    .SingleInstance();
+
+                builder
+                    .Register(
+                        _ =>
+                        {
+                            return new SaleContextFactory().CreateDbContext(
+                                new[] { configuration.GetConnectionString("DefaultConnection") }
+                            );
+                        }
+                    )
+                    .SingleInstance();
+                builder
+                    .RegisterType<SalePersistentRepository>()
+                    .As<ISaleRepository>()
                     .SingleInstance();
                 break;
             case "InMemory":
                 builder
                     .RegisterType<ProductInMemoryRepository>()
                     .As<IProductRepository>()
+                    .SingleInstance();
+
+                builder
+                    .RegisterType<SaleInMemoryRepository>()
+                    .As<ISaleRepository>()
                     .SingleInstance();
                 break;
             default:
@@ -100,6 +122,7 @@ public static class ContainerConfig
         builder.RegisterType<SupplyExistingProductCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<SupplyNewProductCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<StockReportCommand>().As<ICommand>().SingleInstance();
+        builder.RegisterType<SalesReportCommand>().As<ICommand>().SingleInstance();
 
         builder.RegisterType<UseCaseFactory>().As<IUseCaseFactory>().SingleInstance();
         builder.RegisterType<SerializerFactory>().As<ISerializerFactory>().SingleInstance();
@@ -117,6 +140,7 @@ public static class ContainerConfig
             .SingleInstance();
         builder.RegisterType<SupplyNewProductUseCase>().As<IUseCase>().AsSelf().SingleInstance();
         builder.RegisterType<StockReportUseCase>().As<IUseCase>().AsSelf().SingleInstance();
+        builder.RegisterType<SalesReportUseCase>().As<IUseCase>().AsSelf().SingleInstance();
 
         builder.RegisterType<AuthenticationService>().As<IAuthenticationService>().SingleInstance();
         builder.RegisterType<TurnOffService>().As<ITurnOffService>().SingleInstance();

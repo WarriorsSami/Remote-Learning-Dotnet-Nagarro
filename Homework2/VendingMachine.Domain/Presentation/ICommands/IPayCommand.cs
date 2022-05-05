@@ -1,9 +1,11 @@
-﻿namespace VendingMachine.Domain.Presentation.ICommands;
+﻿using VendingMachine.Domain.Entities;
+
+namespace VendingMachine.Domain.Presentation.ICommands;
 
 public interface IPayCommand
 {
     string Name { get; }
-    string Description { get; } 
+    string Description { get; }
     bool CanExecute { get; }
-    void Execute(decimal price);
+    void Execute(Product product);
 }

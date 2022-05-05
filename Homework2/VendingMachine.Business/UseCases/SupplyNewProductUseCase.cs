@@ -36,9 +36,9 @@ internal class SupplyNewProductUseCase : IUseCase
         {
             throw new CancelOrderException("Order cancelled due to invalid price");
         }
-        
+
         _productRepository.AddOrReplace(productToSupply);
-        
+
         var productSupplied = _productRepository.GetById(productToSupply.ColumnId);
         if (productSupplied == null)
         {

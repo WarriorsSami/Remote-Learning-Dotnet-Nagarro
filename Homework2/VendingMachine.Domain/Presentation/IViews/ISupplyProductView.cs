@@ -3,7 +3,7 @@ using VendingMachine.Domain.Entities;
 
 namespace VendingMachine.Domain.Presentation.IViews;
 
-public interface ISupplyProductView: IDisplayView
+public interface ISupplyProductView : IDisplayView
 {
     QuantitySupply RequestProductQuantity();
     Product RequestNewProduct();

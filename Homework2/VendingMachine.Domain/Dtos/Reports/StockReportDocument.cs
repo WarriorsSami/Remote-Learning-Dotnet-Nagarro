@@ -8,7 +8,7 @@ namespace VendingMachine.Domain.Dtos.Reports;
 [Serializable]
 [XmlRoot("StockReport")]
 [JsonObject("StockReport")]
-public class StockReport
+public class StockReportDocument
 {
     [XmlElement("Product")]
     [JsonProperty("StockReport")]

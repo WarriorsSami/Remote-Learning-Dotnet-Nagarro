@@ -100,7 +100,7 @@ internal class ProductInMemoryRepository : IProductRepository
             product.Quantity = quantitySupply.Quantity;
         }
     }
-    
+
     public void IncreaseQuantity(QuantitySupply quantitySupply)
     {
         var product = Products.FirstOrDefault(p => p.ColumnId == quantitySupply.ColumnId);
@@ -109,7 +109,7 @@ internal class ProductInMemoryRepository : IProductRepository
             product.Quantity += quantitySupply.Quantity;
         }
     }
-    
+
     public void AddOrReplace(Product product)
     {
         var productToUpdate = Products.FirstOrDefault(p => p.ColumnId == product.ColumnId);

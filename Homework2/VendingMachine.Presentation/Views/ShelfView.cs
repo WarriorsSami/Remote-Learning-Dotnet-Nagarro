@@ -14,7 +14,7 @@ internal class ShelfView : IShelfView
         {
             DisplayBase.DisplayLine(
                 $"{item.Name} - price: {item.Price}$, "
-                + $"colId: {item.ColumnId}, qty: {item.Quantity}",
+                    + $"colId: {item.ColumnId}, qty: {item.Quantity}",
                 ConsoleColor.Green
             );
         }

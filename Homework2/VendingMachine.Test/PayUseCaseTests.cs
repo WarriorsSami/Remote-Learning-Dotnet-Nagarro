@@ -6,7 +6,8 @@ using VendingMachine.Business.CustomExceptions.PaymentUseCaseExceptions;
 using VendingMachine.Business.Helpers.Payment;
 using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business.IHelpersPayment;
-using VendingMachine.Domain.Business.IServices;
+using VendingMachine.Domain.DataAccess.IRepositories;
+using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.IViews;
 using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 
@@ -18,17 +19,26 @@ internal class PayUseCaseTests
 
     private readonly IEnumerable<IPaymentMethod> _listOfPaymentMethods;
 
+    private readonly Mock<ISaleRepository> _saleRepositoryMock;
+
+    private readonly Product _product;
+
     public PayUseCaseTests()
     {
         _cardValidityAlgorithm = new LuhnCardValidator();
-
-        var mockApplication = new Mock<IAuthenticationService>();
-        mockApplication.Setup(x => x.IsUserAuthenticated).Returns(false);
-
         _listOfPaymentMethods = new List<IPaymentMethod>
         {
             new CashPaymentMethod(),
             new CreditCardPaymentMethod()
+        };
+        _saleRepositoryMock = new Mock<ISaleRepository>();
+        _saleRepositoryMock.Setup(x => x.Add(It.IsAny<Sale>())).Verifiable();
+        _product = new Product
+        {
+            ColumnId = 1,
+            Name = "Fanta",
+            Price = 1.5m,
+            Quantity = 10
         };
     }
 
@@ -44,7 +54,7 @@ internal class PayUseCaseTests
         var mockCreditCardTerminal = new Mock<ICardTerminal>();
 
         mockCashTerminal
-            .SetupSequence(x => x.AskForMoney())
+            .SetupSequence(x => x.AskForMoney(It.IsAny<decimal>()))
             .Returns(1)
             .Returns(2)
             .Returns(5)
@@ -64,10 +74,7 @@ internal class PayUseCaseTests
         var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
             new CashPaymentAlgorithm(mockCashTerminal.Object),
-            new CreditCardPaymentAlgorithm(
-                mockCreditCardTerminal.Object,
-                mockCardValidator.Object
-            )
+            new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object, mockCardValidator.Object)
         };
 
         var mockBuyView = new Mock<IBuyView>();
@@ -79,10 +86,12 @@ internal class PayUseCaseTests
         var paymentUseCase = new PayUseCase(
             mockBuyView.Object,
             listOfPaymentAlgorithm,
-            _listOfPaymentMethods
+            _listOfPaymentMethods,
+            _saleRepositoryMock.Object
         );
 
-        Assert.DoesNotThrow(() => paymentUseCase.Execute(requestedPrice));
+        _product.Price = requestedPrice;
+        Assert.DoesNotThrow(() => paymentUseCase.Execute(_product));
     }
 
     [Test]
@@ -98,10 +107,7 @@ internal class PayUseCaseTests
         var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
             new CashPaymentAlgorithm(mockCashTerminal.Object),
-            new CreditCardPaymentAlgorithm(
-                mockCreditCardTerminal.Object,
-                mockCardValidator.Object
-            )
+            new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object, mockCardValidator.Object)
         };
 
         var mockBuyView = new Mock<IBuyView>();
@@ -113,11 +119,13 @@ internal class PayUseCaseTests
         var paymentUseCase = new PayUseCase(
             mockBuyView.Object,
             listOfPaymentAlgorithm,
-            _listOfPaymentMethods
+            _listOfPaymentMethods,
+            _saleRepositoryMock.Object
         );
 
+        _product.Price = requestedPrice;
         Assert.Throws<InvalidPaymentMethodIdException>(
-            () => paymentUseCase.Execute(requestedPrice)
+            () => paymentUseCase.Execute(_product)
         );
     }
 
@@ -136,10 +144,7 @@ internal class PayUseCaseTests
         var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
             new CashPaymentAlgorithm(mockCashTerminal.Object),
-            new CreditCardPaymentAlgorithm(
-                mockCreditCardTerminal.Object,
-                _cardValidityAlgorithm
-            )
+            new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object, _cardValidityAlgorithm)
         };
 
         var mockBuyView = new Mock<IBuyView>();
@@ -151,10 +156,12 @@ internal class PayUseCaseTests
         var paymentUseCase = new PayUseCase(
             mockBuyView.Object,
             listOfPaymentAlgorithm,
-            _listOfPaymentMethods
+            _listOfPaymentMethods,
+            _saleRepositoryMock.Object
         );
 
-        Assert.DoesNotThrow(() => paymentUseCase.Execute(requestedPrice));
+        _product.Price = requestedPrice;
+        Assert.DoesNotThrow(() => paymentUseCase.Execute(_product));
     }
 
     [Test]
@@ -172,10 +179,7 @@ internal class PayUseCaseTests
         var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
             new CashPaymentAlgorithm(mockCashTerminal.Object),
-            new CreditCardPaymentAlgorithm(
-                mockCreditCardTerminal.Object,
-                _cardValidityAlgorithm
-            )
+            new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object, _cardValidityAlgorithm)
         };
 
         var mockBuyView = new Mock<IBuyView>();
@@ -187,12 +191,12 @@ internal class PayUseCaseTests
         var paymentUseCase = new PayUseCase(
             mockBuyView.Object,
             listOfPaymentAlgorithm,
-            _listOfPaymentMethods
+            _listOfPaymentMethods,
+            _saleRepositoryMock.Object
         );
 
-        Assert.Throws<InvalidCreditCardIdException>(
-            () => paymentUseCase.Execute(requestedPrice)
-        );
+        _product.Price = requestedPrice;
+        Assert.Throws<InvalidCreditCardIdException>(() => paymentUseCase.Execute(_product));
     }
 
     [Test]
@@ -210,10 +214,7 @@ internal class PayUseCaseTests
         var listOfPaymentAlgorithm = new List<IPaymentAlgorithm>
         {
             new CashPaymentAlgorithm(mockCashTerminal.Object),
-            new CreditCardPaymentAlgorithm(
-                mockCreditCardTerminal.Object,
-                _cardValidityAlgorithm
-            )
+            new CreditCardPaymentAlgorithm(mockCreditCardTerminal.Object, _cardValidityAlgorithm)
         };
 
         var mockBuyView = new Mock<IBuyView>();
@@ -225,9 +226,11 @@ internal class PayUseCaseTests
         var paymentUseCase = new PayUseCase(
             mockBuyView.Object,
             listOfPaymentAlgorithm,
-            _listOfPaymentMethods
+            _listOfPaymentMethods,
+            _saleRepositoryMock.Object
         );
 
-        Assert.Throws<FormatException>(() => paymentUseCase.Execute(requestedPrice));
+        _product.Price = requestedPrice;
+        Assert.Throws<FormatException>(() => paymentUseCase.Execute(_product));
     }
 }

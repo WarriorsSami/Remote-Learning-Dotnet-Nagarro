@@ -15,6 +15,7 @@ public class Product
     [JsonIgnore]
     public int ColumnId { get; set; }
     public string Name { get; set; }
+
     [XmlIgnore]
     [JsonIgnore]
     public decimal Price { get; set; }

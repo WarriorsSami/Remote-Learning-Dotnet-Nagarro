@@ -2,6 +2,7 @@
 using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business;
 using VendingMachine.Domain.Business.IServices;
+using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.ICommands;
 
 namespace VendingMachine.Presentation.Commands;
@@ -21,8 +22,8 @@ internal class PayCommand : IPayCommand
     public string Description => "Execute payment";
     public bool CanExecute => !_authService.IsUserAuthenticated;
 
-    public void Execute(decimal price)
+    public void Execute(Product product)
     {
-        _useCaseFactory.Create<PayUseCase>().Execute(price);
+        _useCaseFactory.Create<PayUseCase>().Execute(product);
     }
 }

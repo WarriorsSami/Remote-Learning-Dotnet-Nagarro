@@ -11,10 +11,7 @@ internal class TurnOffCommand : ICommand
     private readonly IAuthenticationService _authService;
     private readonly IUseCaseFactory _useCaseFactory;
 
-    public TurnOffCommand(
-        IAuthenticationService authService,
-        IUseCaseFactory useCaseFactory
-    )
+    public TurnOffCommand(IAuthenticationService authService, IUseCaseFactory useCaseFactory)
     {
         _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));

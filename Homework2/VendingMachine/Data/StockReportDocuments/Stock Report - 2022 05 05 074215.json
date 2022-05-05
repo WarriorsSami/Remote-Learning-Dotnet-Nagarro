@@ -1,16 +1,8 @@
 {
   "StockReport": [
     {
-      "Name": "Coca-Cola",
-      "Quantity": 2
-    },
-    {
       "Name": "Fanta",
       "Quantity": 4
-    },
-    {
-      "Name": "Snickers",
-      "Quantity": 6
     },
     {
       "Name": "Milka",
@@ -26,10 +18,6 @@
     },
     {
       "Name": "Granini",
-      "Quantity": 10
-    },
-    {
-      "Name": "Pepsi",
       "Quantity": 10
     },
     {
@@ -49,8 +37,20 @@
       "Quantity": 13
     },
     {
+      "Name": "Snickers",
+      "Quantity": 5
+    },
+    {
+      "Name": "Pepsi",
+      "Quantity": 9
+    },
+    {
+      "Name": "Coca-Cola",
+      "Quantity": 1
+    },
+    {
       "Name": "Bounty",
-      "Quantity": 18
+      "Quantity": 17
     }
   ]
 }

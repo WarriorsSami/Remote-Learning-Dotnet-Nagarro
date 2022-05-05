@@ -16,10 +16,7 @@ internal class BuyView : IBuyView
 
     public string AskForProductCode()
     {
-        DisplayBase.DisplayLine(
-            "Enter the id for the product you wanna buy:",
-            ConsoleColor.Yellow
-        );
+        DisplayBase.DisplayLine("Enter the id for the product you wanna buy:", ConsoleColor.Yellow);
         var productCode = Console.ReadLine() ?? string.Empty;
 
         return productCode;

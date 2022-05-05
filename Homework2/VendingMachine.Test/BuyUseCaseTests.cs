@@ -3,7 +3,6 @@ using Moq;
 using NUnit.Framework;
 using VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
 using VendingMachine.Business.UseCases;
-using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.DataAccess.IRepositories;
 using VendingMachine.Domain.Dtos;
 using VendingMachine.Domain.Entities;
@@ -19,11 +18,8 @@ internal class BuyUseCaseTests
 
     public BuyUseCaseTests()
     {
-        var mockApplication = new Mock<IAuthenticationService>();
-        mockApplication.Setup(x => x.IsUserAuthenticated).Returns(false);
-
         var mockPayCommand = new Mock<IPayCommand>();
-        mockPayCommand.Setup(x => x.Execute(It.IsAny<decimal>())).Verifiable();
+        mockPayCommand.Setup(x => x.Execute(It.IsAny<Product>())).Verifiable();
         mockPayCommand.Setup(x => x.CanExecute).Returns(true);
 
         _payCommand = mockPayCommand.Object;
@@ -97,26 +93,18 @@ internal class BuyUseCaseTests
             .Returns((int id) => listOfProduct.Find(x => x.ColumnId == id));
 
         mockProductRepository
-            .Setup(
-                x =>
-                    x.UpdateQuantity(
-                        new QuantitySupply
-                        {
-                            ColumnId = It.IsAny<int>(),
-                            Quantity = It.IsAny<int>()
-                        }
-                    )
-            )
+            .Setup(x => x.UpdateQuantity(It.IsAny<QuantitySupply>()))
             .Callback(
-                (int id, int quantity) =>
+                (QuantitySupply quantitySupply) =>
                 {
-                    var product = listOfProduct.Find(x => x.ColumnId == id);
+                    var product = listOfProduct.Find(x => x.ColumnId == quantitySupply.ColumnId);
                     if (product != null)
                     {
-                        product.Quantity = quantity;
+                        product.Quantity = quantitySupply.Quantity;
                     }
                 }
-            );
+            )
+            .Verifiable();
 
         _productRepository = mockProductRepository.Object;
     }

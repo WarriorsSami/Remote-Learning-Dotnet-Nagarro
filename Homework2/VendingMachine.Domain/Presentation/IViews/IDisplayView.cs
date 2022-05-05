@@ -4,5 +4,5 @@ namespace VendingMachine.Domain.Presentation.IViews;
 
 public interface IDisplayView
 {
-   void DisplayProduct(Product product);
+    void DisplayProduct(Product product);
 }

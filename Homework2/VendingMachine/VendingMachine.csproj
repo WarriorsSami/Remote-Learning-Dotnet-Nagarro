@@ -58,9 +58,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\SaleReports" />
-      <Folder Include="Data\StockReports" />
-      <Folder Include="Data\VolumeReports" />
+      <Folder Include="Data\SalesReportDocuments" />
+      <Folder Include="Data\StockReportDocuments" />
+      <Folder Include="Data\VolumeReportDocuments" />
     </ItemGroup>
 
 </Project>

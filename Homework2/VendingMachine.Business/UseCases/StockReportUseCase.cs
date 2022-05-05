@@ -13,6 +13,8 @@ internal class StockReportUseCase : IUseCase
     private readonly IProductRepository _productRepository;
     private readonly IReportsView _reportsView;
 
+    private string _filePath = "Stock Report";
+
     public StockReportUseCase(
         IProductRepository productRepository,
         IReportsView reportsView,
@@ -29,12 +31,9 @@ internal class StockReportUseCase : IUseCase
     public void Execute(params object[] args)
     {
         var products = _productRepository.GetAll();
-        var stockReport = new StockReport
-        {
-            Products = products.ToArray()
-        };
+        var stockReport = new StockReportDocument { Products = products.ToArray() };
 
-        _reportsRepository.Add(stockReport, out var filePath);
-        _reportsView.DisplaySuccessMessage("Stock", filePath);
+        _reportsRepository.Add(stockReport, ref _filePath);
+        _reportsView.DisplaySuccessMessage("Stock", _filePath);
     }
 }

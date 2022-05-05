@@ -48,7 +48,7 @@ internal class BuyUseCase : IUseCase
                 throw new ProductOutOfStockException("Product out of stock");
             }
 
-            _payCommand.Execute(product.Price);
+            _payCommand.Execute(product);
             _productRepository.UpdateQuantity(
                 new QuantitySupply { ColumnId = productCode, Quantity = product.Quantity - 1 }
             );

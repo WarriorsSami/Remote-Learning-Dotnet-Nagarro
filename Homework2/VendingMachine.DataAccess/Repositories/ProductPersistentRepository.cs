@@ -49,7 +49,7 @@ internal class ProductPersistentRepository : IProductRepository
     public void AddOrReplace(Product product)
     {
         var existingProduct = _context.Products.FirstOrDefault(p => p.ColumnId == product.ColumnId);
-        
+
         if (existingProduct != null)
         {
             _context.Entry(existingProduct).CurrentValues.SetValues(product);
