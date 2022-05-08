@@ -7,5 +7,6 @@ namespace VendingMachine.Domain.DataAccess.IRepositories;
 public interface ISaleRepository
 {
     IEnumerable<Sale> Get(TimeInterval timeInterval);
+    IEnumerable<ProductSale> GetGroupedByProduct(TimeInterval timeInterval);
     void Add(Sale sale);
 }

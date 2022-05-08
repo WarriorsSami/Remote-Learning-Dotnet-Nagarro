@@ -1,6 +1,6 @@
 ﻿using System;
 using Autofac;
-using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IFactories;
 using VendingMachine.Domain.Business.IUseCases;
 
 namespace VendingMachine.Factories;

@@ -1,0 +1,22 @@
+{
+  "StartTime": "2022-05-07T18:11:56.1961901Z",
+  "EndTime": "2022-05-08T18:11:56.1961901Z",
+  "Products": [
+    {
+      "Name": "Fanta",
+      "Quantity": 1
+    },
+    {
+      "Name": "Hot Chocolate",
+      "Quantity": 1
+    },
+    {
+      "Name": "Milka",
+      "Quantity": 1
+    },
+    {
+      "Name": "Snickers",
+      "Quantity": 1
+    }
+  ]
+}

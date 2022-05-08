@@ -10,9 +10,9 @@ namespace VendingMachine.Domain.Entities;
 [Table("products")]
 public class Product
 {
-    [Key]
     [XmlIgnore]
     [JsonIgnore]
+    [Key]
     public int ColumnId { get; set; }
     public string Name { get; set; }
 

@@ -6,23 +6,26 @@ using VendingMachine.Domain.Presentation.ICommands;
 
 namespace VendingMachine.Presentation.Commands;
 
-internal class BuyCommand : ICommand
+internal class VolumeReportCommand : ICommand
 {
     private readonly IAuthenticationService _authService;
     private readonly IUseCaseFactory _useCaseFactory;
 
-    public BuyCommand(IAuthenticationService authService, IUseCaseFactory useCaseFactory)
+    public VolumeReportCommand(IAuthenticationService authService, IUseCaseFactory useCaseFactory)
     {
         _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
     }
 
-    public string Name => "buy";
-    public string Description => "Buy & Pay for a product";
-    public bool CanExecute => !_authService.IsUserAuthenticated;
+    public string Name => "volume";
+
+    public string Description =>
+        "Retrieve an XML/Json volume report file for a specific date range.";
+
+    public bool CanExecute => _authService.IsUserAuthenticated;
 
     public void Execute()
     {
-        _useCaseFactory.Create<BuyUseCase>().Execute();
+        _useCaseFactory.Create<VolumeReportUseCase>().Execute();
     }
 }

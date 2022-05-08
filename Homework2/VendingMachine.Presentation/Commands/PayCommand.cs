@@ -1,6 +1,6 @@
 ﻿using System;
 using VendingMachine.Business.UseCases;
-using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IFactories;
 using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Entities;
 using VendingMachine.Domain.Presentation.ICommands;

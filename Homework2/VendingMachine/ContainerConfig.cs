@@ -123,6 +123,7 @@ public static class ContainerConfig
         builder.RegisterType<SupplyNewProductCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<StockReportCommand>().As<ICommand>().SingleInstance();
         builder.RegisterType<SalesReportCommand>().As<ICommand>().SingleInstance();
+        builder.RegisterType<VolumeReportCommand>().As<ICommand>().SingleInstance();
 
         builder.RegisterType<UseCaseFactory>().As<IUseCaseFactory>().SingleInstance();
         builder.RegisterType<SerializerFactory>().As<ISerializerFactory>().SingleInstance();
@@ -141,6 +142,7 @@ public static class ContainerConfig
         builder.RegisterType<SupplyNewProductUseCase>().As<IUseCase>().AsSelf().SingleInstance();
         builder.RegisterType<StockReportUseCase>().As<IUseCase>().AsSelf().SingleInstance();
         builder.RegisterType<SalesReportUseCase>().As<IUseCase>().AsSelf().SingleInstance();
+        builder.RegisterType<VolumeReportUseCase>().As<IUseCase>().AsSelf().SingleInstance();
 
         builder.RegisterType<AuthenticationService>().As<IAuthenticationService>().SingleInstance();
         builder.RegisterType<TurnOffService>().As<ITurnOffService>().SingleInstance();

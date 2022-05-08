@@ -21,7 +21,7 @@ internal class ReportsRepository : IReportsRepository
     public void Add<TReport>(TReport report, ref string filePath) where TReport : class
     {
         filePath += $" - {DateTime.UtcNow:yyyy MM dd HHmmss}";
-        filePath = Path.Combine(_rootDirectoryPath, $"{typeof(TReport).Name}s", filePath);
+        filePath = Path.Combine(_rootDirectoryPath, filePath);
         _serializerFactory.Serialize(report, ref filePath);
     }
 }

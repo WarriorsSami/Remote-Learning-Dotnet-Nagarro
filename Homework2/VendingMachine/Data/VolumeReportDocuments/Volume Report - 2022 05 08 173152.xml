@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<StartTime>2022-04-29T17:31:48.8081059Z</StartTime>
+	<EndTime>2022-05-08T17:31:48.8081059Z</EndTime>
+	<Sales>
+		<Product>
+			<Name>Bounty</Name>
+			<Quantity>1</Quantity>
+		</Product>
+		<Product>
+			<Name>Coca-Cola</Name>
+			<Quantity>1</Quantity>
+		</Product>
+		<Product>
+			<Name>Fanta</Name>
+			<Quantity>1</Quantity>
+		</Product>
+		<Product>
+			<Name>Hot Chocolate</Name>
+			<Quantity>1</Quantity>
+		</Product>
+		<Product>
+			<Name>Milka</Name>
+			<Quantity>2</Quantity>
+		</Product>
+		<Product>
+			<Name>Pepsi</Name>
+			<Quantity>1</Quantity>
+		</Product>
+		<Product>
+			<Name>Snickers</Name>
+			<Quantity>2</Quantity>
+		</Product>
+	</Sales>
+</VolumeReport>

@@ -15,6 +15,21 @@ internal class SaleInMemoryRepository : ISaleRepository
         return Sales.Where(s => s.Date >= timeInterval.Start && s.Date <= timeInterval.End);
     }
 
+    public IEnumerable<ProductSale> GetGroupedByProduct(TimeInterval timeInterval)
+    {
+        return Sales
+            .Where(sale => sale.Date >= timeInterval.Start && sale.Date <= timeInterval.End)
+            .GroupBy(sale => sale.ProductName)
+            .Select(
+                g =>
+                    new ProductSale
+                    {
+                        Name = g.Key,
+                        Quantity = g.Count(s => s.ProductName == g.Key)
+                    }
+            );
+    }
+
     public void Add(Sale sale)
     {
         Sales.Add(sale);

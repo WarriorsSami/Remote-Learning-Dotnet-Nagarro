@@ -24,4 +24,16 @@
 		<Price>5</Price>
 		<PaymentMethod>cash payment</PaymentMethod>
 	</Sale>
+	<Sale>
+		<Date>2022-05-05T07:45:36.330639Z</Date>
+		<ProductName>Milka</ProductName>
+		<Price>8.00</Price>
+		<PaymentMethod>cash payment</PaymentMethod>
+	</Sale>
+	<Sale>
+		<Date>2022-05-08T16:11:44.513318Z</Date>
+		<ProductName>Fanta</ProductName>
+		<Price>3.00</Price>
+		<PaymentMethod>cash payment</PaymentMethod>
+	</Sale>
 </SalesReport>

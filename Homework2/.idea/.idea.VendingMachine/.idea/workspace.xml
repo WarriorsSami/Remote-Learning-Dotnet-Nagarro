@@ -4,7 +4,59 @@
     <projectFile>VendingMachine/VendingMachine.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="" />
+    <list default="true" id="99afa4dd-b84f-41b9-9bf3-6b1a22cedced" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/VolumeReportUseCase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/ProductSale.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/ReportDocuments/VolumeReportDocument.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/VolumeReportCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 08 171727.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 08 172222.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 08 172225.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 08 180230.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 08 181144.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 180251.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 180326.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 180834.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 180957.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 181032.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 181121.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/VolumeReportDocuments/Volume Report - 2022 05 08 172946.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/VolumeReportDocuments/Volume Report - 2022 05 08 173152.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/VolumeReportDocuments/Volume Report - 2022 05 08 173946.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/VolumeReportDocuments/Volume Report - 2022 05 08 175019.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/VolumeReportDocuments/Volume Report - 2022 05 08 180300.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/VolumeReportDocuments/Volume Report - 2022 05 08 181058.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VendingMachine/Data/VolumeReportDocuments/Volume Report - 2022 05 08 181158.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VendingMachine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SalesReportUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/SalesReportUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Business/UseCases/StockReportUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Business/UseCases/StockReportUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ReportsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/ReportsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/SaleInMemoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/SaleInMemoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/SalePersistentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.DataAccess/Repositories/SalePersistentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/IUseCaseFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Business/IFactories/IUseCaseFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/ISaleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/DataAccess/IRepositories/ISaleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/Reports/SalesReportDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/ReportDocuments/SalesReportDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/Reports/StockReportDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Dtos/ReportDocuments/StockReportDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Domain/Entities/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/BuyCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LoginCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LogoutCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/LookCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/PayCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/PayCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SalesReportCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SalesReportCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/StockReportCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/StockReportCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyExistingProductCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyExistingProductCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyNewProductCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/SupplyNewProductCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.Presentation/Commands/TurnOffCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/ContainerConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 05 074220.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 05 074328.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 08 161155.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 05 074549.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Data/SalesReportDocuments/Sales Report - 2022 05 08 152407.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 05 074215.json" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 174954.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 05 074325.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Data/StockReportDocuments/Stock Report - 2022 05 08 160817.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/Factories/UseCaseFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/Factories/UseCaseFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VendingMachine/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine/appsettings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +116,9 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Project.VendingMachine" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,7 +137,9 @@
       <workItem from="1651568394303" duration="9400000" />
       <workItem from="1651582903557" duration="511000" />
       <workItem from="1651595552037" duration="3535000" />
-      <workItem from="1651728328119" duration="8918000" />
+      <workItem from="1651728328119" duration="9108000" />
+      <workItem from="1651737594910" duration="306000" />
+      <workItem from="1652022122729" duration="10707000" />
     </task>
     <servers />
   </component>
@@ -97,7 +154,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="vending-machine-reports-and-log" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -107,6 +176,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feat(report): create stock report functionality&#10;&#10;Create StockReport UseCase, Command and related Repository and Serializer Factory" />
+    <MESSAGE value="feat(sales): add sales report functionality&#10;&#10;- Create SalesReport Use Case, Command, Sale Repositories, Entity and DTO for storing report documents&#10;- Pass Sale Repo to Pay Use Case for storing incoming payments and use its Execute method with a Product param in order to catch all the necessary details for the current payment db record straight from the Buy Use Case&#10;- Fix Unit Tests as ctors have been updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

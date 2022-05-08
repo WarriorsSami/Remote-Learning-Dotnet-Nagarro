@@ -2,7 +2,7 @@
 using System.Linq;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.DataAccess.IRepositories;
-using VendingMachine.Domain.Dtos.Reports;
+using VendingMachine.Domain.Dtos.ReportDocuments;
 using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business.UseCases;
@@ -13,7 +13,7 @@ internal class StockReportUseCase : IUseCase
     private readonly IProductRepository _productRepository;
     private readonly IReportsView _reportsView;
 
-    private string _filePath = "Stock Report";
+    private const string ReportName = "StockReportDocuments\\Stock Report";
 
     public StockReportUseCase(
         IProductRepository productRepository,
@@ -33,7 +33,8 @@ internal class StockReportUseCase : IUseCase
         var products = _productRepository.GetAll();
         var stockReport = new StockReportDocument { Products = products.ToArray() };
 
-        _reportsRepository.Add(stockReport, ref _filePath);
-        _reportsView.DisplaySuccessMessage("Stock", _filePath);
+        var filePath = ReportName;
+        _reportsRepository.Add(stockReport, ref filePath);
+        _reportsView.DisplaySuccessMessage("Stock", filePath);
     }
 }

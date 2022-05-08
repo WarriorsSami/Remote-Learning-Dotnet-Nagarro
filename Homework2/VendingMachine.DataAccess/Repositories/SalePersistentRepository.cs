@@ -23,6 +23,21 @@ internal class SalePersistentRepository : ISaleRepository
         );
     }
 
+    public IEnumerable<ProductSale> GetGroupedByProduct(TimeInterval timeInterval)
+    {
+        return _context.Sales
+            .Where(sale => sale.Date >= timeInterval.Start && sale.Date <= timeInterval.End)
+            .GroupBy(sale => sale.ProductName)
+            .Select(
+                g =>
+                    new ProductSale
+                    {
+                        Name = g.Key,
+                        Quantity = g.Count(s => s.ProductName == g.Key)
+                    }
+            );
+    }
+
     public void Add(Sale sale)
     {
         _context.Sales.Add(sale);

@@ -7,15 +7,15 @@ using VendingMachine.Domain.Presentation.IViews;
 
 namespace VendingMachine.Business.UseCases;
 
-internal class SalesReportUseCase : IUseCase
+internal class VolumeReportUseCase : IUseCase
 {
     private readonly IReportsRepository _reportsRepository;
     private readonly ISaleRepository _saleRepository;
     private readonly IReportsView _reportsView;
 
-    private const string ReportName = "SalesReportDocuments\\Sales Report";
+    private const string ReportName = "VolumeReportDocuments\\Volume Report";
 
-    public SalesReportUseCase(
+    public VolumeReportUseCase(
         ISaleRepository saleRepository,
         IReportsView reportsView,
         IReportsRepository reportsRepository
@@ -30,11 +30,16 @@ internal class SalesReportUseCase : IUseCase
     public void Execute(params object[] args)
     {
         var timeInterval = _reportsView.AskForTimeInterval();
-        var sales = _saleRepository.Get(timeInterval);
-        var salesReport = new SalesReportDocument { Sales = sales.ToArray() };
+        var productSales = _saleRepository.GetGroupedByProduct(timeInterval);
+        var volumeReport = new VolumeReportDocument
+        {
+            StartTime = timeInterval.Start,
+            EndTime = timeInterval.End,
+            Sales = productSales.ToArray()
+        };
 
         var filePath = ReportName;
-        _reportsRepository.Add(salesReport, ref filePath);
-        _reportsView.DisplaySuccessMessage("Sales", filePath);
+        _reportsRepository.Add(volumeReport, ref filePath);
+        _reportsView.DisplaySuccessMessage("Volume", filePath);
     }
 }
