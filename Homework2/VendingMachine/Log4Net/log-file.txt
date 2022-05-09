@@ -44,3 +44,27 @@
    at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 (InnerException: )
 [2022-05-09 20:07:22,038] INFO VendingMachine.Presentation.Commands.LoginCommand - The user is now logged in
 [2022-05-09 20:07:26,248] INFO VendingMachine.Presentation.Commands.TurnOffCommand - The user has left the vending machine
+[2022-05-09 20:32:01,862] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:37:31,912] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:38:35,500] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:39:01,897] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:40:33,126] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:41:47,027] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:46:03,640] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:46:34,757] ERROR VendingMachine.Business.VendingMachineApplication - Message: Invalid password -> StackTrace:    at VendingMachine.Business.Services.AuthenticationService.Login(String password) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\Services\AuthenticationService.cs:line 15
+   at VendingMachine.Business.UseCases.LoginUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\LoginUseCase.cs:line 22
+   at VendingMachine.Presentation.Commands.LoginCommand.Execute() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\LoginCommand.cs:line 35
+   at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 (InnerException: )
+[2022-05-09 20:48:34,067] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:49:31,701] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:49:34,556] INFO VendingMachine.Presentation.Commands.LoginCommand - The user is now logged in
+[2022-05-09 20:49:44,381] INFO VendingMachine.Presentation.Commands.LogoutCommand - The user has been logged out
+[2022-05-09 20:52:10,923] INFO VendingMachine.Presentation.Commands.LookCommand - The list of available products is displayed
+[2022-05-09 20:54:21,919] ERROR VendingMachine.Business.VendingMachineApplication - Message: Input string was not in a correct format. -> StackTrace:    at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at VendingMachine.Presentation.Views.BuyView.AskForPaymentMethod(IEnumerable`1 paymentMethods) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Views\BuyView.cs:line 41
+   at VendingMachine.Business.UseCases.PayUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\PayUseCase.cs:line 38
+   at VendingMachine.Presentation.Commands.PayCommand.Execute(Product product) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\PayCommand.cs:line 34
+   at VendingMachine.Business.UseCases.BuyUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\BuyUseCase.cs:line 51
+   at VendingMachine.Presentation.Commands.BuyCommand.Execute() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\BuyCommand.cs:line 33
+   at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 (InnerException: )
