@@ -10,6 +10,7 @@ public class VolumeReportDocument
 {
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
+
     [XmlArrayItem("Product")]
     [JsonProperty("Products")]
     public ProductSale[] Sales { get; set; }

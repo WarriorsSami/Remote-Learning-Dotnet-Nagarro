@@ -1,4 +1,5 @@
 ﻿using System;
+using log4net;
 using VendingMachine.Business.UseCases;
 using VendingMachine.Domain.Business.IFactories;
 using VendingMachine.Domain.Business.IServices;
@@ -8,13 +9,19 @@ namespace VendingMachine.Presentation.Commands;
 
 internal class LogoutCommand : ICommand
 {
+    private readonly ILog _logger;
     private readonly IAuthenticationService _authService;
     private readonly IUseCaseFactory _useCaseFactory;
 
-    public LogoutCommand(IAuthenticationService authService, IUseCaseFactory useCaseFactory)
+    public LogoutCommand(
+        IAuthenticationService authService,
+        IUseCaseFactory useCaseFactory,
+        ILog logger
+    )
     {
         _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public string Name => "logout";
@@ -26,5 +33,8 @@ internal class LogoutCommand : ICommand
     public void Execute()
     {
         _useCaseFactory.Create<LogoutUseCase>().Execute();
+
+        const string message = "The user has been logged out";
+        _logger.Info(message);
     }
 }

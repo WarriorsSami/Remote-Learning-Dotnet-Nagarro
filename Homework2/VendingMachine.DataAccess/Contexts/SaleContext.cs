@@ -7,7 +7,7 @@ namespace VendingMachine.DataAccess.Contexts;
 internal class SaleContext : DbContext
 {
     public SaleContext() { }
-    
+
     public SaleContext(DbContextOptions<SaleContext> options) : base(options) { }
 
     public DbSet<Sale> Sales { get; set; }

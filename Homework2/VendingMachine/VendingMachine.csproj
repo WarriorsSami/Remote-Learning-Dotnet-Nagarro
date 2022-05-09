@@ -17,6 +17,7 @@
     <ItemGroup>
       <PackageReference Include="Autofac" Version="6.3.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+      <PackageReference Include="log4net" Version="2.0.14" />
       <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
@@ -40,8 +41,15 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Update="appsettings.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <None Remove="bin\**" />
+        <None Update="Configuration\appsettings.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Log4Net\log-file.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Log4Net\log4net.config">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
@@ -58,9 +66,22 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="bin\Debug\net6.0" />
       <Folder Include="Data\SalesReportDocuments" />
       <Folder Include="Data\StockReportDocuments" />
       <Folder Include="Data\VolumeReportDocuments" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\net6.0\log-file.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="bin\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="bin\**" />
     </ItemGroup>
 
 </Project>

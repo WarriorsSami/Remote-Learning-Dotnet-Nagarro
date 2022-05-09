@@ -1,0 +1,46 @@
+[2022-05-09 11:17:28,882] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 11:18:22,828] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 19:46:55,001] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 19:58:00,922] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 19:58:03,361] INFO VendingMachine.Presentation.Commands.LoginCommand - The user is now logged in
+[2022-05-09 19:58:09,201] INFO VendingMachine.Presentation.Commands.LookCommand - The list of available products is displayed
+[2022-05-09 19:58:15,831] INFO VendingMachine.Presentation.Commands.StockReportCommand - Stock report generated
+[2022-05-09 19:58:20,967] INFO VendingMachine.Presentation.Commands.SalesReportCommand - Sales report generated successfully.
+[2022-05-09 19:58:31,444] INFO VendingMachine.Presentation.Commands.LogoutCommand - The user has been logged out
+[2022-05-09 19:58:36,433] INFO VendingMachine.Presentation.Commands.LookCommand - The list of available products is displayed
+[2022-05-09 19:58:44,449] INFO VendingMachine.Presentation.Commands.PayCommand - Payment executed
+[2022-05-09 19:58:44,475] INFO VendingMachine.Presentation.Commands.BuyCommand - The user has successfully bought a product
+[2022-05-09 19:58:48,604] INFO VendingMachine.Presentation.Commands.LookCommand - The list of available products is displayed
+[2022-05-09 19:58:52,983] INFO VendingMachine.Presentation.Commands.LoginCommand - The user is now logged in
+[2022-05-09 19:58:57,364] INFO VendingMachine.Presentation.Commands.SalesReportCommand - Sales report generated successfully.
+[2022-05-09 19:58:59,642] INFO VendingMachine.Presentation.Commands.TurnOffCommand - The user has left the vending machine
+[2022-05-09 20:02:18,345] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:02:22,689] ERROR VendingMachine.Business.VendingMachineApplication - Invalid password ->    at VendingMachine.Business.Services.AuthenticationService.Login(String password) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\Services\AuthenticationService.cs:line 15
+   at VendingMachine.Business.UseCases.LoginUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\LoginUseCase.cs:line 22
+   at VendingMachine.Presentation.Commands.LoginCommand.Execute() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\LoginCommand.cs:line 35
+   at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 ()
+[2022-05-09 20:06:25,721] INFO VendingMachine.Business.VendingMachineApplication - Application has been started
+[2022-05-09 20:06:29,860] INFO VendingMachine.Presentation.Commands.LoginCommand - The user is now logged in
+[2022-05-09 20:06:38,984] ERROR VendingMachine.Business.VendingMachineApplication - Message: Input string was not in a correct format. -> StackTrace:    at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at VendingMachine.Presentation.Views.SupplyProductView.RequestProductQuantity() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Views\SupplyProductView.cs:line 23
+   at VendingMachine.Business.UseCases.SupplyExistingProductUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\SupplyExistingProductUseCase.cs:line 26
+   at VendingMachine.Presentation.Commands.SupplyExistingProductCommand.Execute() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\SupplyExistingProductCommand.cs:line 35
+   at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 (InnerException: )
+[2022-05-09 20:06:43,270] INFO VendingMachine.Presentation.Commands.LogoutCommand - The user has been logged out
+[2022-05-09 20:06:48,068] ERROR VendingMachine.Business.VendingMachineApplication - Message: Unavailable product -> StackTrace:    at VendingMachine.Business.UseCases.BuyUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\BuyUseCase.cs:line 43
+   at VendingMachine.Presentation.Commands.BuyCommand.Execute() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\BuyCommand.cs:line 33
+   at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 (InnerException: )
+[2022-05-09 20:06:56,255] ERROR VendingMachine.Business.VendingMachineApplication - Message: Invalid payment method id -> StackTrace:    at VendingMachine.Business.UseCases.PayUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\PayUseCase.cs:line 41
+   at VendingMachine.Presentation.Commands.PayCommand.Execute(Product product) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\PayCommand.cs:line 34
+   at VendingMachine.Business.UseCases.BuyUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\BuyUseCase.cs:line 51
+   at VendingMachine.Presentation.Commands.BuyCommand.Execute() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\BuyCommand.cs:line 33
+   at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 (InnerException: )
+[2022-05-09 20:07:06,809] INFO VendingMachine.Presentation.Commands.PayCommand - Payment executed
+[2022-05-09 20:07:06,833] INFO VendingMachine.Presentation.Commands.BuyCommand - The user has successfully bought a product
+[2022-05-09 20:07:15,371] ERROR VendingMachine.Business.VendingMachineApplication - Message: Invalid password -> StackTrace:    at VendingMachine.Business.Services.AuthenticationService.Login(String password) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\Services\AuthenticationService.cs:line 15
+   at VendingMachine.Business.UseCases.LoginUseCase.Execute(Object[] args) in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\UseCases\LoginUseCase.cs:line 22
+   at VendingMachine.Presentation.Commands.LoginCommand.Execute() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Presentation\Commands\LoginCommand.cs:line 35
+   at VendingMachine.Business.VendingMachineApplication.Run() in C:\Users\asus\RiderProjects\Remote-Learning-Dotnet-Nagarro\Homework2\VendingMachine.Business\VendingMachineApplication.cs:line 48 (InnerException: )
+[2022-05-09 20:07:22,038] INFO VendingMachine.Presentation.Commands.LoginCommand - The user is now logged in
+[2022-05-09 20:07:26,248] INFO VendingMachine.Presentation.Commands.TurnOffCommand - The user has left the vending machine

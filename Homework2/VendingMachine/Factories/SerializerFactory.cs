@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using VendingMachine.Configuration;
 using VendingMachine.Domain.Business.IFactories;
 using Formatting = Newtonsoft.Json.Formatting;
 

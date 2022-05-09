@@ -1,0 +1,34 @@
+{
+  "StartTime": "2022-04-29T18:27:03.2386282Z",
+  "EndTime": "2022-05-08T18:27:03.2386282Z",
+  "Products": [
+    {
+      "Name": "Bounty",
+      "Quantity": 1
+    },
+    {
+      "Name": "Coca-Cola",
+      "Quantity": 1
+    },
+    {
+      "Name": "Fanta",
+      "Quantity": 1
+    },
+    {
+      "Name": "Hot Chocolate",
+      "Quantity": 1
+    },
+    {
+      "Name": "Milka",
+      "Quantity": 2
+    },
+    {
+      "Name": "Pepsi",
+      "Quantity": 1
+    },
+    {
+      "Name": "Snickers",
+      "Quantity": 2
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿namespace VendingMachine;
+﻿namespace VendingMachine.Configuration;
 
 public class SerializerConfiguration
 {

@@ -9,4 +9,8 @@
       <ProjectReference Include="..\VendingMachine.Domain\VendingMachine.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="log4net" Version="2.0.14" />
+    </ItemGroup>
+
 </Project>

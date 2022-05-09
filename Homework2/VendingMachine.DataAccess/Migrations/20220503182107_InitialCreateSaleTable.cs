@@ -11,23 +11,27 @@ namespace VendingMachine.DataAccess.Migrations
         {
             migrationBuilder.CreateTable(
                 name: "sales",
-                columns: table => new
-                {
-                    Date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    ProductName = table.Column<string>(type: "text", nullable: true),
-                    Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    PaymentMethod = table.Column<string>(type: "text", nullable: true)
-                },
+                columns: table =>
+                    new
+                    {
+                        Date = table.Column<DateTime>(
+                            type: "timestamp with time zone",
+                            nullable: false
+                        ),
+                        ProductName = table.Column<string>(type: "text", nullable: true),
+                        Price = table.Column<decimal>(type: "numeric", nullable: false),
+                        PaymentMethod = table.Column<string>(type: "text", nullable: true)
+                    },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_sales", x => x.Date);
-                });
+                }
+            );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "sales");
+            migrationBuilder.DropTable(name: "sales");
         }
     }
 }

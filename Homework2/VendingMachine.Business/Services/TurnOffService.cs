@@ -1,4 +1,5 @@
-﻿using VendingMachine.Domain.Business.IServices;
+﻿using log4net;
+using VendingMachine.Domain.Business.IServices;
 
 namespace VendingMachine.Business.Services;
 

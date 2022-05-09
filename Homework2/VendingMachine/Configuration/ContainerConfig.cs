@@ -19,17 +19,20 @@ using VendingMachine.Domain.Presentation.ICommands;
 using VendingMachine.Domain.Presentation.IViews;
 using VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
 using VendingMachine.Factories;
+using VendingMachine.Log4Net;
 using VendingMachine.Presentation.Commands;
 using VendingMachine.Presentation.Views;
 using VendingMachine.Presentation.Views.PaymentTerminals;
 
-namespace VendingMachine;
+namespace VendingMachine.Configuration;
 
 public static class ContainerConfig
 {
     public static IContainer Build()
     {
         var builder = new ContainerBuilder();
+
+        builder.RegisterModule<Log4NetModule>();
 
         builder.RegisterType<MainDisplay>().As<IMainDisplay>().SingleInstance();
         builder.RegisterType<BuyView>().As<IBuyView>().SingleInstance();
@@ -46,7 +49,13 @@ public static class ContainerConfig
         builder.RegisterType<LuhnCardValidator>().As<ICardValidityAlgorithm>().SingleInstance();
 
         var configuration = new ConfigurationBuilder()
-            .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
+            .Add(
+                new JsonConfigurationSource
+                {
+                    Path = "Configuration\\appsettings.json",
+                    ReloadOnChange = true
+                }
+            )
             .Build();
         var persistenceType = configuration.GetSection("PersistenceType").Value;
 

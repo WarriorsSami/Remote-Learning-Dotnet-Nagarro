@@ -124,9 +124,7 @@ internal class PayUseCaseTests
         );
 
         _product.Price = requestedPrice;
-        Assert.Throws<InvalidPaymentMethodIdException>(
-            () => paymentUseCase.Execute(_product)
-        );
+        Assert.Throws<InvalidPaymentMethodIdException>(() => paymentUseCase.Execute(_product));
     }
 
     [Test]
