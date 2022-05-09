@@ -92,6 +92,11 @@ internal class ProductInMemoryRepository : IProductRepository
         return product;
     }
 
+    public void Delete(int code)
+    {
+        Products.Remove(GetById(code));
+    }
+
     public void UpdateQuantity(QuantitySupply quantitySupply)
     {
         var product = Products.FirstOrDefault(p => p.ColumnId == quantitySupply.ColumnId);

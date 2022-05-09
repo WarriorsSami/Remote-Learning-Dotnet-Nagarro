@@ -26,6 +26,12 @@ internal class ProductPersistentRepository : IProductRepository
         return _context.Products.FirstOrDefault(p => p.ColumnId == code);
     }
 
+    public void Delete(int code)
+    {
+        _context.Products.Remove(GetById(code));
+        _context.SaveChanges();
+    }
+
     public void UpdateQuantity(QuantitySupply quantitySupply)
     {
         var product = _context.Products.FirstOrDefault(p => p.ColumnId == quantitySupply.ColumnId);

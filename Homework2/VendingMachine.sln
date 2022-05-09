@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Presentation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.Test", "VendingMachine.Test\VendingMachine.Test.csproj", "{3E1E68A8-E33C-4491-975F-986CD5EDDB90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.WebApi", "VendingMachine.WebApi\VendingMachine.WebApi.csproj", "{3A282C2C-8AC2-4F01-8E1C-2F96F5CBB85F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine.WebServices", "VendingMachine.WebServices\VendingMachine.WebServices.csproj", "{D24BB8CB-C737-4D60-B8FA-0FFDB4E1C46E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,13 @@ Global
 		{3E1E68A8-E33C-4491-975F-986CD5EDDB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E1E68A8-E33C-4491-975F-986CD5EDDB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E1E68A8-E33C-4491-975F-986CD5EDDB90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A282C2C-8AC2-4F01-8E1C-2F96F5CBB85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A282C2C-8AC2-4F01-8E1C-2F96F5CBB85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A282C2C-8AC2-4F01-8E1C-2F96F5CBB85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A282C2C-8AC2-4F01-8E1C-2F96F5CBB85F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24BB8CB-C737-4D60-B8FA-0FFDB4E1C46E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24BB8CB-C737-4D60-B8FA-0FFDB4E1C46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24BB8CB-C737-4D60-B8FA-0FFDB4E1C46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24BB8CB-C737-4D60-B8FA-0FFDB4E1C46E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
