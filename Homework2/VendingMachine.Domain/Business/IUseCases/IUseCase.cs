@@ -1,7 +1,6 @@
-﻿namespace VendingMachine.Domain.Business.IUseCases
+﻿namespace VendingMachine.Domain.Business.IUseCases;
+
+public interface IUseCase
 {
-    public interface IUseCase
-    {
-        void Execute(params object[] args);
-    }
+    void Execute(params object[] args);
 }

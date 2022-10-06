@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions
+namespace VendingMachine.Business.CustomExceptions.BuyUseCaseExceptions;
+
+public class ProductOutOfStockException : Exception
 {
-    public class ProductOutOfStockException : Exception
-    {
-        public ProductOutOfStockException() { }
+    public ProductOutOfStockException() { }
 
-        public ProductOutOfStockException(string message) : base(message) { }
+    public ProductOutOfStockException(string message) : base(message) { }
 
-        public ProductOutOfStockException(string message, Exception innerException)
-            : base(message, innerException) { }
-    }
+    public ProductOutOfStockException(string message, Exception innerException)
+        : base(message, innerException) { }
 }

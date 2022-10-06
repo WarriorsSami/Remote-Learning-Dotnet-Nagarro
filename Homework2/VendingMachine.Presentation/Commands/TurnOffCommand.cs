@@ -1,37 +1,40 @@
 ﻿using System;
+using log4net;
 using VendingMachine.Business.UseCases;
-using VendingMachine.Domain.Business;
+using VendingMachine.Domain.Business.IFactories;
 using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Presentation.ICommands;
 
-namespace VendingMachine.Presentation.Commands
+namespace VendingMachine.Presentation.Commands;
+
+internal class TurnOffCommand : ICommand
 {
-    internal class TurnOffCommand : ICommand
+    private readonly ILog _logger;
+    private readonly IAuthenticationService _authService;
+    private readonly IUseCaseFactory _useCaseFactory;
+
+    public TurnOffCommand(
+        IAuthenticationService authService,
+        IUseCaseFactory useCaseFactory,
+        ILog logger
+    )
     {
-        private readonly IAuthenticationService _authService;
-        private readonly ITurnOffService _turnOffService;
-        private readonly IUseCaseFactory _useCaseFactory;
+        _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+        _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    }
 
-        public TurnOffCommand(
-            IAuthenticationService authService,
-            IUseCaseFactory useCaseFactory,
-            ITurnOffService turnOffService
-        )
-        {
-            _authService = authService ?? throw new ArgumentNullException(nameof(authService));
-            _useCaseFactory = useCaseFactory ?? throw new ArgumentNullException(nameof(useCaseFactory));
-            _turnOffService = turnOffService ?? throw new ArgumentNullException(nameof(turnOffService));
-        }
+    public string Name => "exit";
 
-        public string Name => "exit";
+    public string Description => "Go to live your life.";
 
-        public string Description => "Go to live your life.";
+    public bool CanExecute => _authService.IsUserAuthenticated;
 
-        public bool CanExecute => _authService.IsUserAuthenticated;
+    public void Execute()
+    {
+        _useCaseFactory.Create<TurnOffUseCase>().Execute();
 
-        public void Execute(params object[] args)
-        {
-            _useCaseFactory.Create<TurnOffUseCase>().Execute(_turnOffService);
-        }
+        const string message = "The user has left the vending machine";
+        _logger.Info(message);
     }
 }

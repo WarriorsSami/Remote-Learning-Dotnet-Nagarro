@@ -1,0 +1,56 @@
+{
+  "Products": [
+    {
+      "Name": "Orange Juice",
+      "Quantity": 2
+    },
+    {
+      "Name": "Granini",
+      "Quantity": 10
+    },
+    {
+      "Name": "Wiskey",
+      "Quantity": 5
+    },
+    {
+      "Name": "Sprite",
+      "Quantity": 20
+    },
+    {
+      "Name": "Cappy Pulpy",
+      "Quantity": 22
+    },
+    {
+      "Name": "7-Up",
+      "Quantity": 13
+    },
+    {
+      "Name": "Pepsi",
+      "Quantity": 9
+    },
+    {
+      "Name": "Coca-Cola",
+      "Quantity": 1
+    },
+    {
+      "Name": "Bounty",
+      "Quantity": 17
+    },
+    {
+      "Name": "Fanta",
+      "Quantity": 3
+    },
+    {
+      "Name": "Hot Chocolate",
+      "Quantity": 4
+    },
+    {
+      "Name": "Milka",
+      "Quantity": 6
+    },
+    {
+      "Name": "Snickers",
+      "Quantity": 4
+    }
+  ]
+}

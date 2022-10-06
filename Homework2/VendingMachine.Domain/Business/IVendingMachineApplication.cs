@@ -1,7 +1,6 @@
-﻿namespace VendingMachine.Domain.Business
+﻿namespace VendingMachine.Domain.Business;
+
+public interface IVendingMachineApplication
 {
-    public interface IVendingMachineApplication
-    {
-        void Run();
-    }
+    void Run();
 }

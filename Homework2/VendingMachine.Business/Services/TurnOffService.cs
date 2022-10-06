@@ -1,19 +1,19 @@
-﻿using VendingMachine.Domain.Business.IServices;
+﻿using log4net;
+using VendingMachine.Domain.Business.IServices;
 
-namespace VendingMachine.Business.Services
+namespace VendingMachine.Business.Services;
+
+public class TurnOffService : ITurnOffService
 {
-    public class TurnOffService: ITurnOffService
+    public bool TurnOffRequested { get; set; }
+
+    public void Initialize()
     {
-        public bool TurnOffRequested { get; set; }
-        
-        public void Initialize()
-        {
-            TurnOffRequested = false;
-        }
-        
-        public void TurnOff()
-        {
-            TurnOffRequested = true;
-        }
+        TurnOffRequested = false;
+    }
+
+    public void TurnOff()
+    {
+        TurnOffRequested = true;
     }
 }

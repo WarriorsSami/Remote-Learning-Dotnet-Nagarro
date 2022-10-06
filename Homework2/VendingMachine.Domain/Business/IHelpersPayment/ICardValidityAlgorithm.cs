@@ -1,7 +1,6 @@
-namespace VendingMachine.Domain.Business.IHelpersPayment
+namespace VendingMachine.Domain.Business.IHelpersPayment;
+
+public interface ICardValidityAlgorithm
 {
-    public interface ICardValidityAlgorithm
-    {
-        bool IsValid(string cardNumber);
-    }
+    bool IsValid(string cardNumber);
 }

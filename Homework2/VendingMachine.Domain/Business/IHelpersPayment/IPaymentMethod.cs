@@ -1,8 +1,7 @@
-﻿namespace VendingMachine.Domain.Business.IHelpersPayment
+﻿namespace VendingMachine.Domain.Business.IHelpersPayment;
+
+public interface IPaymentMethod
 {
-    public interface IPaymentMethod
-    {
-        PaymentMethodType Id { get; }
-        public string Name { get; }
-    }
+    PaymentMethodType Id { get; }
+    public string Name { get; }
 }

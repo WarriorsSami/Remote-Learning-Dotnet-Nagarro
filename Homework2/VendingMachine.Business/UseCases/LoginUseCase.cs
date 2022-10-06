@@ -1,28 +1,24 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using VendingMachine.Domain.Business.IServices;
 using VendingMachine.Domain.Business.IUseCases;
 using VendingMachine.Domain.Presentation.IViews;
 
-[assembly: InternalsVisibleTo("VendingMachine.Presentation")]
+namespace VendingMachine.Business.UseCases;
 
-namespace VendingMachine.Business.UseCases
+internal class LoginUseCase : IUseCase
 {
-    internal class LoginUseCase : IUseCase
+    private readonly IAuthenticationService _authService;
+    private readonly IMainDisplay _mainDisplay;
+
+    public LoginUseCase(IMainDisplay mainDisplay, IAuthenticationService authService)
     {
-        private readonly IMainDisplay _mainDisplay;
+        _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
+        _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+    }
 
-        public LoginUseCase(IMainDisplay mainDisplay)
-        {
-            _mainDisplay = mainDisplay ?? throw new ArgumentNullException(nameof(mainDisplay));
-        }
-
-        public void Execute(params object[] args)
-        {
-            var password = _mainDisplay.AskForPassword();
-            var authService = (IAuthenticationService)args[0];
-
-            authService.Login(password);
-        }
+    public void Execute(params object[] args)
+    {
+        var password = _mainDisplay.AskForPassword();
+        _authService.Login(password);
     }
 }

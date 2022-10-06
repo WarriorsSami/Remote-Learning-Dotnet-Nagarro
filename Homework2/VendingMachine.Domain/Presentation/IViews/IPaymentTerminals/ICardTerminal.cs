@@ -1,7 +1,6 @@
-namespace VendingMachine.Domain.Presentation.IViews.IPaymentTerminals
+namespace VendingMachine.Domain.Presentation.IViews.IPaymentTerminals;
+
+public interface ICardTerminal
 {
-    public interface ICardTerminal
-    {
-        string AskForCardNumber();
-    }
+    string AskForCardNumber();
 }
