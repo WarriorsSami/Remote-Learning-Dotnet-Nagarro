@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>ClassLibrary1CaesarCipher.DataDecryptor.DataAccess</RootNamespace>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CaesarCipher.DataDecryptor.Business\CaesarCipher.DataDecryptor.Business.csproj" />
+    </ItemGroup>
+
+</Project>
