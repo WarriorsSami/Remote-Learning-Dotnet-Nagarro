@@ -1,9 +1,10 @@
 ﻿using System;
 using DustInTheWind.ConsoleTools;
+using DustInTheWind.ConsoleTools.Controls;
 
 namespace iQuest.StarFiles
 {
-    internal static class Program
+    internal class Program
     {
         private static void Main()
         {

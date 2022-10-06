@@ -8,13 +8,14 @@ namespace iQuest.StarFiles.UniverseModel
     /// </summary>
     internal class BinaryStar : SimpleStar
     {
-        private readonly Random random = new Random();
-        private WinApiFile additionalFile;
+        private readonly Random _random = new Random();
+        private WinApiFile _additionalFile;
 
-        public string AdditionalFilename => additionalFile.FileName;
+        private bool _disposed;
 
-        public BinaryStar(string name)
-            : base(name)
+        public string AdditionalFilename => _additionalFile.FileName;
+
+        public BinaryStar(string name) : base(name)
         {
             CreateAndOpenAdditionalFile();
             GenerateAdditionalContent();
@@ -22,39 +23,45 @@ namespace iQuest.StarFiles.UniverseModel
 
         private void CreateAndOpenAdditionalFile()
         {
-            Guid guid = Guid.NewGuid();
-            string filePath = $"star-{guid:D}.txt";
-            additionalFile = new WinApiFile(filePath);
+            var guid = Guid.NewGuid();
+            var filePath = $"star-{guid:D}.txt";
+            _additionalFile = new WinApiFile(filePath);
 
             GenerateContentInAdditionalFile();
         }
 
         private void GenerateContentInAdditionalFile()
         {
-            string content = $"This is the star 2 of the binary named '{Name}'" + Environment.NewLine;
-            additionalFile.Write(content);
+            var content = $"This is the star 2 of the binary named '{Name}'" + Environment.NewLine;
+            _additionalFile.Write(content);
         }
 
         protected override void GenerateContent()
         {
-            string content = $"This is the star 1 of the binary named '{Name}'" + Environment.NewLine +
-                             "This star is made up mostly of Hydrogen and some Helium atoms." + Environment.NewLine;
+            var content =
+                $"This is the star 1 of the binary named '{Name}'"
+                + Environment.NewLine
+                + "This star is made up mostly of Hydrogen and some Helium atoms."
+                + Environment.NewLine;
 
             File.Write(content);
         }
 
         private void GenerateAdditionalContent()
         {
-            for (int i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
-                int atomicMass = random.Next(1, 26);
-                AddContent($"Some atoms with atomic mass {atomicMass} have been found in this star." + Environment.NewLine);
+                var atomicMass = _random.Next(1, 26);
+                AddContent(
+                    $"Some atoms with atomic mass {atomicMass} have been found in this star."
+                        + Environment.NewLine
+                );
             }
         }
 
         private void AddContent(string content)
         {
-            int fileIndex = random.Next(1, 3);
+            var fileIndex = _random.Next(1, 3);
 
             switch (fileIndex)
             {
@@ -63,8 +70,28 @@ namespace iQuest.StarFiles.UniverseModel
                     break;
 
                 case 2:
-                    additionalFile.Write(content);
+                    _additionalFile.Write(content);
                     break;
+            }
+        }
+
+        public override void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _additionalFile.Dispose();
+                }
+
+                base.Dispose(disposing);
+                _disposed = true;
             }
         }
     }

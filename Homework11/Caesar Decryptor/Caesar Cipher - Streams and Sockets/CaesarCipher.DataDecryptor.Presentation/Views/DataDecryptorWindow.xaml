@@ -1,0 +1,260 @@
+﻿<Window
+    x:Class="CaesarCipher.DataDecryptor.Presentation.Views.DataDecryptorWindow"
+
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:iQuest.CaesarCipher.PresentationBase.Controls;assembly=iQuest.CaesarCipher.PresentationBase"
+    xmlns:valueConverters="clr-namespace:iQuest.CaesarCipher.PresentationBase.ValueConverters;assembly=iQuest.CaesarCipher.PresentationBase"
+    xmlns:viewModels1="clr-namespace:CaesarCipher.DataDecryptor.Presentation.ViewModels"
+
+    mc:Ignorable="d"
+    Title="Caesar's Cipher - Data Decryptor"
+    Height="550"
+    Width="1000"
+    ResizeMode="NoResize"
+    d:DataContext="{d:DesignInstance viewModels1:DataDecryptorViewModel}">
+
+    <Window.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Pack://application:,,,/iQuest.CaesarCipher.PresentationBase;component/Themes/Colors.xaml" />
+                <ResourceDictionary Source="Pack://application:,,,/iQuest.CaesarCipher.PresentationBase;component/Themes/ButtonStyles.xaml" />
+                <ResourceDictionary Source="Pack://application:,,,/iQuest.CaesarCipher.PresentationBase;component/Themes/LabelStyles.xaml" />
+                <ResourceDictionary Source="Pack://application:,,,/iQuest.CaesarCipher.PresentationBase;component/Themes/TextBoxStyles.xaml" />
+                <ResourceDictionary Source="Pack://application:,,,/iQuest.CaesarCipher.PresentationBase;component/Themes/TextBlockStyles.xaml" />
+                <ResourceDictionary Source="Pack://application:,,,/iQuest.CaesarCipher.PresentationBase;component/Themes/ErrorBlockStyles.xaml" />
+                <ResourceDictionary Source="Pack://application:,,,/iQuest.CaesarCipher.PresentationBase;component/Themes/StatusBarStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <valueConverters:IpAddressToStringConverter x:Key="IpAddressToStringConverter" />
+            <valueConverters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+        </ResourceDictionary>
+
+    </Window.Resources>
+    
+    <DockPanel>
+
+        <DockPanel Height="500" Width="500">
+
+            <StatusBar
+                DockPanel.Dock="Bottom">
+
+                <StatusBarItem>
+                    <controls:Led State="{Binding LedStateForListener}"/>
+                </StatusBarItem>
+
+                <StatusBarItem>
+                    <TextBlock
+                        Foreground="Gray"
+                        Text="Received bytes:" />
+                </StatusBarItem>
+
+                <StatusBarItem>
+                    <TextBlock
+                        Foreground="Gray"
+                        Text="{Binding ReceivedBytesCount, StringFormat={}{0:#,##0} bytes}" />
+                </StatusBarItem>
+
+            </StatusBar>
+
+            <DockPanel Margin="30">
+
+                <controls:ErrorBlock
+                    DockPanel.Dock="Bottom"
+                    Content="{Binding ErrorMessageForListener}"
+                    Visibility="{Binding ErrorMessageForListener, Converter={StaticResource NullToVisibilityConverter}}"
+                    Margin="0 20 0 0" />
+
+                <GroupBox
+                    DockPanel.Dock="Top"
+                    Padding="15"
+                    FontSize="14">
+
+                    <GroupBox.Header>
+                        <TextBlock
+                            Text="Listener"
+                            Margin="10 0"/>
+
+                    </GroupBox.Header>
+
+                    <DockPanel>
+
+                        <Button
+                            DockPanel.Dock="Bottom"
+                            Command="{Binding StartStopCommandForListener}"
+                            Content="{Binding StartButtonTextForListener}"
+                            Margin="0 10 0 0" />
+
+                        <StackPanel
+                            IsEnabled="{Binding AreDataInputFieldsEnabledForListener}">
+
+                            <StackPanel.Resources>
+
+                                <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                                    <Setter Property="Margin" Value="0 0 0 8" />
+                                </Style>
+
+                                <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+                                    <Setter Property="Margin" Value="0 0 0 20" />
+                                </Style>
+
+                            </StackPanel.Resources>
+
+                            <Label
+                                Target="{Binding ElementName=IpTextBoxForListener}"
+                                Content="_IP:" />
+
+                            <TextBox
+                                Name="IpTextBoxForListener"
+                                Text="{Binding IpAddressForListener, Converter={StaticResource IpAddressToStringConverter}}" />
+
+                            <Label
+                                Target="{Binding ElementName=PortTextBoxForListener}"
+                                Content="_Port:" />
+
+                            <TextBox
+                                Name="PortTextBoxForListener"
+                                Text="{Binding PortForListener, UpdateSourceTrigger=PropertyChanged}" />
+
+                        </StackPanel>
+
+                    </DockPanel>
+
+                </GroupBox>
+
+                <GroupBox
+                    Margin="0 20 0 0"
+                    FontSize="14"
+                    Height="400">
+
+                    <GroupBox.Header>
+                        <TextBlock
+                            Text="Received Encrypted Data"
+                            Margin="10 0"/>
+
+                    </GroupBox.Header>
+
+                    <TextBox
+                        AcceptsReturn="True"
+                        Text="{Binding ReceivedText}"
+                        BorderThickness="0"
+                        VerticalScrollBarVisibility="Auto"
+                        HorizontalScrollBarVisibility="Auto"
+                        Margin="0"
+                        IsReadOnly="True" />
+
+                </GroupBox>
+
+            </DockPanel>
+
+        </DockPanel>
+        
+        <DockPanel Height="500" Width="500">
+        
+            <StatusBar DockPanel.Dock="Bottom">
+
+                <StatusBarItem>
+                    <controls:Led State="{Binding LedStateForClient}"/>
+                </StatusBarItem>
+
+                <StatusBarItem>
+                    <TextBlock
+                        Foreground="Gray"
+                        Text="Sent bytes:" />
+                </StatusBarItem>
+
+                <StatusBarItem>
+                    <TextBlock
+                        Foreground="Gray"
+                        Text="{Binding BytesSentCount, StringFormat={}{0:#,##0} bytes}" />
+                </StatusBarItem>
+
+            </StatusBar>
+
+            <DockPanel Margin="30">
+
+                <controls:ErrorBlock
+                    DockPanel.Dock="Bottom"
+                    Content="{Binding ErrorMessageForClient}"
+                    Visibility="{Binding ErrorMessageForClient, Converter={StaticResource NullToVisibilityConverter}}"
+                    Margin="0 20" />
+                
+                <GroupBox
+                    DockPanel.Dock="Top"
+                    Padding="15"
+                    FontSize="14">
+
+                    <GroupBox.Header>
+                        <TextBlock
+                            Text="Client"
+                            Margin="10 0"/>
+
+                    </GroupBox.Header>
+                    
+                    <DockPanel>
+                
+                        <Button
+                            DockPanel.Dock="Bottom"
+                            Command="{Binding StartStopCommandForClient}"
+                            Content="{Binding StartButtonTextForClient}" />
+
+                        <ScrollViewer
+                            HorizontalScrollBarVisibility="Disabled"
+                            VerticalScrollBarVisibility="Auto">
+
+                            <StackPanel IsEnabled="{Binding AreDataInputFieldsEnabledForClient}">
+
+                                <StackPanel.Resources>
+
+                                    <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                                        <Setter Property="Margin" Value="0 0 0 8" />
+                                    </Style>
+
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+                                        <Setter Property="Margin" Value="0 0 0 20" />
+                                    </Style>
+
+                                </StackPanel.Resources>
+
+                                <Label
+                                    Target="{Binding ElementName=IpTextBoxForClient}"
+                                    Content="_IP:" />
+
+                                <TextBox
+                                    Name="IpTextBoxForClient"
+                                    Text="{Binding IpAddressForClient, Converter={StaticResource IpAddressToStringConverter}}" />
+
+                                <Label
+                                    Target="{Binding ElementName=PortTextBoxForClient}"
+                                    Content="_Port:" />
+
+                                <TextBox
+                                    Name="PortTextBoxForClient"
+                                    Text="{Binding PortForClient, UpdateSourceTrigger=PropertyChanged}" />
+
+                                <Label
+                                    Target="{Binding ElementName=LagTextBox}"
+                                    Content="Data sending _lag:" />
+
+                                <TextBox
+                                    Name="LagTextBox"
+                                    Text="{Binding Lag, UpdateSourceTrigger=PropertyChanged}" />
+
+                            </StackPanel>
+
+                        </ScrollViewer>
+                    
+                    </DockPanel>
+                
+                </GroupBox>
+
+            </DockPanel>
+            
+        </DockPanel>
+
+    </DockPanel>
+
+</Window>

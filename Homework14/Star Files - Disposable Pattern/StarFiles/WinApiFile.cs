@@ -6,18 +6,22 @@ using iQuest.StarFiles.WinApi;
 
 namespace iQuest.StarFiles
 {
-    internal class WinApiFile
+    internal class WinApiFile : IDisposable
     {
         public const uint INVALID_SET_FILE_POINTER = 0xFFFFFFFF;
 
-        private IntPtr fileHandle;
+        private bool _disposed;
+
+        private IntPtr _fileHandle;
 
         public string FileName { get; }
 
         public WinApiFile(string fileName)
         {
-            if (fileName == null) throw new ArgumentNullException(nameof(fileName));
-            if (fileName.Length == 0) throw new ArgumentNullException(nameof(fileName));
+            if (fileName == null)
+                throw new ArgumentNullException(nameof(fileName));
+            if (fileName.Length == 0)
+                throw new ArgumentNullException(nameof(fileName));
 
             FileName = fileName;
             Open();
@@ -27,10 +31,17 @@ namespace iQuest.StarFiles
         {
             const DesiredAccess access = DesiredAccess.GENERIC_READ | DesiredAccess.GENERIC_WRITE;
 
-            fileHandle = Kernel32.CreateFile(FileName, access, ShareMode.FILE_SHARE_READ, IntPtr.Zero,
-                CreationDisposition.OPEN_ALWAYS, FlagsAndAttributes.NONE, IntPtr.Zero);
+            _fileHandle = Kernel32.CreateFile(
+                FileName,
+                access,
+                ShareMode.FILE_SHARE_READ,
+                IntPtr.Zero,
+                CreationDisposition.OPEN_ALWAYS,
+                FlagsAndAttributes.NONE,
+                IntPtr.Zero
+            );
 
-            if (fileHandle.ToInt32() == -1)
+            if (_fileHandle.ToInt32() == -1)
                 ThrowLastWin32Err();
         }
 
@@ -43,48 +54,76 @@ namespace iQuest.StarFiles
         {
             MoveFilePointer(0, MoveMethod.FILE_BEGIN);
 
-            using (MemoryStream stream = new MemoryStream())
+            using var stream = new MemoryStream();
+            var buffer = new byte[10240];
+
+            uint actualReadCount = 0;
+
+            while (true)
             {
-                byte[] buffer = new byte[10240];
+                var success = Kernel32.ReadFile(
+                    _fileHandle,
+                    buffer,
+                    (uint)buffer.Length,
+                    ref actualReadCount,
+                    IntPtr.Zero
+                );
 
-                uint actualReadCount = 0;
+                if (!success)
+                    ThrowLastWin32Err();
 
-                while (true)
-                {
-                    bool success = Kernel32.ReadFile(fileHandle, buffer, (uint)buffer.Length, ref actualReadCount, IntPtr.Zero);
+                if (actualReadCount == 0)
+                    break;
 
-                    if (!success)
-                        ThrowLastWin32Err();
-
-                    if (actualReadCount == 0)
-                        break;
-
-                    stream.Write(buffer, 0, (int)actualReadCount);
-                }
-
-                return Encoding.UTF8.GetString(stream.ToArray());
+                stream.Write(buffer, 0, (int)actualReadCount);
             }
+
+            return Encoding.UTF8.GetString(stream.ToArray());
         }
 
         public void Write(string text)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(text);
+            var bytes = Encoding.UTF8.GetBytes(text);
 
             uint actualWriteCount = 0;
 
-            bool success = Kernel32.WriteFile(fileHandle, bytes, (uint)bytes.Length, ref actualWriteCount, IntPtr.Zero);
+            var success = Kernel32.WriteFile(
+                _fileHandle,
+                bytes,
+                (uint)bytes.Length,
+                ref actualWriteCount,
+                IntPtr.Zero
+            );
             if (!success)
                 ThrowLastWin32Err();
         }
 
         private void MoveFilePointer(int distance, MoveMethod moveMethod)
         {
-            if (fileHandle == IntPtr.Zero)
+            if (_fileHandle == IntPtr.Zero)
                 return;
 
-            uint result = Kernel32.SetFilePointer(fileHandle, distance, IntPtr.Zero, moveMethod);
+            var result = Kernel32.SetFilePointer(_fileHandle, distance, IntPtr.Zero, moveMethod);
             if (result == INVALID_SET_FILE_POINTER)
                 ThrowLastWin32Err();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing) { }
+
+                Kernel32.CloseHandle(_fileHandle);
+                _fileHandle = IntPtr.Zero;
+                _disposed = true;
+            }
         }
     }
 }

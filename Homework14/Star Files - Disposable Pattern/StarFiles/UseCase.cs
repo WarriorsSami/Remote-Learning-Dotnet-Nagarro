@@ -7,10 +7,13 @@ namespace iQuest.StarFiles
     {
         public void Execute()
         {
-            Universe universe = new Universe();
+            string starFilePath, binaryStarFilePath1, binaryStarFilePath2;
 
-            string starFilePath = GenerateStar(universe);
-            (string binaryStarFilePath1, string binaryStarFilePath2) = GenerateBinaryStar(universe);
+            using (var universe = new Universe())
+            {
+                starFilePath = GenerateStar(universe);
+                (binaryStarFilePath1, binaryStarFilePath2) = GenerateBinaryStar(universe);
+            }
 
             DisplayFileContent(starFilePath);
             DisplayFileContent(binaryStarFilePath1);
@@ -23,7 +26,7 @@ namespace iQuest.StarFiles
             Console.WriteLine("Generating star.");
 
             const string starName = "Betelgeuse";
-            string createdFilePath = universe.CreateStarFromTemplate(starName);
+            var createdFilePath = universe.CreateStarFromTemplate(starName);
 
             Console.WriteLine($"Finished generating star: '{starName}'.");
             Console.WriteLine($"File: {createdFilePath}");
@@ -36,7 +39,7 @@ namespace iQuest.StarFiles
             Console.WriteLine("Generating binary star.");
 
             const string starName = "Sirius";
-            Tuple<string, string> createdFilePath = universe.CreateBinaryStar(starName);
+            var createdFilePath = universe.CreateBinaryStar(starName);
 
             Console.WriteLine($"Finished generating binary star '{starName}'.");
             Console.WriteLine($"Files: {createdFilePath}");
@@ -49,8 +52,8 @@ namespace iQuest.StarFiles
             Console.WriteLine($"File: '{filePath}'");
             Console.WriteLine("Content:");
 
-            WinApiFile winApiFile = new WinApiFile(filePath);
-            string text = winApiFile.ReadAll();
+            using var winApiFile = new WinApiFile(filePath);
+            var text = winApiFile.ReadAll();
             Console.WriteLine(text);
         }
     }
